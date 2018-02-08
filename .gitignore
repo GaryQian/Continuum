@@ -33,3 +33,5 @@ ExportedObj/
 sysinfo.txt
 # Builds
 *.apk
+# Mac OS indexing file
+.DS_Store
