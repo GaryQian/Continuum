@@ -8,7 +8,6 @@ using UnityEngine;
 [Serializable]
 public class Version {
     public int version;
-
     public Version() {
         version = 1;
     }
@@ -16,10 +15,10 @@ public class Version {
 
 [Serializable]
 public class SettingsData {
-    public bool setting;
+    //public bool setting;
 
     public SettingsData() {
-        setting = false;
+        //setting = false;
     }
 
 }
@@ -38,7 +37,6 @@ public class SaveManager : MonoBehaviour {
     }
 
     public void SaveVersion() {
-
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + VERSION_PATH);
 
