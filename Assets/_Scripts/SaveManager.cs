@@ -27,6 +27,7 @@ public class SaveManager : MonoBehaviour {
     public static SaveManager Instance;
 
     public static readonly string VERSION_PATH = "/version.dat";
+    public static readonly string SETTINGS_PATH = "/settings.dat";
 
     private void Awake() {
         if (Instance != null) {
@@ -54,6 +55,7 @@ public class SaveManager : MonoBehaviour {
             }
             catch (Exception e) {
                 Debug.LogError("Failed to load Version: " + e.Message);
+                return new Version().version;
             }
             file.Close();
 
@@ -62,6 +64,36 @@ public class SaveManager : MonoBehaviour {
         else {
             SaveVersion();
             return new Version().version;
+        }
+    }
+
+    public void SaveSettings() {
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(Application.persistentDataPath + SETTINGS_PATH);
+
+        bf.Serialize(file, new Version());
+        file.Close();
+    }
+
+    public SettingsData LoadSettings() {
+        if (File.Exists(Application.persistentDataPath + SETTINGS_PATH)) {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + SETTINGS_PATH, FileMode.Open);
+            SettingsData data = null;
+            try {
+                data = (SettingsData)bf.Deserialize(file);
+            }
+            catch (Exception e) {
+                Debug.LogError("Failed to load Settings: " + e.Message);
+                data = new SettingsData();
+            }
+            file.Close();
+
+            return data;
+        }
+        else {
+            SaveVersion();
+            return new SettingsData();
         }
     }
 
