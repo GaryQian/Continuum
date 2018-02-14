@@ -9,37 +9,45 @@ using UnityEngine;
 /// </summary>
 public class GameManager : MonoBehaviour {
 
-    public static GameManager Instance; ///Singleton Instance
+	public static GameManager Instance; ///Singleton Instance
 
-    public static int saveVersion;
-    public SettingsData settings;
+	public static int saveVersion;
+	public SettingsData settings;
 
-    /// <summary>
-    /// EARLY setup that is done before the start function.
-    /// </summary>
-    private void Awake() {
-        if (Instance != null) {
-            Destroy(gameObject);
-            return;
-        }
-        Instance = this;
-    }
+	public GameObject player;
+	public Transform playerLocation;
 
-    /// <summary>
-    /// Load everything that needs to be done at game load.
-    /// </summary>
-    void Start () {
-        saveVersion = SaveManager.Instance.GetVersion();
-        SaveManager.Instance.SaveVersion();
-
-        settings = SaveManager.Instance.LoadSettings();
-        
-	}
-	
 	/// <summary>
-    /// Global update. Run on every frame. Try to put things in more local update loops, but some things like global counters can go here.
-    /// </summary>
+	/// EARLY setup that is done before the start function.
+	/// </summary>
+	private void Awake() {
+		if (Instance != null) {
+			Destroy(gameObject);
+			return;
+		}
+		Instance = this;
+		playerLocation = player.transform;
+	}
+
+	/// <summary>
+	/// Load everything that needs to be done at game load.
+	/// </summary>
+	void Start () {
+		saveVersion = SaveManager.Instance.GetVersion();
+		SaveManager.Instance.SaveVersion();
+
+		settings = SaveManager.Instance.LoadSettings();
+
+	}
+
+	/// <summary>
+	/// Global update. Run on every frame. Try to put things in more local update loops, but some things like global counters can go here.
+	/// </summary>
 	void Update () {
-		
+		playerLocation = player.transform;
+	}
+
+	public Transform getPlayerLocation() {
+		return playerLocation;
 	}
 }
