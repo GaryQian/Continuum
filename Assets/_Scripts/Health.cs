@@ -13,17 +13,27 @@ public class Health : MonoBehaviour {
     // Callbacks for when this object dies. Register callbacks using: OnDie += functionname;
     public Action OnDie;
 
-	// Use this for initialization
 	void Start () {
         health = maxHealth;
 	}
 
+    /// <summary>
+    /// Do damage to entity. Use positive dmg vals to do damage.
+    /// </summary>
+    /// <param name="dmg"></param>
+    /// <param name="attacker"></param>
     public void Damage(float dmg, GameObject attacker=null) {
         dmg = invincible ? 0 : dmg * armor;
         ChangeHealth(-dmg);
 
     }
 
+
+    /// <summary>
+    /// Heal entity. Use positive hp vals to heal.
+    /// </summary>
+    /// <param name="hp"></param>
+    /// <param name="healer"></param>
     public void Heal(float hp, GameObject healer=null) {
         ChangeHealth(hp);
     }
@@ -75,13 +85,17 @@ public class Health : MonoBehaviour {
             if (duration > 0) Invoke("SetInvincibleTrue", duration);
         }
     }
-    void SetInvincibleTrue() { invincible = true; }
-    void SetInvincibleFalse() { invincible = false; }
+    void SetInvincibleTrue() { invincible = true; }    // Called By Invoke()
+    void SetInvincibleFalse() { invincible = false; }  // Called By Invoke()
 	
 
     public void Die() {
         OnDie();
         Destroy(gameObject);
+    }
+
+    public void OnDestroy() {
+        
     }
 
 
