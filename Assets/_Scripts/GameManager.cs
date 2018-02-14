@@ -8,6 +8,7 @@ using UnityEngine;
 /// Handles overall game flow such as starting game, and delegating to local managers.
 /// </summary>
 public class GameManager : MonoBehaviour {
+
 	public static GameManager Instance; ///Singleton Instance
 
 	public static int saveVersion;
@@ -15,7 +16,6 @@ public class GameManager : MonoBehaviour {
 
 	public GameObject player;
 	public Transform playerLocation;
-	public float px, py, pz;
 
 	/// <summary>
 	/// EARLY setup that is done before the start function.
@@ -33,9 +33,13 @@ public class GameManager : MonoBehaviour {
 	/// Load everything that needs to be done at game load.
 	/// </summary>
 	void Start () {
-		saveVersion = SaveManager.Instance.GetVersion ();
-		SaveManager.Instance.SaveVersion ();
+		saveVersion = SaveManager.Instance.GetVersion();
+		SaveManager.Instance.SaveVersion();
+
+		settings = SaveManager.Instance.LoadSettings();
+
 	}
+
 	/// <summary>
 	/// Global update. Run on every frame. Try to put things in more local update loops, but some things like global counters can go here.
 	/// </summary>
