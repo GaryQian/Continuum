@@ -2,12 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// Singleton. Access with GameManager.Instance
+/// Handles overall game flow such as starting game, and delegating to local managers.
+/// </summary>
 public class GameManager : MonoBehaviour {
 
-    public static GameManager Instance;
+    public static GameManager Instance; ///Singleton Instance
+
     public static int saveVersion;
     public SettingsData settings;
 
+    /// <summary>
+    /// EARLY setup that is done before the start function.
+    /// </summary>
     private void Awake() {
         if (Instance != null) {
             Destroy(gameObject);
@@ -16,7 +25,9 @@ public class GameManager : MonoBehaviour {
         Instance = this;
     }
 
-    // Use this for initialization
+    /// <summary>
+    /// Load everything that needs to be done at game load.
+    /// </summary>
     void Start () {
         saveVersion = SaveManager.Instance.GetVersion();
         SaveManager.Instance.SaveVersion();
@@ -25,7 +36,9 @@ public class GameManager : MonoBehaviour {
         
 	}
 	
-	// Update is called once per frame
+	/// <summary>
+    /// Global update. Run on every frame. Try to put things in more local update loops, but some things like global counters can go here.
+    /// </summary>
 	void Update () {
 		
 	}

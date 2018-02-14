@@ -5,6 +5,21 @@ using System.IO;
 using System;
 using UnityEngine;
 
+/// <summary>
+/// TO SAVE/EDIT SETTINGS:
+///     GameManager.Instance.settings.<property> = value
+///     SaveManager.SaveSettings();
+///     
+///     
+/// GameManager.Instance.saveVersion is the id for the save format (useful when new updates have differing save formats)
+/// 
+/// </summary>
+
+
+
+/// <summary>
+/// Save version. This represents the save data format version
+/// </summary>
 [Serializable]
 public class Version {
     public int version;
@@ -13,6 +28,9 @@ public class Version {
     }
 }
 
+/// <summary>
+/// Settings. Global settings like brightness, difficulty, etc.
+/// </summary>
 [Serializable]
 public class SettingsData {
     //public bool setting;
@@ -22,6 +40,11 @@ public class SettingsData {
     }
 
 }
+
+
+/// <summary>
+/// Singleton. Use to load saved data and flush to disk.
+/// </summary>
 public class SaveManager : MonoBehaviour {
 
     public static SaveManager Instance;
@@ -67,14 +90,21 @@ public class SaveManager : MonoBehaviour {
         }
     }
 
+
+    /// <summary>
+    /// Saves main settings
+    /// </summary>
     public void SaveSettings() {
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + SETTINGS_PATH);
 
-        bf.Serialize(file, new Version());
+        bf.Serialize(file, GameManager.Instance.settings);
         file.Close();
     }
-
+    /// <summary>
+    /// Loads Main settings
+    /// </summary>
+    /// <returns>Settings. This is cached at GameManager.Instance.settings</returns>
     public SettingsData LoadSettings() {
         if (File.Exists(Application.persistentDataPath + SETTINGS_PATH)) {
             BinaryFormatter bf = new BinaryFormatter();

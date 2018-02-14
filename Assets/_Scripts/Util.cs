@@ -1,8 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-//Static utility class with Instance references to key Gameobjects in the scene
+/// <summary>
+/// Static utility class with Instance references to key Gameobjects in the scene
+/// 
+/// Most methods and members here should be marked public static, but if nessecary instance member variables can be used too.
+/// </summary>
 public class Util : MonoBehaviour {
 
     public static Util Instance;
@@ -24,7 +27,9 @@ public class Util : MonoBehaviour {
         Instance = this;
     }
 
-    // Use this for initialization
+    /// <summary>
+    /// Calculate and initialize global statistics that are universally useful.
+    /// </summary>
     void Start() {
         aspectRatio = (float)Screen.width / Screen.height;
         xScale = Screen.width / 1920f;
