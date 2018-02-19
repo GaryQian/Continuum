@@ -8,10 +8,11 @@ public class Health : MonoBehaviour {
     public float health;
     public float maxHealth;
     public bool invincible = false;
-    public float armor;
+    public float armor = 1;
 
     // Callbacks for when this object dies. Register callbacks using: OnDie += functionname;
     public Action OnDie;
+    public Action<float> OnChangeHealth;
 
 	void Start () {
         health = maxHealth;
@@ -25,7 +26,6 @@ public class Health : MonoBehaviour {
     public void Damage(float dmg, GameObject attacker=null) {
         dmg = invincible ? 0 : dmg * armor;
         ChangeHealth(-dmg);
-
     }
 
 
@@ -40,6 +40,9 @@ public class Health : MonoBehaviour {
 
     void ChangeHealth(float hp) {
         health += hp;
+        if (health <= 0) {
+            Die();
+        }
     }
 
     /// <summary>
@@ -48,7 +51,7 @@ public class Health : MonoBehaviour {
     /// <param name="dot">Damage per second to apply. Negative values heal over time</param>
     /// <param name="duration">How long to apply for. Total dmg applied is duration * dot</param>
     /// <param name="tickDuration">OPTIONAL: delay between each tick of dmg</param>
-    public void Dot(float dot, float duration, float tickDuration) { StartCoroutine(DotRoutine(dot, duration, tickDuration)); }
+    public void Dot(float dot, float duration, float tickDuration=0) { StartCoroutine(DotRoutine(dot, duration, tickDuration)); }
     IEnumerator DotRoutine(float dot, float duration, float tickDuration=0) { //This is wrapped by Dot(...)
         float endDotTime = Time.time + duration;
         float appliedDmg = 0;
