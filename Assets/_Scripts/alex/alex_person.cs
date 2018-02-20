@@ -6,7 +6,7 @@ public class alex_person : MonoBehaviour {
     
 	// Use this for initialization
 	void Start () {
-        Debug.Log("alex_person script");
+        
 	}
 	
 	// Update is called once per frame
@@ -16,9 +16,6 @@ public class alex_person : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.tag);
-        if (other.tag.Equals("Cylinder")) {
-            Destroy(other.gameObject);
-        }
+
     }
 }
