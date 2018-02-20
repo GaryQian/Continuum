@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public class Puppetable {
+    bool isPuppeted = false;
+}
+
 public class Puppet : MonoBehaviour {
 
     public Recording recording;
@@ -17,7 +21,8 @@ public class Puppet : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+        // We may not want to always playback on start
+        StartPlayback();
 	}
 
     public void StartPlayback() {
