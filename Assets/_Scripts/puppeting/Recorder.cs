@@ -24,15 +24,20 @@ public class Recording {
     public Queue<Record> records;
     public UnitType type;
     public float recordDelay;
+    public int maxRecords;
 
     public Recording(UnitType type, float recordDelay = 0.1f) {
         records = new Queue<Record>();
         this.type = type;
         this.recordDelay = recordDelay;
+        this.maxRecords = (int)(15f / recordDelay);
     }
 
     public void AddRecord(Record r) {
         records.Enqueue(r);
+        if (records.Count > maxRecords) {
+            records.Dequeue();
+        }
     }
 
     public Record NextRecord() {
@@ -57,10 +62,15 @@ public class Recorder : MonoBehaviour {
     public bool recordOnStart = true;
     public Health health;
 
-	// Use this for initialization
-	void Start () {
+    public bool isPlayer = false;
+
+    // Use this for initialization
+    void Start () {
         recording = new Recording(type, recordDelay);
         if (recordOnStart) StartRecording();
+
+        if (!isPlayer) PuppetRegister.recorders.Add(this);
+        else PuppetRegister.playerRecorder = this;
 	}
 
     public void StartRecording() {
@@ -78,6 +88,7 @@ public class Recorder : MonoBehaviour {
         //Spawn Puppet Script Here
         Puppet p = gameObject.AddComponent<Puppet>();
         p.Setup(recording);
+        p.isPlayer = isPlayer;
 
         Destroy(this);
     }

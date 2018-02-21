@@ -15,6 +15,8 @@ public class Puppet : MonoBehaviour {
     public Rigidbody body;
     public float lerpSpeed = 5f;
 
+    public bool isPlayer;
+
     public void Setup(Recording r) {
         recording = r;
     }
@@ -23,7 +25,11 @@ public class Puppet : MonoBehaviour {
 	void Start () {
         // We may not want to always playback on start
         StartPlayback();
-	}
+
+
+        if (!isPlayer) PuppetRegister.puppets.Add(this);
+        else PuppetRegister.playerPuppet = this;
+    }
 
     public void StartPlayback() {
         GrabNextRecord();
