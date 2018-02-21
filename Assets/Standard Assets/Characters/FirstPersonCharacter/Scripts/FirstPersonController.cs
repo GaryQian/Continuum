@@ -11,12 +11,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
     public class FirstPersonController : MonoBehaviour
     {
         [SerializeField] private bool m_IsWalking;
+		[SerializeField] private bool m_IsCrouched;
+		[SerializeField] private bool m_IsDashing;
         [SerializeField] private float m_WalkSpeed;
         [SerializeField] private float m_RunSpeed;
         [SerializeField] [Range(0f, 1f)] private float m_RunstepLenghten;
         [SerializeField] private float m_JumpSpeed;
         [SerializeField] private float m_StickToGroundForce;
         [SerializeField] private float m_GravityMultiplier;
+		[SerializeField] private float m_Energy;
         [SerializeField] private MouseLook m_MouseLook;
         [SerializeField] private bool m_UseFovKick;
         [SerializeField] private FOVKick m_FovKick = new FOVKick();
@@ -42,6 +45,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
+
         // Use this for initialization
         private void Start()
         {
@@ -55,6 +59,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
+			m_Energy = 100;
         }
 
 
@@ -68,6 +73,22 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
             }
 
+			//Adjust character model height when crouched or standing
+			if (m_IsCrouched) {
+				transform.localScale = new Vector3(1f, 0.5f, 1f);
+			} else {
+				transform.localScale = new Vector3(1f, 1f, 1f);
+			}
+
+			//Control energy levels when dashing or recovering
+			if (m_IsDashing) {
+				m_Energy -= 33;
+			} else {
+				if (m_Energy + 1 <= 100) {
+					m_Energy += 1;
+				} 
+			}
+
             if (!m_PreviouslyGrounded && m_CharacterController.isGrounded)
             {
                 StartCoroutine(m_JumpBob.DoBobCycle());
@@ -79,6 +100,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 m_MoveDir.y = 0f;
             }
+				
 
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
         }
@@ -108,7 +130,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_MoveDir.x = desiredMove.x*speed;
             m_MoveDir.z = desiredMove.z*speed;
 
-
             if (m_CharacterController.isGrounded)
             {
                 m_MoveDir.y = -m_StickToGroundForce;
@@ -127,8 +148,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             m_CollisionFlags = m_CharacterController.Move(m_MoveDir*Time.fixedDeltaTime);
 
-            ProgressStepCycle(speed);
-            UpdateCameraPosition(speed);
+			ProgressStepCycle (speed);
+			UpdateCameraPosition (speed);
 
             m_MouseLook.UpdateCursorLock();
         }
@@ -155,8 +176,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
 
             m_NextStep = m_StepCycle + m_StepInterval;
-
-            PlayFootStepAudio();
+			if (m_IsDashing) {
+				PlayDashAudio ();
+			} else {
+				PlayFootStepAudio ();
+			}
         }
 
 
@@ -176,18 +200,23 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_FootstepSounds[0] = m_AudioSource.clip;
         }
 
+		private void PlayDashAudio() {
+			//TODO
+		}
+
 
         private void UpdateCameraPosition(float speed)
         {
+
             Vector3 newCameraPosition;
-            if (!m_UseHeadBob)
+			if (!m_UseHeadBob)
             {
                 return;
             }
-            if (m_CharacterController.velocity.magnitude > 0 && m_CharacterController.isGrounded)
+			if (m_CharacterController.velocity.magnitude > 0 && m_CharacterController.isGrounded)
             {
                 m_Camera.transform.localPosition =
-                    m_HeadBob.DoHeadBob(m_CharacterController.velocity.magnitude +
+					m_HeadBob.DoHeadBob(m_CharacterController.velocity.magnitude +
                                       (speed*(m_IsWalking ? 1f : m_RunstepLenghten)));
                 newCameraPosition = m_Camera.transform.localPosition;
                 newCameraPosition.y = m_Camera.transform.localPosition.y - m_JumpBob.Offset();
@@ -213,9 +242,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // On standalone builds, walk/run speed is modified by a key press.
             // keep track of whether or not the character is walking or running
             m_IsWalking = !Input.GetKey(KeyCode.LeftShift);
+			m_IsCrouched = Input.GetKey(KeyCode.C);
+			m_IsDashing = Input.GetKey(KeyCode.E) && m_Energy > 32;
 #endif
             // set the desired speed to be walking or running
             speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
+			if (m_IsDashing) {
+				speed = m_RunSpeed * 2;
+			}
             m_Input = new Vector2(horizontal, vertical);
 
             // normalize input if it exceeds 1 in combined length:
