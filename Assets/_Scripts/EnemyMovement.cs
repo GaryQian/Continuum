@@ -7,7 +7,7 @@ public class EnemyMovement : MonoBehaviour {
     //GameManager gm;
     NavMeshAgent enemy;
     public Transform destination;
-    public float enemySightRange = 30.0f;
+    public float enemySightRange = 10.0f;
     public bool playerInSight = false;
     LayerMask mask;
 
@@ -24,8 +24,6 @@ public class EnemyMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(enemy.transform.localPosition);
-        Debug.Log(player.transform.localPosition);
         enemy.transform.LookAt(player.transform);
         if (Physics.Raycast(enemy.transform.position, enemy.transform.forward, enemySightRange, mask.value)) {
             Debug.Log("Player on sight!!!");
