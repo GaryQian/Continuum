@@ -7,6 +7,7 @@ public class PressureDoor : MonoBehaviour {
 	Animator animator;
 	bool doorOpen;
 	double timeLeft = 0;
+	public double howLong = 5.0;
 
 	void Start() {
 		doorOpen = false;
@@ -17,7 +18,7 @@ public class PressureDoor : MonoBehaviour {
 		if (col.gameObject.tag == "Player") {
 			doorOpen = true;
 			ControlDoors ("Open");
-			timeLeft = 5.0;
+			timeLeft = howLong;
 		}
 	}
 
