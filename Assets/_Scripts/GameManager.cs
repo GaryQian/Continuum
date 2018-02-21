@@ -15,7 +15,6 @@ public class GameManager : MonoBehaviour {
 	public SettingsData settings;
 
 	public GameObject player;
-	public Transform playerLocation;
 
 	/// <summary>
 	/// EARLY setup that is done before the start function.
@@ -26,7 +25,6 @@ public class GameManager : MonoBehaviour {
 			return;
 		}
 		Instance = this;
-		playerLocation = player.transform;
 	}
 
 	/// <summary>
@@ -35,19 +33,13 @@ public class GameManager : MonoBehaviour {
 	void Start () {
 		saveVersion = SaveManager.Instance.GetVersion();
 		SaveManager.Instance.SaveVersion();
-
 		settings = SaveManager.Instance.LoadSettings();
-
 	}
 
 	/// <summary>
 	/// Global update. Run on every frame. Try to put things in more local update loops, but some things like global counters can go here.
 	/// </summary>
 	void Update () {
-		playerLocation = player.transform;
 	}
 
-	public Transform getPlayerLocation() {
-		return playerLocation;
-	}
 }
