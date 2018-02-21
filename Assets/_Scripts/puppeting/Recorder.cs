@@ -64,6 +64,10 @@ public class Recorder : MonoBehaviour {
 
     public bool isPlayer = false;
 
+    public void Setup(bool isPlayer) {
+        this.isPlayer = isPlayer;
+    }
+
     // Use this for initialization
     void Start () {
         recording = new Recording(type, recordDelay);
@@ -87,8 +91,7 @@ public class Recorder : MonoBehaviour {
         StopRecording();
         //Spawn Puppet Script Here
         Puppet p = gameObject.AddComponent<Puppet>();
-        p.Setup(recording);
-        p.isPlayer = isPlayer;
+        p.Setup(recording, isPlayer);
 
         Destroy(this);
     }

@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f0a3c2ca4098bb4cb5918839f2d30aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: Main
+  targetScene: Anthony_Bullets
 --- !u!23 &348014636
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1177,7 +1177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f0a3c2ca4098bb4cb5918839f2d30aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: alex
+  targetScene: alex-level-1
 --- !u!23 &1992351894
 MeshRenderer:
   m_ObjectHideFlags: 0

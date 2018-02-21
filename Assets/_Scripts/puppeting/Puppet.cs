@@ -17,8 +17,9 @@ public class Puppet : MonoBehaviour {
 
     public bool isPlayer;
 
-    public void Setup(Recording r) {
+    public void Setup(Recording r, bool isPlayer) {
         recording = r;
+        this.isPlayer = isPlayer;
     }
 
 	// Use this for initialization
@@ -47,11 +48,20 @@ public class Puppet : MonoBehaviour {
             GrabNextRecord();
             yield return new WaitForSeconds(recording.recordDelay);
         }
+
     }
     void GrabNextRecord() {
         Record r = recording.NextRecord();
         targetPos = r.position;
         targetRot = r.rotation;
+    }
+
+    public void SwitchToRecord() {
+        //Spawn Puppet Script Here
+        Recorder p = gameObject.AddComponent<Recorder>();
+        p.Setup(isPlayer);
+
+        Destroy(this);
     }
 	
 	// Update is called once per frame
