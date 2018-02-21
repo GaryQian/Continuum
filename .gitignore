@@ -35,3 +35,4 @@ sysinfo.txt
 *.apk
 # Mac OS indexing file
 .DS_Store
+*ProBuilderPreferences.asset*
