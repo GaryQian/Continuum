@@ -8,3 +8,27 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Main.unity
     guid: 7b19db12dc8be44f2ae83ac16e4bf964
+  - enabled: 1
+    path: Assets/_Scenes/Title.unity
+    guid: 52b1b333215d0e5419773324b299a4f7
+  - enabled: 1
+    path: Assets/_Scenes/Test Environment.unity
+    guid: 7a10c7b6d9f40498397e02f696f4da36
+  - enabled: 1
+    path: Assets/_Scenes/matt.unity
+    guid: b69a75938368d44b6aa83949cac1b167
+  - enabled: 1
+    path: Assets/_Scenes/Julian.unity
+    guid: 8803f86d6531d4b4485a166890f932e3
+  - enabled: 1
+    path: Assets/_Scenes/Anthony_sandbox.unity
+    guid: 3626344b053fb4ccf847195cd1984763
+  - enabled: 1
+    path: Assets/_Scenes/alex.unity
+    guid: 6f75da72e4ba94524b91f4b159a6e728
+  - enabled: 1
+    path: Assets/_Scenes/Anthony_Bullets.unity
+    guid: 79615d8f077c34e329a43d92ffb9556c
+  - enabled: 1
+    path: Assets/_Scenes/alex-level-1/alex-level-1.unity
+    guid: 79e082139a8b641069020ba2739c3c4e
