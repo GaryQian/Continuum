@@ -113,7 +113,7 @@ Transform:
   m_GameObject: {fileID: 1078161875908458}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.5333333, y: 0.5, z: 1.841}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 0.5}
   m_Children: []
   m_Father: {fileID: 4303708885414188}
   m_RootOrder: 3
@@ -126,7 +126,7 @@ Transform:
   m_GameObject: {fileID: 1711002509066498}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.633333, y: 0.5, z: 1.081}
-  m_LocalScale: {x: 0.75, y: 1, z: 0.5}
+  m_LocalScale: {x: 0.75, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4303708885414188}
   m_RootOrder: 1
@@ -139,7 +139,7 @@ Transform:
   m_GameObject: {fileID: 1022824157442642}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.633333, y: 0.5, z: 0.579}
-  m_LocalScale: {x: 0.75, y: 1, z: 0.5}
+  m_LocalScale: {x: 0.75, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4303708885414188}
   m_RootOrder: 0
@@ -150,9 +150,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1258634530720628}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.3, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 12, z: 10}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -32.03, y: 2.5, z: -10.68}
+  m_LocalScale: {x: 0.5, y: 5, z: 2.32}
   m_Children:
   - {fileID: 4185365432099540}
   - {fileID: 4178311060729818}
@@ -160,7 +160,7 @@ Transform:
   - {fileID: 4161027724360260}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &4754417842829444
 Transform:
   m_ObjectHideFlags: 1
@@ -169,7 +169,7 @@ Transform:
   m_GameObject: {fileID: 1377494856261150}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.5333333, y: 0.5, z: -0.19}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 0.5}
   m_Children: []
   m_Father: {fileID: 4303708885414188}
   m_RootOrder: 2
@@ -420,8 +420,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.6896896, y: 1.2976053, z: 1.9972366}
-  m_Center: {x: 3.2857246, y: 0.14880113, z: 0.63567543}
+  m_Size: {x: 4.7288947, y: 1.4498323, z: 2.750153}
+  m_Center: {x: 2.766122, y: 0.22491466, z: 1.0121331}
 --- !u!65 &65792168303979116
 BoxCollider:
   m_ObjectHideFlags: 1

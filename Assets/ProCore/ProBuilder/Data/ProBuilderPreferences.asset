@@ -10,7 +10,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 146836576, guid: 0472bdc8d6d15384d98f22ee34302f9c, type: 3}
   m_Name: ProBuilderPreferences
-  m_EditorClassIdentifier:
+  m_EditorClassIdentifier: 
   m_Bool_keys:
   - pbGenerateUV2PerObject
   - pb_SmoothingGroupEditor::m_ShowPreview
@@ -35,7 +35,7 @@ MonoBehaviour:
   m_Color_keys: []
   m_Material_keys: []
   m_Bool_values: 0001010001010101
-  m_Int_values: 0400000002000000000000000000000001000000
+  m_Int_values: 0100000001000000000000000000000001000000
   m_Float_values:
   - 0
   - 0
