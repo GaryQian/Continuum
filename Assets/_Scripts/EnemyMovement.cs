@@ -4,7 +4,7 @@ using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour {
 
-    //GameManager gm;
+    GameManager gm;
     NavMeshAgent enemy;
     public Transform destination;
     public float enemySightRange = 10.0f;
@@ -16,7 +16,7 @@ public class EnemyMovement : MonoBehaviour {
         
 	// Use this for initialization
 	void Start () {
-        //gm = GameManager.Instance;
+        gm = GameManager.Instance;
         mask = LayerMask.GetMask("Ignore Raycast");
         enemy = GetComponent<NavMeshAgent>();
         enemy.destination = destination.position;
@@ -24,9 +24,10 @@ public class EnemyMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        enemy.transform.LookAt(player.transform);
-        if (Physics.Raycast(enemy.transform.position, enemy.transform.forward, enemySightRange, mask.value)) {
-            Debug.Log("Player on sight!!!");
-        }
+		enemy.destination = gm.player.transform.position;
+//        enemy.transform.LookAt(player.transform);
+//        if (Physics.Raycast(enemy.transform.position, enemy.transform.forward, enemySightRange, mask.value)) {
+//            Debug.Log("Player on sight!!!");
+//        }
 	}
 }

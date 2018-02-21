@@ -32,10 +32,8 @@ public class ShooterModule : MonoBehaviour {
 
 	void FixedUpdate(){
 		RaycastHit hit;
-
 		if (Physics.Raycast (transform.position, Target.transform.position - transform.position, out hit, detectionRange)) {
-			//print ("Found an object - distance: " + hit.distance);
-			if (hit.transform.gameObject.CompareTag ("Player")) {
+			if (hit.transform.gameObject.CompareTag("Player")) {
 				if (!targetSighted) {
 					targetSighted = true;
 					Body.GetComponent<Renderer> ().material = AlarmedStateMaterial;
