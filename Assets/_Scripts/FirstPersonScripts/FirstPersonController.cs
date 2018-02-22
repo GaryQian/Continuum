@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
+using UnityEngine.UI; 
 
 namespace UnityStandardAssets.Characters.FirstPerson
 {
@@ -44,6 +45,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 		private float m_NextStep;
 		private bool m_Jumping;
 		private AudioSource m_AudioSource;
+        public static UIBars bars;
+        public static Health health;
 
 
 		// Use this for initialization
@@ -60,6 +63,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
 			m_Energy = 100;
+            health = (Health) GetComponent(typeof(Health));
+            bars = (UIBars)GetComponent(typeof(UIBars));
 		}
 
 
@@ -103,6 +108,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 
 			m_PreviouslyGrounded = m_CharacterController.isGrounded;
+			bars.SetHealthBar(health.health, health.maxHealth);
+            bars.SetStaminaBar(m_Energy, (float)100.0);
 		}
 
 
