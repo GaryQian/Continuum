@@ -24,9 +24,10 @@ public class PuppetRegister : MonoBehaviour{
         recorders = new List<Recorder>();
         puppets = new List<Puppet>();
 
+        Invoke("Rewind", 10f);
 	}
 	
-	public static void Rewind() {
+	public void Rewind() {
         foreach (Recorder r in recorders) {
             if (r != null) r.SwitchToPuppet();
         }

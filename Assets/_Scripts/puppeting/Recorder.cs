@@ -16,12 +16,26 @@ public class Record {
         this.rotation = rotation;
         timestamp = Time.time;
 
-        this.hp = (hp != -1f) ? hp : -1f ;
+        this.hp = (hp != -1f) ? hp : -1f;
+    }
+}
+
+public enum EventRecordType { enemyshoot, playershoot, enemydie, playerdie, etc}
+public class EventRecord {
+    public ArrayList data;
+    public EventRecordType type;
+    public float timestamp;
+
+    public EventRecord(EventRecordType type, ArrayList data) {
+        this.data = data;
+        this.type = type;
+        timestamp = Time.time;
     }
 }
 
 public class Recording {
     public Queue<Record> records;
+    public Queue<EventRecord> events;
     public UnitType type;
     public float recordDelay;
     public int maxRecords;

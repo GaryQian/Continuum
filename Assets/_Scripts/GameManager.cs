@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour {
 		settings = SaveManager.Instance.LoadSettings();
 	}
 
+
 	/// <summary>
 	/// Global update. Run on every frame. Try to put things in more local update loops, but some things like global counters can go here.
 	/// </summary>
