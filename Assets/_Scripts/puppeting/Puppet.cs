@@ -48,6 +48,7 @@ public class Puppet : MonoBehaviour {
             GrabNextRecord();
             yield return new WaitForSeconds(recording.recordDelay);
         }
+        SwitchToRecord();
 
     }
     void GrabNextRecord() {
