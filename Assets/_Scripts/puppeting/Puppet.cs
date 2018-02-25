@@ -59,10 +59,16 @@ public class Puppet : MonoBehaviour {
 
     public void SwitchToRecord() {
         //Spawn Puppet Script Here
-        Recorder p = gameObject.AddComponent<Recorder>();
-        p.Setup(isPlayer);
+        if (isPlayer) {
+            Destroy(gameObject);
+        }
+        else {
+            Recorder p = gameObject.AddComponent<Recorder>();
+            p.Setup(isPlayer);
 
-        Destroy(this);
+            Destroy(this);
+
+        }
     }
 	
 	// Update is called once per frame

@@ -32,5 +32,7 @@ public class PuppetRegister : MonoBehaviour{
             if (r != null) r.SwitchToPuppet();
         }
         recorders = new List<Recorder>();
+
+        //playerRecorder.SwitchToPuppet();
     }
 }

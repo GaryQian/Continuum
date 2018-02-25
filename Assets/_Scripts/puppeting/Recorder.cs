@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 // Expand this as unit types increase.
 public enum UnitType { player, enemy, enemy2, etc }
@@ -87,8 +88,8 @@ public class Recorder : MonoBehaviour {
         recording = new Recording(type, recordDelay);
         if (recordOnStart) StartRecording();
 
-        if (!isPlayer) PuppetRegister.recorders.Add(this);
-        else PuppetRegister.playerRecorder = this;
+        PuppetRegister.recorders.Add(this);
+        if (isPlayer) PuppetRegister.playerRecorder = this;
 	}
 
     public void StartRecording() {
@@ -104,10 +105,26 @@ public class Recorder : MonoBehaviour {
     public void SwitchToPuppet() {
         StopRecording();
         //Spawn Puppet Script Here
-        Puppet p = gameObject.AddComponent<Puppet>();
-        p.Setup(recording, isPlayer);
+        if (isPlayer) {
+            Debug.Log("Creating clone");
+            GameObject clone = Instantiate(gameObject);
+            Puppet p = clone.AddComponent<Puppet>();
+            p.Setup(recording, isPlayer);
+            Destroy(clone.GetComponentInChildren<Camera>().gameObject);
+            Destroy(clone.GetComponentInChildren<FirstPersonController>());
+            Destroy(clone.GetComponent<Recorder>());
+            Invoke("StartRecording", 15f);
+            transform.position = recording.records.Peek().position;
 
-        Destroy(this);
+        }
+        else {
+            Puppet p = gameObject.AddComponent<Puppet>();
+            p.Setup(recording, isPlayer);
+            Destroy(this);
+        }
+
+
+
     }
 
     IEnumerator Record() {
