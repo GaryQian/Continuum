@@ -222,8 +222,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1949241020133448}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 23.86, y: 0, z: -10.07}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -5, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 2, z: 0.50000024}
   m_Children:
   - {fileID: 4923935491709088}
@@ -231,7 +231,7 @@ Transform:
   - {fileID: 4960886626438228}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &4075369832470570
 Transform:
   m_ObjectHideFlags: 1
@@ -783,12 +783,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bddffe593821c4df496d28b6db43a166, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 0}
+  gm: {fileID: 0}
   Gun: {fileID: 1062934982921956}
   Body: {fileID: 1015947853392126}
   Muzzle: {fileID: 1628994671386330}
   Bullet: {fileID: 1966532732242780, guid: 18c97c57c7bd14d9c9c03d0002343918, type: 2}
   shootInterval: 0.8
+  sightRange: 15
   detectionRange: 30
   NormalStateMaterial: {fileID: 2100000, guid: 5b334a50544cc4ba992d08b310d10bd2, type: 2}
   AlarmedStateMaterial: {fileID: 2100000, guid: b1d8ab6de18c24ea0bb972053e09f2f6,
@@ -806,6 +807,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 0}
   destination: {fileID: 0}
+  detectionRange: 0.01
+  sightRange: 15
 --- !u!114 &114332177757371574
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -817,12 +820,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bddffe593821c4df496d28b6db43a166, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 0}
+  gm: {fileID: 0}
   Gun: {fileID: 1358239976620092}
   Body: {fileID: 1949622341931246}
   Muzzle: {fileID: 1263237445645166}
   Bullet: {fileID: 1966532732242780, guid: 18c97c57c7bd14d9c9c03d0002343918, type: 2}
   shootInterval: 1
+  sightRange: 15
   detectionRange: 30
   NormalStateMaterial: {fileID: 2100000, guid: 5b334a50544cc4ba992d08b310d10bd2, type: 2}
   AlarmedStateMaterial: {fileID: 2100000, guid: b1d8ab6de18c24ea0bb972053e09f2f6,
