@@ -157,9 +157,10 @@ GameObject:
   - component: {fileID: 82299486423675240}
   - component: {fileID: 195356176162031760}
   - component: {fileID: 114269398528284518}
+  - component: {fileID: 114113597185835272}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -772,6 +773,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114113597185835272
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1949241020133448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7a288580eb964441a0b6b4045b68c33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  maxHealth: 100
+  invincible: 0
+  armor: 1
+  isAlive: 1
 --- !u!114 &114223263742148138
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -788,6 +805,7 @@ MonoBehaviour:
   Body: {fileID: 1015947853392126}
   Muzzle: {fileID: 1628994671386330}
   Bullet: {fileID: 1966532732242780, guid: 18c97c57c7bd14d9c9c03d0002343918, type: 2}
+  enemy: {fileID: 0}
   shootInterval: 0.8
   sightRange: 15
   detectionRange: 30
@@ -806,9 +824,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gm: {fileID: 0}
-  destination: {fileID: 0}
-  detectionRange: 0.01
-  sightRange: 15
+  destinations: []
+  currentDestination: 0
+  totalDestinations: 0
+  destinationChangeDist: 15
+  playerDetected: 0
 --- !u!114 &114332177757371574
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -825,6 +845,7 @@ MonoBehaviour:
   Body: {fileID: 1949622341931246}
   Muzzle: {fileID: 1263237445645166}
   Bullet: {fileID: 1966532732242780, guid: 18c97c57c7bd14d9c9c03d0002343918, type: 2}
+  enemy: {fileID: 0}
   shootInterval: 1
   sightRange: 15
   detectionRange: 30
