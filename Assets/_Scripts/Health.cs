@@ -9,6 +9,7 @@ public class Health : MonoBehaviour {
     public float maxHealth;
     public bool invincible = false;
     public float armor = 1;
+	public bool isAlive = true;
 
     // Callbacks for when this object dies. Register callbacks using: OnDie += functionname;
     public Action OnDie;
@@ -40,8 +41,9 @@ public class Health : MonoBehaviour {
 
     void ChangeHealth(float hp) {
         health += hp;
-        if (health <= 0) {
-            Die();
+        if (isAlive && health <= 0) {
+			isAlive = false;
+			Die();
         }
     }
 
@@ -93,10 +95,16 @@ public class Health : MonoBehaviour {
 	
 
     public void Die() {
-        if (OnDie != null) OnDie();
-        else Debug.LogWarning("Warning: Entity died but no OnDie method registered");
-        Destroy(gameObject);
-    }
+        if (OnDie != null) {
+            OnDie();
+        }
+        else {
+            Debug.LogWarning("Warning: Entity died but no OnDie method registered. Destroying.");
+            Destroy(gameObject);
+        }
+        
+    
+	}
 
     public void OnDestroy() {
         
