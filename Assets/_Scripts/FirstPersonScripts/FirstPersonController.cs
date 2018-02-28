@@ -14,13 +14,19 @@ namespace UnityStandardAssets.Characters.FirstPerson
 		[SerializeField] private bool m_IsWalking;
 		[SerializeField] private bool m_IsCrouched;
 		[SerializeField] private bool m_IsDashing;
-		[SerializeField] private float m_WalkSpeed;
-		[SerializeField] private float m_RunSpeed;
 		[SerializeField] [Range(0f, 1f)] private float m_RunstepLenghten;
 		[SerializeField] private float m_JumpSpeed;
 		[SerializeField] private float m_StickToGroundForce;
 		[SerializeField] private float m_GravityMultiplier;
+
+		[SerializeField] private float m_WalkSpeed;
+		[SerializeField] private float m_RunSpeed;
 		[SerializeField] private float m_Energy;
+		[SerializeField] private float m_MaxEnergy;
+		[SerializeField] private float m_DashMultiplier;
+		[SerializeField] private float m_EnergyDrainMultiplier;
+		[SerializeField] private float m_EnergyRegenMultiplier;
+
 		[SerializeField] private MouseLook m_MouseLook;
 		[SerializeField] private bool m_UseFovKick;
 		[SerializeField] private FOVKick m_FovKick = new FOVKick();
@@ -62,9 +68,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			m_Jumping = false;
 			m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
-			m_Energy = 100;
             health = (Health) GetComponent(typeof(Health));
             bars = (UIBars)GetComponent(typeof(UIBars));
+
+			//Balance Sliders
+			m_DashMultiplier = 5;
+			m_MaxEnergy = 100;
+			m_Energy = m_MaxEnergy;
+			m_EnergyDrainMultiplier = 1650;
+			m_EnergyRegenMultiplier = 50;
 		}
 
 
@@ -87,10 +99,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 			//Control energy levels when dashing or recovering
 			if (m_IsDashing) {
-				m_Energy -= (1650*Time.fixedDeltaTime);
+				m_Energy -= (m_EnergyDrainMultiplier*Time.fixedDeltaTime);
 			} else {
 				if (m_Energy + 1 <= 100) {
-					m_Energy += (50*Time.fixedDeltaTime);
+					m_Energy += (m_EnergyRegenMultiplier*Time.fixedDeltaTime);
 				} 
 			}
 
@@ -255,7 +267,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			// set the desired speed to be walking or running
 			speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
 			if (m_IsDashing) {
-				speed = m_RunSpeed * 5;
+				speed = m_RunSpeed * m_DashMultiplier;
 			}
 			m_Input = new Vector2(horizontal, vertical);
 
