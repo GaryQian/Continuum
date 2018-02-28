@@ -42,12 +42,12 @@ public class EnemyMovement : MonoBehaviour
     void ChangeDestination() {
         if (playerDetected) {
             enemy.destination = gm.player.transform.position;
-            Debug.Log("Chasing Player.");
+            //Debug.Log("Chasing Player.");
         }
         else if (Vector3.Distance(this.gameObject.transform.position, destinations[currentDestination].position) < destinationChangeDist) {
             currentDestination = (currentDestination + 1) % totalDestinations;
             enemy.destination = destinations[currentDestination].transform.position;
-            Debug.Log("Destination Changed.");
+            //Debug.Log("Destination Changed.");
         }
     }
 }
