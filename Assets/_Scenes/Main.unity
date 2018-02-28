@@ -11400,12 +11400,12 @@ Prefab:
     - target: {fileID: 224796602140645584, guid: 1ea592d42ba3946bc84b7aafb0af7a7a,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224796602140645584, guid: 1ea592d42ba3946bc84b7aafb0af7a7a,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224601475697307898, guid: 1ea592d42ba3946bc84b7aafb0af7a7a,
         type: 2}
@@ -11590,7 +11590,7 @@ Prefab:
     - target: {fileID: 224394598708955218, guid: 1ea592d42ba3946bc84b7aafb0af7a7a,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 12.199997
+      value: 12.199982
       objectReference: {fileID: 0}
     - target: {fileID: 224394598708955218, guid: 1ea592d42ba3946bc84b7aafb0af7a7a,
         type: 2}
@@ -12170,7 +12170,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh41782
+  m_Name: pb_Mesh64372
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -12337,6 +12337,11 @@ Prefab:
     - target: {fileID: 14300000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_Center.y
       value: 1.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 114923998247331648, guid: 5e9e851c0e142814dac026a256ba2ac0,
+        type: 2}
+      propertyPath: recordDelay
+      value: 0.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
