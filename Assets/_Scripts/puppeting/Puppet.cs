@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,12 +15,16 @@ public class Puppet : MonoBehaviour {
 
     public Rigidbody body;
     public float lerpSpeed = 5f;
+    public float startPlaybackTime;
+
+    public Action<EventRecord> OnEvent;
 
     public bool isPlayer;
 
-    public void Setup(Recording r, bool isPlayer) {
+    public void Setup(Recording r, bool isPlayer, Action<EventRecord> OnEvent) {
         recording = r;
         this.isPlayer = isPlayer;
+        this.OnEvent = OnEvent;
     }
 
 	// Use this for initialization
@@ -33,6 +38,7 @@ public class Puppet : MonoBehaviour {
     }
 
     public void StartPlayback() {
+        startPlaybackTime = Time.time;
         GrabNextRecord();
         SnapToTarg();
         StartCoroutine(PullRecords());
@@ -64,7 +70,7 @@ public class Puppet : MonoBehaviour {
         }
         else {
             Recorder p = gameObject.AddComponent<Recorder>();
-            p.Setup(isPlayer);
+            p.Setup(isPlayer, OnEvent);
 
             Destroy(this);
 
@@ -82,6 +88,12 @@ public class Puppet : MonoBehaviour {
         else {
             transform.position = pos;
             transform.rotation = rot;
+        }
+
+        if (recording.events.Count > 0 && Time.time - startPlaybackTime >= recording.events.Peek().timestamp) {
+            EventRecord e = recording.events.Dequeue();
+            if (OnEvent != null) OnEvent(e);
+            else Debug.LogWarning("Warning: Event registered but no OnEvent method!");
         }
 	}
 }

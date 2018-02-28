@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
@@ -23,14 +24,14 @@ public class Record {
 
 public enum EventRecordType { enemyshoot, playershoot, enemydie, playerdie, etc}
 public class EventRecord {
-    public ArrayList data;
+    public Hashtable data;
     public EventRecordType type;
     public float timestamp;
 
-    public EventRecord(EventRecordType type, ArrayList data) {
+    public EventRecord(float startTime, EventRecordType type, Hashtable data) {
         this.data = data;
         this.type = type;
-        timestamp = Time.time;
+        timestamp = Time.time - startTime;
     }
 }
 
@@ -43,6 +44,7 @@ public class Recording {
 
     public Recording(UnitType type, float recordDelay = 0.1f) {
         records = new Queue<Record>();
+        events = new Queue<EventRecord>();
         this.type = type;
         this.recordDelay = recordDelay;
         this.maxRecords = (int)(15f / recordDelay);
@@ -74,13 +76,35 @@ public class Recorder : MonoBehaviour {
     public Recording recording;
 
     public bool isRecording;
+    float startRecordTime;
     public bool recordOnStart = true;
     public Health health;
 
+    /// <summary>
+    /// If this entity uses events, please ensure that you add an event handler method using:
+    ///     void Start() {
+    ///         GetComponent<Recorder>().OnEvent += methodNameThatTakesAnEventRecord;
+    ///     }
+    ///     void methodNameThatTakesAnEventRecord(EventRecord e) {
+    ///         switch (e.type) {
+    ///             ...
+    ///         }
+    ///     }
+    /// To record an event, use the following:
+    ///     Hashtable hash = new Hashtable();
+    ///     hash.Add("somekey", data);
+    ///     GetComponent<Recorder>().AddEvent(EventType.typenamehere, hash);
+    ///     
+    /// To access hashed parameters:
+    ///     ... (CastToCorrectType) e.data["somekey"] ...
+    /// </summary>
+    public Action<EventRecord> OnEvent;
+
     public bool isPlayer = false;
 
-    public void Setup(bool isPlayer) {
+    public void Setup(bool isPlayer, Action<EventRecord> OnEvent) {
         this.isPlayer = isPlayer;
+        this.OnEvent = OnEvent;
     }
 
     // Use this for initialization
@@ -94,6 +118,7 @@ public class Recorder : MonoBehaviour {
 
     public void StartRecording() {
         isRecording = true;
+        startRecordTime = Time.time;
         StartCoroutine(Record());
     }
 
@@ -109,7 +134,7 @@ public class Recorder : MonoBehaviour {
             Debug.Log("Creating clone");
             GameObject clone = Instantiate(gameObject);
             Puppet p = clone.AddComponent<Puppet>();
-            p.Setup(recording, isPlayer);
+            p.Setup(recording, isPlayer, OnEvent);
             Destroy(clone.GetComponentInChildren<Camera>().gameObject);
             Destroy(clone.GetComponentInChildren<FirstPersonController>());
             Destroy(clone.GetComponent<Recorder>());
@@ -119,12 +144,19 @@ public class Recorder : MonoBehaviour {
         }
         else {
             Puppet p = gameObject.AddComponent<Puppet>();
-            p.Setup(recording, isPlayer);
+            p.Setup(recording, isPlayer, OnEvent);
             Destroy(this);
         }
+    }
 
-
-
+    /// <summary>
+    /// To record an event, use the following:
+    ///     Hashtable hash = new Hashtable();
+    ///     hash.Add("somekey", data);
+    ///     GetComponent<Recorder>().AddEvent(EventType.typenamehere, hash);
+    /// </summary>
+    public void AddEvent(EventRecordType type, Hashtable data) {
+        recording.events.Enqueue(new EventRecord(startRecordTime, type, data));
     }
 
     IEnumerator Record() {

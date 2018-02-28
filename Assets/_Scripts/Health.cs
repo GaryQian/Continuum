@@ -93,7 +93,8 @@ public class Health : MonoBehaviour {
 	
 
     public void Die() {
-        OnDie();
+        if (OnDie != null) OnDie();
+        else Debug.LogWarning("Warning: Entity died but no OnDie method registered");
         Destroy(gameObject);
     }
 
