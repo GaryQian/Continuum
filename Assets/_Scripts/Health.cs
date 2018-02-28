@@ -92,8 +92,8 @@ public class Health : MonoBehaviour {
     }
     void SetInvincibleTrue() { invincible = true; }    // Called By Invoke()
     void SetInvincibleFalse() { invincible = false; }  // Called By Invoke()
-	
 
+    // Callbacks for when this object dies. Register callbacks using: GetComponent<Health>().OnDie += functionname;
     public void Die() {
         if (OnDie != null) {
             OnDie();
@@ -102,8 +102,6 @@ public class Health : MonoBehaviour {
             Debug.LogWarning("Warning: Entity died but no OnDie method registered. Destroying.");
             Destroy(gameObject);
         }
-        
-    
 	}
 
     public void OnDestroy() {

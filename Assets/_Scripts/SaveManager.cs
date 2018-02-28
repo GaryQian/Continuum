@@ -34,7 +34,8 @@ public class Version {
 [Serializable]
 public class SettingsData {
     //public bool setting;
-
+    public bool soundOn;
+    public bool musicOn;
     public SettingsData() {
         //setting = false;
     }
