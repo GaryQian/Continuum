@@ -22,13 +22,12 @@ public class Record {
     }
 }
 
-public enum EventRecordType { enemyshoot, playershoot, enemydie, playerdie, etc}
 public class EventRecord {
     public Hashtable data;
-    public EventRecordType type;
+    public int type;
     public float timestamp;
 
-    public EventRecord(float startTime, EventRecordType type, Hashtable data) {
+    public EventRecord(float startTime, int type, Hashtable data) {
         this.data = data;
         this.type = type;
         timestamp = Time.time - startTime;
@@ -155,7 +154,7 @@ public class Recorder : MonoBehaviour {
     ///     hash.Add("somekey", data);
     ///     GetComponent<Recorder>().AddEvent(EventType.typenamehere, hash);
     /// </summary>
-    public void AddEvent(EventRecordType type, Hashtable data) {
+    public void AddEvent(int type, Hashtable data) {
         recording.events.Enqueue(new EventRecord(startRecordTime, type, data));
     }
 
