@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ClickShooterScript : MonoBehaviour {
 
-	public GameObject MuzzlePositionHolder;
-	public GameObject Bullet;
-	public GameObject Camera;
+	public GameObject muzzlePositionHolder;
+	public GameObject bullet;
+	public GameObject camera;
 	private Transform cameraTransform;
 	private RaycastHit hit;
 	private Vector3 bulletTargetPoint;
@@ -19,11 +19,17 @@ public class ClickShooterScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		cameraTransform = Camera.transform;
+        FindCamera();
 	}
+
+    void FindCamera() {
+        camera = Camera.main.gameObject;
+        cameraTransform = camera.transform;
+    }
 	
 	// Update is called once per frame
 	void Update () {
+        if (camera == null) FindCamera();
 		Debug.DrawRay (cameraTransform.position, cameraTransform.forward * 100, Color.magenta);
 		if (Physics.Raycast (cameraTransform.position, cameraTransform.forward, out hit, 500, ShotLayerMask)) {
 			aimHasTarget = true;
@@ -37,10 +43,10 @@ public class ClickShooterScript : MonoBehaviour {
 		}
 
 		if (Input.GetMouseButtonDown (0)) {
-			GameObject instanceBullet = Instantiate (Bullet, MuzzlePositionHolder.transform.position, Quaternion.identity);
+			GameObject instanceBullet = Instantiate (bullet, muzzlePositionHolder.transform.position, Quaternion.identity);
 			instanceBullet.SetActive (true);
 			if (aimHasTarget) {
-				instanceBullet.transform.rotation = Quaternion.LookRotation (bulletTargetPoint - MuzzlePositionHolder.transform.position);
+				instanceBullet.transform.rotation = Quaternion.LookRotation (bulletTargetPoint - muzzlePositionHolder.transform.position);
 			} else {
 				instanceBullet.transform.rotation = Quaternion.LookRotation (bulletTargetPoint);
 			}
