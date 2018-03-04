@@ -11193,7 +11193,7 @@ Transform:
   m_LocalScale: {x: 0.30000004, y: 0.29999998, z: 0.30000004}
   m_Children: []
   m_Father: {fileID: 530796223}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: -28.928001, z: 0}
 --- !u!54 &104256507
 Rigidbody:
@@ -11695,12 +11695,6 @@ MonoBehaviour:
   recordOnStart: 1
   health: {fileID: 350207119}
   isPlayer: 0
---- !u!114 &413426675 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114398776464994776, guid: 1ea592d42ba3946bc84b7aafb0af7a7a,
-    type: 2}
-  m_PrefabInternal: {fileID: 468923995}
-  m_Script: {fileID: 11500000, guid: 477f64469270544c181c15bd91b1ceec, type: 3}
 --- !u!43 &441856362
 Mesh:
   m_ObjectHideFlags: 0
@@ -12281,10 +12275,8 @@ Transform:
   - {fileID: 552654881}
   - {fileID: 845144322}
   - {fileID: 1184466744}
-  - {fileID: 433845351}
   - {fileID: 1531388022}
   - {fileID: 104256506}
-  - {fileID: 1899349272}
   m_Father: {fileID: 749972259}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13085,6 +13077,11 @@ Prefab:
       propertyPath: m_Mass
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 114160244703047866, guid: 5e9e851c0e142814dac026a256ba2ac0,
+        type: 2}
+      propertyPath: invincible
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
   m_IsPrefabParent: 0
@@ -13167,8 +13164,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 413426675}
-        m_MethodName: Resume
+      - m_Target: {fileID: 1432413924}
+        m_MethodName: QuitButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13177,7 +13174,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1020301562
@@ -16401,6 +16398,24 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 89688ab13cabe3e44998237febf51208, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &1432413922 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+  m_PrefabInternal: {fileID: 1013151532}
+--- !u!114 &1432413924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1432413922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e54ccf4b38d84c828a0b7c443bcdab6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathUI: {fileID: 1733035472}
+  deathCamera: {fileID: 20434283453816082, guid: 16fe29e9bb4094e56b0c6db9b5b8fce3,
+    type: 2}
 --- !u!1001 &1442326777
 Prefab:
   m_ObjectHideFlags: 0
@@ -16611,7 +16626,7 @@ Transform:
   m_LocalScale: {x: 0.29999998, y: 0.29999998, z: 0.29999998}
   m_Children: []
   m_Father: {fileID: 530796223}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: -28.928001, z: 0}
 --- !u!54 &1531388023
 Rigidbody:
@@ -22563,8 +22578,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 413426675}
-        m_MethodName: Resume
+      - m_Target: {fileID: 1432413924}
+        m_MethodName: RestartButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22573,7 +22588,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1844587683

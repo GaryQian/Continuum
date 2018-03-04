@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.Events;
 
 public class Health : MonoBehaviour {
 
@@ -12,7 +13,7 @@ public class Health : MonoBehaviour {
 	public bool isAlive = true;
 
     // Callbacks for when this object dies. Register callbacks using: OnDie += functionname;
-    public Action OnDie;
+    public UnityAction OnDie;
     public Action<float> OnChangeHealth;
 
 	void Start () {
