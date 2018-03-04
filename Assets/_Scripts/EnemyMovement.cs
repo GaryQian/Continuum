@@ -7,8 +7,7 @@ public class EnemyMovement : MonoBehaviour
 
     public GameManager gm;
     NavMeshAgent enemy;
-    public int currentDestination = 0;
-    public int totaldestinations = 0;
+    public int currentDestination;
     public float destinationChangeDist = 15.0f;
     public bool playerDetected;
 
@@ -18,8 +17,6 @@ public class EnemyMovement : MonoBehaviour
         gm = GameManager.Instance;
         enemy = GetComponent<NavMeshAgent>();
         enemy.destination = WorldManager.Instance.destinations[0].position;
-        currentDestination = 0;
-        totaldestinations = WorldManager.Instance.destinations.Length;
     }
 
     // Update is called once per frame
@@ -44,7 +41,7 @@ public class EnemyMovement : MonoBehaviour
             //Debug.Log("Chasing Player.");
         }
         else if (Vector3.Distance(this.gameObject.transform.position, WorldManager.Instance.destinations[currentDestination].position) < destinationChangeDist) {
-            currentDestination = (currentDestination + 1) % totaldestinations;
+            currentDestination = (currentDestination + 1) % WorldManager.Instance.destinations.Length;
             enemy.destination = WorldManager.Instance.destinations[currentDestination].transform.position;
             //Debug.Log("Destination Changed.");
         }
