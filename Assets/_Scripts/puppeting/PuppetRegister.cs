@@ -21,11 +21,13 @@ public class PuppetRegister : MonoBehaviour{
 
     // Use this for initialization
     void Start () {
+        InitLists();
+	}
+
+    public void InitLists() {
         recorders = new List<Recorder>();
         puppets = new List<Puppet>();
-
-        Invoke("Rewind", 10f);
-	}
+    }
 	
 	public void Rewind() {
         foreach (Recorder r in recorders) {
@@ -34,5 +36,11 @@ public class PuppetRegister : MonoBehaviour{
         recorders = new List<Recorder>();
 
         //playerRecorder.SwitchToPuppet();
+    }
+
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.R)) {
+            Rewind();
+        }
     }
 }

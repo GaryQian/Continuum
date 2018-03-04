@@ -14,7 +14,7 @@ public class Puppet : MonoBehaviour {
     public Quaternion targetRot;
 
     public Rigidbody body;
-    public float lerpSpeed = 5f;
+    public float lerpSpeed = 10f;
     public float startPlaybackTime;
 
     public Action<EventRecord> OnEvent;
