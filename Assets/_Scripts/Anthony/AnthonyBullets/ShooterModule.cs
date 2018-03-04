@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public class ShooterModule : MonoBehaviour {
 
-    public GameManager gm;
 	public GameObject Gun;
 	public GameObject Body;
 	public GameObject Muzzle;
@@ -28,18 +27,18 @@ public class ShooterModule : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (gm.player)
+        if (GameManager.Instance.player)
         {
-            transform.rotation = Quaternion.LookRotation(gm.player.transform.position - transform.position);
-            Debug.DrawRay(transform.position, gm.player.transform.position - transform.position, Color.green);
+            transform.rotation = Quaternion.LookRotation(GameManager.Instance.player.transform.position - transform.position);
+            Debug.DrawRay(transform.position, GameManager.Instance.player.transform.position - transform.position, Color.green);
         }
 	}
 
 	void FixedUpdate(){
-        if (Vector3.Distance(gm.player.transform.position, transform.position) < sightRange)
+        if (Vector3.Distance(GameManager.Instance.player.transform.position, transform.position) < sightRange)
         {
             RaycastHit hit;
-            if (gm.player && Physics.Raycast(transform.position, (gm.player.transform.position + new Vector3(0, 0.5f, 0)) - transform.position, out hit, detectionRange))
+            if (GameManager.Instance.player && Physics.Raycast(transform.position, (GameManager.Instance.player.transform.position + new Vector3(0, 0.5f, 0)) - transform.position, out hit, detectionRange))
             {
                 if (hit.transform.gameObject.CompareTag("Player"))
                 {
@@ -70,10 +69,10 @@ public class ShooterModule : MonoBehaviour {
 	}
 
 	void shootBulletFromEnemy() {
-        //enemy.destination = gm.player.transform.position;
+        //enemy.destination = GameManager.Instance.player.transform.position;
 		if (targetSighted) {
 			GameObject instanceBullet = Instantiate (Bullet, Muzzle.transform.position, Quaternion.identity);
-			instanceBullet.transform.rotation = Quaternion.LookRotation (gm.player.transform.position - transform.position);
+			instanceBullet.transform.rotation = Quaternion.LookRotation (GameManager.Instance.player.transform.position - transform.position);
 			BulletMovement bulletScript = instanceBullet.GetComponent<BulletMovement> ();
 			bulletScript.ShotSource = this.gameObject;
 		}

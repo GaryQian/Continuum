@@ -9,6 +9,9 @@ public class WorldManager : MonoBehaviour {
     public static WorldManager Instance;
 
     public Transform[] destinations;
+    public Transform[] spawnpoints;
+
+    public GameObject enemyPrefab;
 
     public List<GameObject> enemies;
     public List<GameObject> props;
@@ -28,6 +31,8 @@ public class WorldManager : MonoBehaviour {
         enemies = new List<GameObject>();
         props = new List<GameObject>();
         env = new List<GameObject>();
+
+        InvokeRepeating("SpawnEnemy", 10, 10);
     }
 
     public void Register(GameObject obj, TrackType type) {
@@ -43,6 +48,10 @@ public class WorldManager : MonoBehaviour {
             case TrackType.Prop: props.Remove(obj); break;
             case TrackType.Env: env.Remove(obj); break;
         }
+    }
+
+    public void SpawnEnemy() {
+        Instantiate(enemyPrefab, spawnpoints[Random.Range(0, spawnpoints.Length)].position, Quaternion.identity);
     }
 
     // Update is called once per frame
