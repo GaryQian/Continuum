@@ -106,6 +106,10 @@ public class Recorder : MonoBehaviour {
         this.OnEvent = OnEvent;
     }
 
+    private void OnEnable() {
+        recording = new Recording(type, recordDelay);
+    }
+
     // Use this for initialization
     void Start () {
         recording = new Recording(type, recordDelay);
@@ -139,6 +143,9 @@ public class Recorder : MonoBehaviour {
             Destroy(clone.GetComponent<Recorder>());
             Invoke("StartRecording", 15f);
             transform.position = recording.records.Peek().position;
+
+            StopRecording();
+            OnEnable();
 
         }
         else {
