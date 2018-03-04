@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
 
-public class DeathScreen : MonoBehaviour
+public class PlayerDeath : MonoBehaviour
 {
 
     // Use this for initialization
@@ -26,16 +26,6 @@ public class DeathScreen : MonoBehaviour
         Camera cam = Instantiate(deathCamera, vec, rotation);
         cam.enabled = true;
         Time.timeScale = 0f;
-    }
-
-
-    public void RestartButton() {
-        SceneManager.LoadScene("Title");
-    }
-
-    public void QuitButton()
-    {
-        Application.Quit();
     }
 }
 
