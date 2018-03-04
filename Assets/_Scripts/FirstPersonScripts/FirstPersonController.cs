@@ -72,7 +72,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             bars = (UIBars)GetComponent(typeof(UIBars));
 
 			//Balance Sliders
-			m_DashMultiplier = 10;
+			m_DashMultiplier = 20;
 			m_MaxEnergy = 100;
 			m_Energy = m_MaxEnergy;
 			m_EnergyDrainMultiplier = 1650;
@@ -260,9 +260,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			#if !MOBILE_INPUT
 			// On standalone builds, walk/run speed is modified by a key press.
 			// keep track of whether or not the character is walking or running
-			m_IsWalking = !Input.GetKey(KeyCode.LeftShift);
+			m_IsWalking = true;
 			m_IsCrouched = Input.GetKey(KeyCode.C);
-			m_IsDashing = Input.GetKey(KeyCode.E) && m_Energy > 32;
+			m_IsDashing = Input.GetKey(KeyCode.LeftShift) && m_Energy > 32;
 			#endif
 			// set the desired speed to be walking or running
 			speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;

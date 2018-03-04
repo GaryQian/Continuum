@@ -40,6 +40,7 @@ public class BulletMovement : MonoBehaviour {
 
 		if(other.tag.Equals("Environment")){
 			Destroy (this.gameObject);
+            return;
 		} else if (other.tag.Equals ("Player") && ShotSource.tag.Equals("Enemy")) {
 			UIManager.instance.FlashRedOnDamage ();
 			Debug.Log ("Player hit by " + ShotSource.name + "'s bullet");
