@@ -141,6 +141,7 @@ public class Recorder : MonoBehaviour {
             Destroy(clone.GetComponentInChildren<Camera>().gameObject);
             Destroy(clone.GetComponentInChildren<FirstPersonController>());
             Destroy(clone.GetComponent<Recorder>());
+            Debug.Log("Cloned");
             Invoke("StartRecording", 15f);
             transform.position = recording.records.Peek().position;
 
