@@ -8,8 +8,7 @@ using UnityEngine;
 public class WorldManager : MonoBehaviour {
     public static WorldManager Instance;
 
-
-    
+    public Transform[] destinations;
 
     private void Awake() {
         // Modified singleton pattern. This aggresively takes control of the global instance.
