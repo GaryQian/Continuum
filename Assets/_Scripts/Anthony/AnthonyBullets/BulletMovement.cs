@@ -16,6 +16,8 @@ public class BulletMovement : MonoBehaviour {
 	public Gradient trailGradient;
 	private float createdAt;
 	private TrailRenderer trailRenderer;
+    public GameObject bulletParticles;
+    private bool particlesSet = false;
 
 	// Use this for initialization
 	void Start () {
@@ -47,8 +49,13 @@ public class BulletMovement : MonoBehaviour {
 		} else if (other.tag.Equals ("Enemy") && ShotSource.tag.Equals("Player")) {
 			//damage handling for shots fired by player
 			Health health;
+            if (!this.particlesSet) {
+                GameObject particles = Instantiate(bulletParticles, this.transform.position, Quaternion.identity);
+                particles.SetActive(true);
+                this.particlesSet = true;
+            }
 			if ((health = other.GetComponent<Health> ()) != null) health.Damage (bulletDamage, ShotSource);
-		}
+        }
 	}
 
 	void setupTrailRenderer(){
