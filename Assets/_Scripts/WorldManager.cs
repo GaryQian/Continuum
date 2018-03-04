@@ -10,6 +10,10 @@ public class WorldManager : MonoBehaviour {
 
     public Transform[] destinations;
 
+    public List<GameObject> enemies;
+    public List<GameObject> props;
+    public List<GameObject> env;
+
     private void Awake() {
         // Modified singleton pattern. This aggresively takes control of the global instance.
         if (Instance != null) {
@@ -21,11 +25,28 @@ public class WorldManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        enemies = new List<GameObject>();
+        props = new List<GameObject>();
+        env = new List<GameObject>();
+    }
+
+    public void Register(GameObject obj, TrackType type) {
+        switch (type) {
+            case TrackType.Enemy: enemies.Add(obj); break;
+            case TrackType.Prop: props.Add(obj); break;
+            case TrackType.Env: env.Add(obj); break;
+        }
+    }
+    public void UnRegister(GameObject obj, TrackType type) {
+        switch (type) {
+            case TrackType.Enemy: enemies.Remove(obj); break;
+            case TrackType.Prop: props.Remove(obj); break;
+            case TrackType.Env: env.Remove(obj); break;
+        }
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 }

@@ -15,17 +15,6 @@ public class SoundManager : MonoBehaviour {
     public AudioSource musicSource;
     public static AudioSource musicSourceStatic;
 
-    public AudioSource laserAudioSource;
-    public static AudioSource laserAudioSourceStatic;
-
-    public float maxLaserVol = 1f;
-    public float targetVol;
-    public float laserVol;
-
-    public AudioClip chargeClip;
-    public AudioClip fireClip;
-    public AudioClip loopClip;
-
     public AudioClip titleMusic;
     public AudioClip menuMusic;
     public AudioClip inGameMusic;
@@ -57,15 +46,12 @@ public class SoundManager : MonoBehaviour {
         sfxSourceStatic2 = sfxSource2;
         sfxSourceStatic3 = sfxSource3;
         musicSourceStatic = musicSource;
-        laserAudioSourceStatic = laserAudioSource;
 
         musicVol = maxMusicVol;
         targMusicVol = maxMusicVol;
     }
 
     private void Update() {
-        laserVol += (targetVol - laserVol) * Time.deltaTime * 3f;
-        laserAudioSource.volume = laserVol;
 
         musicVol += (targMusicVol - musicVol) * Time.deltaTime * 5f;
         musicSource.volume = musicVol;
@@ -89,20 +75,6 @@ public class SoundManager : MonoBehaviour {
             case 1: if (sfxSourceStatic2 != null) sfxSourceStatic2.PlayOneShot(clip, vol); break;
             case 2: if (sfxSourceStatic3 != null) sfxSourceStatic3.PlayOneShot(clip, vol); break;
         }
-    }
-
-    public static void StartLaser() {
-        instance.targetVol = GameManager.Instance.settings.soundOn ? instance.maxLaserVol : 0;
-        instance.laserVol = instance.targetVol;
-    }
-
-    public static void EndLaser() {
-        instance.targetVol = 0;
-    }
-
-    public static void InstantSetLaserVol(float v) {
-        instance.laserVol = v;
-        instance.laserAudioSource.volume = instance.laserVol;
     }
 
     public void ChangeMusic(MusicType type) {
