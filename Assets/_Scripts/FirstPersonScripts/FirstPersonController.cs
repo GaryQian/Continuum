@@ -72,7 +72,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             bars = (UIBars)GetComponent(typeof(UIBars));
 
 			//Balance Sliders
-			m_DashMultiplier = 5;
+			m_DashMultiplier = 10;
 			m_MaxEnergy = 100;
 			m_Energy = m_MaxEnergy;
 			m_EnergyDrainMultiplier = 1650;
