@@ -11324,6 +11324,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1854176023264582, guid: 130e73f3612868047ba4f5d39542ee12, type: 2}
+      propertyPath: m_Name
+      value: Spawnpoint1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 130e73f3612868047ba4f5d39542ee12, type: 2}
   m_IsPrefabParent: 0
@@ -14969,7 +14973,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1854176023264582, guid: 130e73f3612868047ba4f5d39542ee12, type: 2}
       propertyPath: m_Name
-      value: Spawnpoint (1)
+      value: Spawnpoint2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 130e73f3612868047ba4f5d39542ee12, type: 2}
@@ -15163,6 +15167,7 @@ MonoBehaviour:
   - {fileID: 1747738782}
   spawnpoints:
   - {fileID: 1728332256}
+  - {fileID: 1096173588}
   enemyPrefab: {fileID: 1949241020133448, guid: 81ba5ab89c8914621a5cac9cd1bad4a2,
     type: 2}
   enemies: []
