@@ -80,9 +80,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c9a41ded6efc46e5a29cd6f45e1dda3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MuzzlePositionHolder: {fileID: 1947496477729988}
-  Bullet: {fileID: 1966532732242780, guid: a525a2b089dbc47cdb656d539ddd59f5, type: 2}
-  Camera: {fileID: 0}
+  muzzlePositionHolder: {fileID: 0}
+  bullet: {fileID: 1966532732242780, guid: a525a2b089dbc47cdb656d539ddd59f5, type: 2}
+  camera: {fileID: 0}
   ShotLayerMask:
     serializedVersion: 2
     m_Bits: 0

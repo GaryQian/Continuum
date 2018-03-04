@@ -729,7 +729,7 @@ PlayerSettings:
   facebookSdkVersion: 7.9.1
   apiCompatibilityLevel: 2
   cloudProjectId: 8347304b-3766-4c0d-802f-7cfd9eb4f979
-  projectName: 
+  projectName: ContinuumGame
   organizationId: anthony-sunghoon-kim
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
