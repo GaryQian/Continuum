@@ -38,12 +38,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641252, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -89,7 +89,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000006, guid: 9eca7b11645d441d6944d9bd43f750cf,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -596,7 +597,7 @@ Transform:
   m_GameObject: {fileID: 1189045507}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 1, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -829,6 +830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseMenuUI: {fileID: 727086570}
+  DeathScreen: {fileID: 0}
 --- !u!1 &1509682985
 GameObject:
   m_ObjectHideFlags: 0
@@ -1224,7 +1226,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-467406
+  m_Name: pb_Mesh-685442
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -1366,7 +1368,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4783701241825220, guid: aa99b7a01906943fb81bd72b26095454, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0.22865798
+      value: 3.25
       objectReference: {fileID: 0}
     - target: {fileID: 4783701241825220, guid: aa99b7a01906943fb81bd72b26095454, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1386,7 +1388,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4783701241825220, guid: aa99b7a01906943fb81bd72b26095454, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 64197629178022268, guid: aa99b7a01906943fb81bd72b26095454,
         type: 2}
@@ -1442,6 +1444,15 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1712989045065332, guid: aa99b7a01906943fb81bd72b26095454, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114582966852641910, guid: aa99b7a01906943fb81bd72b26095454,
+        type: 2}
+      propertyPath: targetScene
+      value: Main
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aa99b7a01906943fb81bd72b26095454, type: 2}
   m_IsPrefabParent: 0
@@ -1450,7 +1461,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-467430
+  m_Name: pb_Mesh-685440
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -1575,6 +1586,34 @@ Mesh:
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshOptimized: 0
+--- !u!1 &1672280820
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 1100010235}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1672280821}
+  m_Layer: 0
+  m_Name: Missing Prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1672280821
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 1100010235}
+  m_GameObject: {fileID: 1672280820}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1679124567
 GameObject:
   m_ObjectHideFlags: 0
@@ -1712,7 +1751,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-467408
+  m_Name: pb_Mesh-685438
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
