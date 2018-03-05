@@ -13340,6 +13340,12 @@ Prefab:
       propertyPath: invincible
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114838393304637752, guid: 5e9e851c0e142814dac026a256ba2ac0,
+        type: 2}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 1966532732242780, guid: a525a2b089dbc47cdb656d539ddd59f5,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
   m_IsPrefabParent: 0
