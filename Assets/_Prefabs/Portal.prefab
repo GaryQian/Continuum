@@ -89,7 +89,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 127
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1986466244390720
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,8 +349,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 1.7320509}
-  m_Center: {x: -0.5, y: 1, z: -0.86602545}
+  m_Size: {x: 2, y: 40, z: 1.7320509}
+  m_Center: {x: -0.5, y: 20, z: -0.86602545}
 --- !u!65 &65656252524808062
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -5438,7 +5438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f0a3c2ca4098bb4cb5918839f2d30aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: Main
+  targetScene: Title
 --- !u!114 &114608671970262006
 MonoBehaviour:
   m_ObjectHideFlags: 1
