@@ -26,6 +26,7 @@ public class PlayerDeath : MonoBehaviour
         Camera cam = Instantiate(deathCamera, vec, rotation);
         cam.enabled = true;
         Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
     }
 }
 
