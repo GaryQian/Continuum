@@ -20,7 +20,7 @@ public class SlidingDoors : MonoBehaviour {
 	}
 
 	void OnTriggerExit(Collider col) {
-		if (doorOpen) {
+		if (doorOpen && col.gameObject.tag == "Player") {
 			doorOpen = false;
 			ControlDoors("Close");
 		}
