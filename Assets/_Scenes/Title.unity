@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641252, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -59,10 +59,10 @@ LightmapSettings:
     m_BakeResolution: 40
     m_TextureWidth: 1024
     m_TextureHeight: 1024
-    m_AO: 0
+    m_AO: 1
     m_AOMaxDistance: 1
-    m_CompAOExponent: 1
-    m_CompAOExponentDirect: 0
+    m_CompAOExponent: 1.4
+    m_CompAOExponentDirect: 1.06
     m_Padding: 2
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
@@ -345,6 +345,34 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &835561130
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 1100010235}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 835561131}
+  m_Layer: 0
+  m_Name: Missing Prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &835561131
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 1100010235}
+  m_GameObject: {fileID: 835561130}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1100010235
 Prefab:
   m_ObjectHideFlags: 0
@@ -823,12 +851,13 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1259668354}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 477f64469270544c181c15bd91b1ceec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   PauseMenuUI: {fileID: 727086570}
+  DeathScreen: {fileID: 0}
 --- !u!1 &1509682985
 GameObject:
   m_ObjectHideFlags: 0
@@ -981,7 +1010,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -1224,7 +1253,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-467406
+  m_Name: pb_Mesh-250102
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -1386,7 +1415,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4783701241825220, guid: aa99b7a01906943fb81bd72b26095454, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 64197629178022268, guid: aa99b7a01906943fb81bd72b26095454,
         type: 2}
@@ -1420,11 +1449,11 @@ Prefab:
       objectReference: {fileID: 1645301827}
     - target: {fileID: 4125408093701836, guid: aa99b7a01906943fb81bd72b26095454, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 6
+      value: 2.07
       objectReference: {fileID: 0}
     - target: {fileID: 4125408093701836, guid: aa99b7a01906943fb81bd72b26095454, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -10.91
+      value: -11.25
       objectReference: {fileID: 0}
     - target: {fileID: 4410737350171672, guid: aa99b7a01906943fb81bd72b26095454, type: 2}
       propertyPath: m_LocalPosition.x
@@ -1442,6 +1471,19 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114582966852641910, guid: aa99b7a01906943fb81bd72b26095454,
+        type: 2}
+      propertyPath: targetScene
+      value: Main
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712989045065332, guid: aa99b7a01906943fb81bd72b26095454, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125408093701836, guid: aa99b7a01906943fb81bd72b26095454, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -8.26
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aa99b7a01906943fb81bd72b26095454, type: 2}
   m_IsPrefabParent: 0
@@ -1450,7 +1492,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-467430
+  m_Name: pb_Mesh-250100
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -1712,7 +1754,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-467408
+  m_Name: pb_Mesh-250098
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
