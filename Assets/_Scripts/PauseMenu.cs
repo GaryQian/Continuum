@@ -47,6 +47,7 @@ public class PauseMenu : MonoBehaviour {
     {
         SceneManager.LoadScene("Title");
         Resume();
+        DeathScreen.SetActive(false);
     }
 
 
