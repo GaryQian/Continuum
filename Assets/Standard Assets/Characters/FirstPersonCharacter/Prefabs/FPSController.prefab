@@ -2878,7 +2878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1000
-  maxHealth: 1000
+  maxHealth: 3000
   invincible: 0
   armor: 1
   isAlive: 1
