@@ -13227,31 +13227,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 5400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
-      propertyPath: m_Mass
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 114160244703047866, guid: 5e9e851c0e142814dac026a256ba2ac0,
+    - target: {fileID: 114888845641084590, guid: 5e9e851c0e142814dac026a256ba2ac0,
         type: 2}
-      propertyPath: invincible
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114838393304637752, guid: 5e9e851c0e142814dac026a256ba2ac0,
-        type: 2}
-      propertyPath: bullet
+      propertyPath: deathUI
       value: 
-      objectReference: {fileID: 1966532732242780, guid: a525a2b089dbc47cdb656d539ddd59f5,
-        type: 2}
-    - target: {fileID: 114160244703047866, guid: 5e9e851c0e142814dac026a256ba2ac0,
-        type: 2}
-      propertyPath: health
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 114160244703047866, guid: 5e9e851c0e142814dac026a256ba2ac0,
-        type: 2}
-      propertyPath: maxHealth
-      value: 1000
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1733035472}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
   m_IsPrefabParent: 0
@@ -16568,24 +16548,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 89688ab13cabe3e44998237febf51208, type: 3}
   m_IsPrefabParent: 0
---- !u!1 &1432413922 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
-  m_PrefabInternal: {fileID: 1013151532}
---- !u!114 &1432413924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1432413922}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3288b55da6074141bf35cf6e27eee1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deathUI: {fileID: 1733035472}
-  deathCamera: {fileID: 20434283453816082, guid: 16fe29e9bb4094e56b0c6db9b5b8fce3,
-    type: 2}
 --- !u!43 &1434096769
 Mesh:
   m_ObjectHideFlags: 0
@@ -17495,7 +17457,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1733035473
 RectTransform:
   m_ObjectHideFlags: 0
