@@ -12341,6 +12341,11 @@ Prefab:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1451579621}
+    - target: {fileID: 114578324728785274, guid: 06caca6e4cb1946fab2c7d78f5f5d788,
+        type: 2}
+      propertyPath: maxHealth
+      value: 400
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 06caca6e4cb1946fab2c7d78f5f5d788, type: 2}
   m_IsPrefabParent: 0
@@ -16762,7 +16767,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-548332
+  m_Name: pb_Mesh-155680
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
