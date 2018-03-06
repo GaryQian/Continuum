@@ -12008,6 +12008,21 @@ Prefab:
       propertyPath: DeathScreen
       value: 
       objectReference: {fileID: 1733035472}
+    - target: {fileID: 114727660081115672, guid: 1ea592d42ba3946bc84b7aafb0af7a7a,
+        type: 2}
+      propertyPath: m_Colors.m_NormalColor.a
+      value: 0.20784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 114049241103309906, guid: 1ea592d42ba3946bc84b7aafb0af7a7a,
+        type: 2}
+      propertyPath: m_Colors.m_NormalColor.a
+      value: 0.20784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 114764292154332758, guid: 1ea592d42ba3946bc84b7aafb0af7a7a,
+        type: 2}
+      propertyPath: m_Colors.m_NormalColor.a
+      value: 0.20784314
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1ea592d42ba3946bc84b7aafb0af7a7a, type: 2}
   m_IsPrefabParent: 0
@@ -13299,7 +13314,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.18039216, g: 0.3137255, b: 0.46666667, a: 0}
+    m_NormalColor: {r: 0.18039216, g: 0.3137255, b: 0.46666667, a: 0.20784314}
     m_HighlightedColor: {r: 0.18039216, g: 0.3137255, b: 0.46666667, a: 0.322}
     m_PressedColor: {r: 0.18039216, g: 0.3137255, b: 0.46666667, a: 0.553}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -17480,7 +17495,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1733035473
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22831,7 +22846,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.18039216, g: 0.3137255, b: 0.46666667, a: 0}
+    m_NormalColor: {r: 0.18039216, g: 0.3137255, b: 0.46666667, a: 0.206}
     m_HighlightedColor: {r: 0.18039216, g: 0.3137255, b: 0.46666667, a: 0.322}
     m_PressedColor: {r: 0.18039216, g: 0.3137255, b: 0.46666667, a: 0.553}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
