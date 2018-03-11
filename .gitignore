@@ -9,6 +9,8 @@ RawFileStorage/Recordings/*
 *_Data/*
 Continuum.exe
 Continuum_Data/*
+continuum-alpha.exe
+continuum-alpha/*
 
 # Visual Studio 2015 cache directory
 /.vs/
