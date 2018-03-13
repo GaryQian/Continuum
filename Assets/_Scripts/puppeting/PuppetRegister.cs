@@ -38,12 +38,18 @@ public class PuppetRegister : MonoBehaviour {
         Debug.Log("ready to rewind");
         ready = true;
     }
-	
-	public void Rewind() {
+
+    public void RemoveDistortion() {
+        TimeDistortion.targ = 0;
+    }
+
+    public void Rewind() {
         if (!ready) return;
         Debug.Log("REWINDING");
+        TimeDistortion.targ = 1f;
         ready = false;
         Invoke("SetReady", 31f);
+        Invoke("RemoveDistortion", 15f);
         foreach (Recorder r in recorders) {
             if (r != null) r.SwitchToPuppet();
         }
