@@ -77,6 +77,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			m_Energy = m_MaxEnergy;
 			m_EnergyDrainMultiplier = 1650;
 			m_EnergyRegenMultiplier = 50;
+
+
+            GameManager.Instance.player = gameObject;
 		}
 
 

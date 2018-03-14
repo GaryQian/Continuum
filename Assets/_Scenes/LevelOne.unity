@@ -90,7 +90,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 112000090, guid: 9eca7b11645d441d6944d9bd43f750cf,
+  m_LightingDataAsset: {fileID: 112000028, guid: d688f51495cf14b5e881e215658cade1,
     type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -5013,7 +5013,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-727762
+  m_Name: pb_Mesh27888
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -5406,7 +5406,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6071a727373274c3e9f840344741deeb, type: 2}
+  - {fileID: 2100000, guid: 6f8a129cd678e7d45b764cd49f0113f9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8214,7 +8214,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-727760
+  m_Name: pb_Mesh27732
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
