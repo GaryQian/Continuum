@@ -15,10 +15,10 @@ public class UIBars : MonoBehaviour {
 	
     //sets the bars on the HUD to the desired value
     public void SetHealthBar(float cur, float max) {
-        healthBar.value = cur / max;
+        if (healthBar != null) healthBar.value = cur / max;
     }
 
     public void SetStaminaBar(float cur, float max) {
-        staminaBar.value = cur / max;
+        if (staminaBar != null) staminaBar.value = cur / max;
     }
 }

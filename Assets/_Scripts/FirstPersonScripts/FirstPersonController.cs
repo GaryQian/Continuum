@@ -54,6 +54,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public static UIBars bars;
         public static Health health;
 
+        public AudioClip dashClip;
+
 
 		// Use this for initialization
 		private void Start()
@@ -179,9 +181,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 		private void PlayJumpSound()
 		{
-			m_AudioSource.clip = m_JumpSound;
+            m_AudioSource.clip = m_JumpSound;
 			m_AudioSource.Play();
-		}
+            //SoundManager.PlaySfx(dashClip);
+        }
 
 
 		private void ProgressStepCycle(float speed)
@@ -223,8 +226,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 		}
 
 		private void PlayDashAudio() {
-			//TODO
-		}
+            SoundManager.PlaySfx(dashClip);
+        }
 
 
 		private void UpdateCameraPosition(float speed)
@@ -265,7 +268,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			// keep track of whether or not the character is walking or running
 			m_IsWalking = true;
 			m_IsCrouched = Input.GetKey(KeyCode.C);
+            bool prevDash = m_IsDashing;
 			m_IsDashing = Input.GetKey(KeyCode.LeftShift) && m_Energy > 32;
+
+            if (m_IsDashing) {
+                //m_AudioSource.clip = dashClip;// m_JumpSound;
+                //m_AudioSource.Play();
+                m_AudioSource.PlayOneShot(dashClip);
+                SoundManager.PlaySingleSfx(dashClip);
+            }
 			#endif
 			// set the desired speed to be walking or running
 			speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
