@@ -46,6 +46,6 @@ public class LaserScript : MonoBehaviour
     }
 
     void damagePlayer() {
-        // GameManager.Instance.player.damage(laserDamageDPS);
+        GameManager.Instance.player.GetComponent<Health>().Damage(laserDPS * Time.deltaTime);
     }
 }
