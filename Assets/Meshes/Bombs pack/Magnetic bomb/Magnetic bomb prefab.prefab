@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 6400000}
   - component: {fileID: 114383356528346768}
   - component: {fileID: 135317046253641910}
+  - component: {fileID: 114680294939485342}
   m_Layer: 0
   m_Name: Magnetic bomb prefab
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,6 +115,22 @@ MonoBehaviour:
   power: 10
   upforce: 1
   explosionEffect: {fileID: 100004, guid: 164aaa7e1b58e17408278903dd66786f, type: 2}
+--- !u!114 &114680294939485342
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7a288580eb964441a0b6b4045b68c33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  maxHealth: 50
+  invincible: 0
+  armor: 1
+  isAlive: 1
 --- !u!135 &135317046253641910
 SphereCollider:
   m_ObjectHideFlags: 1
