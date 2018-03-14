@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 4869726608451756}
   - component: {fileID: 82094188012295744}
   m_Layer: 0
-  m_Name: okean
+  m_Name: RadioWithSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114630685091581428}
   - component: {fileID: 135779209581726016}
   - component: {fileID: 23209426684989016}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1928587596402906}
   m_LocalRotation: {x: -0, y: 0.71577334, z: -0, w: 0.6983327}
-  m_LocalPosition: {x: -1.43, y: 2.7, z: 1.68}
+  m_LocalPosition: {x: -14.04, y: 7.155608, z: 50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4080255014813280}
@@ -274,7 +274,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1179555211206506}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1625,6 +1625,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 4080255014813280}
+  x: 0
+  y: 0
+  z: 3
+  speed: 1
+  random: 1
 --- !u!114 &114636209332332956
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1637,8 +1642,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserLineRenderer: {fileID: 0}
-  laserMaxLength: 10
-  laserDPS: 1000
+  laserMaxLength: 30
+  laserDPS: 5000
   laser: {fileID: 1337711154926480}
   target: {fileID: 4620176969120806}
   dist: {x: 0, y: 0, z: 0}
@@ -5412,7 +5417,7 @@ SphereCollider:
   m_GameObject: {fileID: 1179555211206506}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}

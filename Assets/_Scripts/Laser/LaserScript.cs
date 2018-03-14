@@ -36,6 +36,7 @@ public class LaserScript : MonoBehaviour
             endPos = hit.point;
             if (hit.transform.gameObject.CompareTag("Player"))
             {
+				Debug.Log ("Player");
                 damagePlayer();
             }
             return endPos;
