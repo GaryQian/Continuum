@@ -10,9 +10,12 @@ public class bombDetonation : MonoBehaviour
     public float upforce = 1.0f;
     public GameObject explosionEffect;
 
+    void Start()
+    {
+        GetComponent<Health>().OnDie += Detonate;
+    }
 
-
-    private void OnTriggerEnter(Collider col)
+	private void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Player")
         {
