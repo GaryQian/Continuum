@@ -3,7 +3,6 @@ using System.Collections;
 
 public class LaserScript : MonoBehaviour
 {
-    public GameManager gm;
     public LineRenderer laserLineRenderer;
     public float laserMaxLength = 10f;
     public float laserDPS = 100.0f;
@@ -22,7 +21,7 @@ public class LaserScript : MonoBehaviour
 
     void castLaser() {
         dist = target.position - laser.transform.position;
-        laserLineRenderer.SetPosition(0, laser.transform.position);
+		laserLineRenderer.SetPosition(0, laser.transform.position);
         laserLineRenderer.SetPosition(1, DetectHit(laser.transform.position, laserMaxLength, dist));
     }
 
