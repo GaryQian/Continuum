@@ -10,6 +10,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
 
 	public static GameManager Instance; ///Singleton Instance
+        //GameManager.Instance
 
 	public static int saveVersion;
 	public SettingsData settings;
