@@ -648,71 +648,71 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void Aim()
     {
-        if (!climbing && grounded && !ragdollh.ragdolled)
-        {
-
-            if (equippedWeapon)
-            {
-                WeaponBase _currentW = currentWeapon;
-
-                
-                if (controller.aimMode == Controller.AimMode.Hold)
-                {
-                    aim = Input.GetKey(controller.AimKey) || Input.GetKey(controller.ShootKey);
-                }
-                else
-                {
-                    if (!_currentW.reloadProgress && !_currentW.shootProgress)
-                    {
-                        if (Input.GetKeyDown(controller.AimKey))
-                        {
-                            aim = !aim;
-                        }
-                    }
-                    else
-                    {
-                        aim = true;
-                    }
-                }
-                if(Input.GetKeyDown(controller.AimKey))
-                {
-                    _currentW.AimAudio();
-                }
-                if (Input.GetKeyUp(controller.AimKey))
-                {
-                    _currentW.AimAudio();
-                }
-
-            }
-            else
-            {
-                if (controller.aimMode == Controller.AimMode.Hold)
-                {
-                    aim = Input.GetKey(controller.AimKey);
-                }
-                else
-                {
-                    if (Input.GetKeyDown(controller.AimKey))
-                    {
-                        aim = !aim;
-                    }
-                }
-            }
-        }
-
-        if (equippedWeapon)
-        {
-            if (!aim)
-            {
-                currentWeapon.MoveTo(transformToRotate);
-            }
-            else
-            {
-                currentWeapon.MoveTo(aimHelper);
-                
-            }
-            aimHelper.rotation = aimRotationAux;
-        }
+//        if (!climbing && grounded && !ragdollh.ragdolled)
+//        {
+//
+//            if (equippedWeapon)
+//            {
+//                WeaponBase _currentW = currentWeapon;
+//
+//                
+//                if (controller.aimMode == Controller.AimMode.Hold)
+//                {
+//                    aim = Input.GetKey(controller.AimKey) || Input.GetKey(controller.ShootKey);
+//                }
+//                else
+//                {
+//                    if (!_currentW.reloadProgress && !_currentW.shootProgress)
+//                    {
+//                        if (Input.GetKeyDown(controller.AimKey))
+//                        {
+//                            aim = !aim;
+//                        }
+//                    }
+//                    else
+//                    {
+//                        aim = true;
+//                    }
+//                }
+//                if(Input.GetKeyDown(controller.AimKey))
+//                {
+//                    _currentW.AimAudio();
+//                }
+//                if (Input.GetKeyUp(controller.AimKey))
+//                {
+//                    _currentW.AimAudio();
+//                }
+//
+//            }
+//            else
+//            {
+//                if (controller.aimMode == Controller.AimMode.Hold)
+//                {
+//                    aim = Input.GetKey(controller.AimKey);
+//                }
+//                else
+//                {
+//                    if (Input.GetKeyDown(controller.AimKey))
+//                    {
+//                        aim = !aim;
+//                    }
+//                }
+//            }
+//        }
+//
+//        if (equippedWeapon)
+//        {
+//            if (!aim)
+//            {
+//                currentWeapon.MoveTo(transformToRotate);
+//            }
+//            else
+//            {
+//                currentWeapon.MoveTo(aimHelper);
+//                
+//            }
+//            aimHelper.rotation = aimRotationAux;
+//        }
     }
 
     public void Crouch()
