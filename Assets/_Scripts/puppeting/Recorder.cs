@@ -131,7 +131,7 @@ public class Recorder : MonoBehaviour {
     }
 
     public void SwitchToPuppet() {
-        StopRecording();
+        StopRecording();    
         //Spawn Puppet Script Here
         if (isPlayer) {
             Debug.Log("Creating clone");
