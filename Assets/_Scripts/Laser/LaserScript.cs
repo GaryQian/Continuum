@@ -10,19 +10,32 @@ public class LaserScript : MonoBehaviour
     public Transform target;
     public Vector3 dist;
 
+    public float moveDist = 1.5f;  // Amount to move left and right from the start point
+    public float speed = 2.0f;
+    private Vector3 startPosition;
+
     void Start() {
+        startPosition = transform.position;
         laserLineRenderer = this.gameObject.GetComponent<LineRenderer>();
+        moveDist = Random.Range(1, 3);
     }
 
     void Update()
     {
         castLaser();
+        moveLR();
     }
 
     void castLaser() {
         dist = target.position - laser.transform.position;
 		laserLineRenderer.SetPosition(0, laser.transform.position);
         laserLineRenderer.SetPosition(1, DetectHit(laser.transform.position, laserMaxLength, dist));
+    }
+
+    void moveLR() {
+        Vector3 v = startPosition;
+        v.x += moveDist * Mathf.Sin(Time.time * speed);
+        transform.position = v;
     }
 
     Vector3 DetectHit(Vector3 startPos, float distance, Vector3 direction)
