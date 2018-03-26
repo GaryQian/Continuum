@@ -31,7 +31,7 @@ public class ClickShooterScript : MonoBehaviour {
 	void Update () {
         if (camera == null) FindCamera();
 		Debug.DrawRay (cameraTransform.position, cameraTransform.forward * 100, Color.magenta);
-		if (Physics.Raycast (cameraTransform.position, cameraTransform.forward, out hit, 500, ShotLayerMask)) {
+		if (Physics.Raycast (cameraTransform.position, cameraTransform.forward.normalized, out hit, 500, ShotLayerMask)) {
 			aimHasTarget = true;
 			bulletTargetPoint = hit.point;
 //			Debug.Log ("Hit: " + hit.transform.gameObject.name + " in " + hit.point);

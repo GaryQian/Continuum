@@ -180,10 +180,11 @@ namespace ProBuilder2.Examples
 		 */
 		public bool FaceCheck(Vector3 pos)
 		{
+            //return false;
 			Ray ray = Camera.main.ScreenPointToRay (pos);
 			RaycastHit hit;
 
-			if( Physics.Raycast(ray.origin, ray.direction, out hit))
+			if( Physics.Raycast(ray.origin, ray.direction.normalized, out hit))
 			{
 				pb_Object hitpb = hit.transform.gameObject.GetComponent<pb_Object>();
 

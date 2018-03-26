@@ -630,7 +630,8 @@ public class PlayerBehaviour : MonoBehaviour
     public bool SomethingInFront()
     {
         Vector3 posToDetect = transformToRotate.position + transformToRotate.up * .5f;
-        return Physics.Raycast(posToDetect, transformToRotate.forward, 0.5f);
+        int mask = 1 << 10;
+        return Physics.Raycast(posToDetect, transformToRotate.forward.normalized, 0.5f, mask);
     }
 
     public bool SomethingInFrontAim(float distance)
@@ -643,7 +644,8 @@ public class PlayerBehaviour : MonoBehaviour
             offset = cam.right * 0.15f;
         }
         Vector3 posToDetect = transformToRotate.position + transformToRotate.up * .5f;
-        return Physics.Raycast(posToDetect, camF + offset, distance) && !Physics.Raycast(posToDetect + (offset * -5), camF + (offset * -5), distance);
+        int mask = 1 << 10;
+        return Physics.Raycast(posToDetect, (camF + offset).normalized, distance, mask) && !Physics.Raycast(posToDetect + (offset * -5).normalized, camF + (offset * -5), distance, mask);
     }
 
     public void Aim()
@@ -719,7 +721,8 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (controller.canCrouch)
         {
-            bool somethingAbove = Physics.Raycast(transform.position + transform.up * .5f, transform.up, 1.4f);
+            int mask = 1 << 10;
+            bool somethingAbove = Physics.Raycast(transform.position + transform.up * .5f, transform.up, 1.4f, mask);
             if (Input.GetKeyDown(controller.CrouchKey))
             {
                 if (crouch && !somethingAbove)
@@ -803,8 +806,8 @@ public class PlayerBehaviour : MonoBehaviour
         RaycastHit hit;
 
         Vector3 climbRayPos = transform.position + transformToRotate.forward * 0.45f + transformToRotate.up * 2.1f * characterHeight;
-
-        if (Physics.Raycast(climbRayPos, -transform.up, out hit, 1.8f) && !ragdollh.ragdolled && canClimbBasedOnWeapon)
+        int mask = 1 << 10;
+        if (Physics.Raycast(climbRayPos, -transform.up, out hit, 1.8f, mask) && !ragdollh.ragdolled && canClimbBasedOnWeapon)
         {
             climbHit = true;
 
@@ -876,7 +879,8 @@ public class PlayerBehaviour : MonoBehaviour
         if (ragdollh.ragdolled)
         {
             RaycastHit h;
-            if (Input.GetKeyDown(controller.JumpKey) && Physics.SphereCast(transform.position + transform.up * 1, 0.2f, -transform.up, out h, 3f))
+            int mask = 1 << 10;
+            if (Input.GetKeyDown(controller.JumpKey) && Physics.SphereCast(transform.position + transform.up * 1, 0.2f, -transform.up, out h, 3f, mask))
             {
                 ToggleRagdoll();
             }
@@ -975,7 +979,8 @@ public class PlayerBehaviour : MonoBehaviour
     void GroundCheck()
     {
         RaycastHit hit;
-        if(Physics.SphereCast(transform.position + transform.up * 2, .15f, -transform.up, out hit, 2.5f))
+        int mask = 1 << 10;
+        if (Physics.SphereCast(transform.position + transform.up * 2, .15f, -transform.up, out hit, 2.5f, mask))
         {
             grounded = true;
             if (moveAxis == Vector3.zero || ragdollh.state == RagdollHelper.RagdollState.blendToAnim)
