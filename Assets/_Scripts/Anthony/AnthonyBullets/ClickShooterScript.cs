@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ClickShooterScript : MonoBehaviour {
 
+	public GameObject Hand;
+	private Animator handAnimator;
 	public GameObject muzzlePositionHolder;
 	public GameObject bullet;
 	public GameObject camera;
@@ -11,7 +13,10 @@ public class ClickShooterScript : MonoBehaviour {
 	private RaycastHit hit;
 	private Vector3 bulletTargetPoint;
 	public LayerMask ShotLayerMask;
+
+	public float shotDelay = 0.5f;
 	private bool aimHasTarget = false;
+	private float lastShotTime = 0f;
 
 	void Awake(){
 		ShotLayerMask = LayerMask.GetMask(new string[]{"Default"});
@@ -20,6 +25,7 @@ public class ClickShooterScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         FindCamera();
+		handAnimator = Hand.GetComponent<Animator> ();
 	}
 
     void FindCamera() {
@@ -43,15 +49,21 @@ public class ClickShooterScript : MonoBehaviour {
 		}
 
 		if (Input.GetMouseButtonDown (0)) {
-			GameObject instanceBullet = Instantiate (bullet, muzzlePositionHolder.transform.position, Quaternion.identity);
-			instanceBullet.SetActive (true);
-			if (aimHasTarget) {
-				instanceBullet.transform.rotation = Quaternion.LookRotation (bulletTargetPoint - muzzlePositionHolder.transform.position);
-			} else {
-				instanceBullet.transform.rotation = Quaternion.LookRotation (bulletTargetPoint);
+			if (Time.time - lastShotTime > shotDelay) {
+				lastShotTime = Time.time;
+				GameObject instanceBullet = Instantiate (bullet, muzzlePositionHolder.transform.position, Quaternion.identity);
+				instanceBullet.SetActive (true);
+				if (aimHasTarget) {
+					instanceBullet.transform.rotation = Quaternion.LookRotation (bulletTargetPoint - muzzlePositionHolder.transform.position);
+				} else {
+					instanceBullet.transform.rotation = Quaternion.LookRotation (bulletTargetPoint);
+				}
+				BulletMovement bulletScript = instanceBullet.GetComponent<BulletMovement> ();
+				bulletScript.ShotSource = this.gameObject;
+
+				handAnimator.Play ("GunFire");
+
 			}
-			BulletMovement bulletScript = instanceBullet.GetComponent<BulletMovement> ();
-			bulletScript.ShotSource = this.gameObject;
 		}
 	}
 }

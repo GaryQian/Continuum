@@ -56,6 +56,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         public AudioClip dashClip;
 
+		public GameObject Hand;
+		private Animator handAnimator;
+
 
 		// Use this for initialization
 		private void Start()
@@ -82,12 +85,23 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 
             GameManager.Instance.player = gameObject;
+			handAnimator = Hand.GetComponent<Animator> ();
 		}
 
 
 		// Update is called once per frame
 		private void Update()
 		{
+			#if !MOBILE_INPUT
+
+			if ((Input.GetKey (KeyCode.W) || Input.GetKey (KeyCode.A) || Input.GetKey (KeyCode.S) || Input.GetKey (KeyCode.D))) {
+				handAnimator.SetBool ("isWalking", true);
+			} else {
+				handAnimator.SetBool ("isWalking", false);
+			}
+
+			#endif
+
 			RotateView();
 			// the jump state needs to read here to make sure it is not missed
 			if (!m_Jump)
@@ -140,12 +154,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 		private void FixedUpdate()
 		{
+			
 			float speed;
 			GetInput(out speed);
 			// always move along the camera forward as it is the direction that it being aimed at
 			Vector3 desiredMove = transform.forward*m_Input.y + transform.right*m_Input.x;
 
 			// get a normal for the surface that is being touched to move along it
+
+
 			RaycastHit hitInfo;
 			Physics.SphereCast(transform.position, m_CharacterController.radius, Vector3.down, out hitInfo,
 				m_CharacterController.height/2f, Physics.AllLayers, QueryTriggerInteraction.Ignore);
