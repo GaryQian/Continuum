@@ -40,7 +40,7 @@ public class LaserScript : MonoBehaviour
 
     Vector3 DetectHit(Vector3 startPos, float distance, Vector3 direction)
     {
-        Ray ray = new Ray(startPos, direction);
+        Ray ray = new Ray(startPos, direction.normalized);
         RaycastHit hit;
         Vector3 endPos = startPos + (distance * direction);
 

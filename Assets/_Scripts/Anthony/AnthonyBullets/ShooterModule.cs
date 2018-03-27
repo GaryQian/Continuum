@@ -38,7 +38,7 @@ public class ShooterModule : MonoBehaviour {
         if (Vector3.Distance(GameManager.Instance.player.transform.position, transform.position) < sightRange)
         {
             RaycastHit hit;
-            if (GameManager.Instance.player && Physics.Raycast(transform.position, (GameManager.Instance.player.transform.position + new Vector3(0, 0.5f, 0)) - transform.position, out hit, detectionRange))
+            if (GameManager.Instance.player && Physics.Raycast(transform.position, ((GameManager.Instance.player.transform.position + new Vector3(0, 0.5f, 0)) - transform.position).normalized, out hit, detectionRange))
             {
                 if (hit.transform.gameObject.CompareTag("Player"))
                 {

@@ -197,9 +197,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private void StickToGroundHelper()
         {
             RaycastHit hitInfo;
+            int mask = 1 << 10;
             if (Physics.SphereCast(transform.position, m_Capsule.radius * (1.0f - advancedSettings.shellOffset), Vector3.down, out hitInfo,
                                    ((m_Capsule.height/2f) - m_Capsule.radius) +
-                                   advancedSettings.stickToGroundHelperDistance, Physics.AllLayers, QueryTriggerInteraction.Ignore))
+                                   advancedSettings.stickToGroundHelperDistance, mask, QueryTriggerInteraction.Ignore))
             {
                 if (Mathf.Abs(Vector3.Angle(hitInfo.normal, Vector3.up)) < 85f)
                 {
