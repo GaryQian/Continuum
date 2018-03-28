@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityStandardAssets.Characters.FirstPerson;
 
 // Expand this as unit types increase.
@@ -40,6 +41,7 @@ public class Recording {
     public UnitType type;
     public float recordDelay;
     public int maxRecords;
+    public float startTime;
 
     public Recording(UnitType type, float recordDelay = 0.1f) {
         records = new Queue<Record>();
@@ -47,6 +49,7 @@ public class Recording {
         this.type = type;
         this.recordDelay = recordDelay;
         this.maxRecords = (int)(15f / recordDelay);
+        this.startTime = Time.time;
     }
 
     public void AddRecord(Record r) {
@@ -54,6 +57,10 @@ public class Recording {
         if (records.Count > maxRecords) {
             records.Dequeue();
         }
+    }
+
+    public void AddEvent(int type, Hashtable data) {
+        events.Enqueue(new EventRecord(startTime, type, data));
     }
 
     public Record NextRecord() {
@@ -97,13 +104,13 @@ public class Recorder : MonoBehaviour {
     /// To access hashed parameters:
     ///     ... (CastToCorrectType) e.data["somekey"] ...
     /// </summary>
-    public Action<EventRecord> OnEvent;
+    public UnityAction OnEvent;
 
     public bool isPlayer = false;
 
-    public void Setup(bool isPlayer, Action<EventRecord> OnEvent) {
+    public void Setup(bool isPlayer) {
         this.isPlayer = isPlayer;
-        this.OnEvent = OnEvent;
+        //this.OnEvent = OnEvent;
     }
 
     private void OnEnable() {

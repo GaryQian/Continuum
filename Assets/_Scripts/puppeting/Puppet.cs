@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Events;
 using UnityEngine;
 
 public class Puppetable {
@@ -17,11 +18,11 @@ public class Puppet : MonoBehaviour {
     public float lerpSpeed = 10f;
     public float startPlaybackTime;
 
-    public Action<EventRecord> OnEvent;
+    public UnityAction OnEvent;
 
     public bool isPlayer;
 
-    public void Setup(Recording r, bool isPlayer, Action<EventRecord> OnEvent) {
+    public void Setup(Recording r, bool isPlayer, UnityAction OnEvent) {
         recording = r;
         this.isPlayer = isPlayer;
         this.OnEvent = OnEvent;
