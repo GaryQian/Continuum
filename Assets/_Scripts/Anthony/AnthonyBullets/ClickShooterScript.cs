@@ -8,7 +8,7 @@ public class ClickShooterScript : MonoBehaviour {
 	private Animator handAnimator;
 	public GameObject muzzlePositionHolder;
 	public GameObject bullet;
-	public GameObject camera;
+	public GameObject mainCamera;
 	private Transform cameraTransform;
 	private RaycastHit hit;
 	private Vector3 bulletTargetPoint;
@@ -29,13 +29,13 @@ public class ClickShooterScript : MonoBehaviour {
 	}
 
     void FindCamera() {
-        camera = Camera.main.gameObject;
-        cameraTransform = camera.transform;
+        mainCamera = Camera.main.gameObject;
+        cameraTransform = mainCamera.transform;
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (camera == null) FindCamera();
+        if (mainCamera == null) FindCamera();
 		Debug.DrawRay (cameraTransform.position, cameraTransform.forward * 100, Color.magenta);
 		if (Physics.Raycast (cameraTransform.position, cameraTransform.forward.normalized, out hit, 500, ShotLayerMask)) {
 			aimHasTarget = true;
