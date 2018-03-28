@@ -1,0 +1,183 @@
+fileFormatVersion: 2
+guid: d0c31c107e334b244a499ccd14c403bf
+timeCreated: 1514182993
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: CATRigHub001
+    100002: CATRigLArm1
+    100004: CATRigLArm21
+    100006: CATRigLArm22
+    100008: CATRigLArmCollarbone
+    100010: CATRigLArmDigit11
+    100012: CATRigLArmDigit12
+    100014: CATRigLArmDigit13
+    100016: CATRigLArmDigit21
+    100018: CATRigLArmDigit22
+    100020: CATRigLArmDigit23
+    100022: CATRigLArmDigit31
+    100024: CATRigLArmDigit32
+    100026: CATRigLArmDigit33
+    100028: CATRigLArmDigit41
+    100030: CATRigLArmDigit42
+    100032: CATRigLArmDigit43
+    100034: CATRigLArmDigit51
+    100036: CATRigLArmDigit52
+    100038: CATRigLArmDigit53
+    100040: CATRigLArmPalm
+    100042: CATRigRArm1
+    100044: CATRigRArm21
+    100046: CATRigRArm22
+    100048: CATRigRArmCollarbone
+    100050: CATRigRArmDigit11
+    100052: CATRigRArmDigit12
+    100054: CATRigRArmDigit13
+    100056: CATRigRArmDigit21
+    100058: CATRigRArmDigit22
+    100060: CATRigRArmDigit23
+    100062: CATRigRArmDigit31
+    100064: CATRigRArmDigit32
+    100066: CATRigRArmDigit33
+    100068: CATRigRArmDigit41
+    100070: CATRigRArmDigit42
+    100072: CATRigRArmDigit43
+    100074: CATRigRArmDigit51
+    100076: CATRigRArmDigit52
+    100078: CATRigRArmDigit53
+    100080: CATRigRArmPalm
+    100082: Character001
+    100084: //RootNode
+    100086: FPS Hands
+    100088: saski
+    100090: saski001
+    100092: saski002
+    100094: saski003
+    400000: CATRigHub001
+    400002: CATRigLArm1
+    400004: CATRigLArm21
+    400006: CATRigLArm22
+    400008: CATRigLArmCollarbone
+    400010: CATRigLArmDigit11
+    400012: CATRigLArmDigit12
+    400014: CATRigLArmDigit13
+    400016: CATRigLArmDigit21
+    400018: CATRigLArmDigit22
+    400020: CATRigLArmDigit23
+    400022: CATRigLArmDigit31
+    400024: CATRigLArmDigit32
+    400026: CATRigLArmDigit33
+    400028: CATRigLArmDigit41
+    400030: CATRigLArmDigit42
+    400032: CATRigLArmDigit43
+    400034: CATRigLArmDigit51
+    400036: CATRigLArmDigit52
+    400038: CATRigLArmDigit53
+    400040: CATRigLArmPalm
+    400042: CATRigRArm1
+    400044: CATRigRArm21
+    400046: CATRigRArm22
+    400048: CATRigRArmCollarbone
+    400050: CATRigRArmDigit11
+    400052: CATRigRArmDigit12
+    400054: CATRigRArmDigit13
+    400056: CATRigRArmDigit21
+    400058: CATRigRArmDigit22
+    400060: CATRigRArmDigit23
+    400062: CATRigRArmDigit31
+    400064: CATRigRArmDigit32
+    400066: CATRigRArmDigit33
+    400068: CATRigRArmDigit41
+    400070: CATRigRArmDigit42
+    400072: CATRigRArmDigit43
+    400074: CATRigRArmDigit51
+    400076: CATRigRArmDigit52
+    400078: CATRigRArmDigit53
+    400080: CATRigRArmPalm
+    400082: Character001
+    400084: //RootNode
+    400086: FPS Hands
+    400088: saski
+    400090: saski001
+    400092: saski002
+    400094: saski003
+    4300000: saski001
+    4300002: saski003
+    4300004: saski002
+    4300006: saski
+    4300008: FPS Hands
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: FPS Hands
+    13700002: saski
+    13700004: saski001
+    13700006: saski002
+    13700008: saski003
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

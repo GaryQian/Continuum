@@ -96,4 +96,13 @@ public class Puppet : MonoBehaviour {
             else Debug.LogWarning("Warning: Event registered but no OnEvent method!");
         }
 	}
+		
+	public void SwapPlayerModel(){
+		Debug.Log ("swapping enabled");
+		Debug.Log (gameObject.name);
+
+		gameObject.GetComponent<PlayerPuppetModelHolder> ().ActivatePuppetModel ();
+//		Debug.Log (gameObject.GetComponentInChildren<PlayerPuppetModelFlag> ().gameObject.name + "enabled");
+//		gameObject.GetComponentInChildren<PlayerPuppetModelFlag> ().gameObject.SetActive (true);
+	}
 }
