@@ -108,9 +108,9 @@ public class Recorder : MonoBehaviour {
 
     public bool isPlayer = false;
 
-    public void Setup(bool isPlayer) {
+    public void Setup(bool isPlayer, UnityAction OnEvent) {
         this.isPlayer = isPlayer;
-        //this.OnEvent = OnEvent;
+        this.OnEvent = OnEvent;
     }
 
     private void OnEnable() {

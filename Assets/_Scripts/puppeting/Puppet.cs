@@ -92,7 +92,7 @@ public class Puppet : MonoBehaviour {
 
         if (recording.events.Count > 0 && Time.time - startPlaybackTime >= recording.events.Peek().timestamp) {
             EventRecord e = recording.events.Dequeue();
-            if (OnEvent != null) OnEvent(e);
+            if (OnEvent != null) OnEvent();
             else Debug.LogWarning("Warning: Event registered but no OnEvent method!");
         }
 	}
