@@ -24,7 +24,7 @@ public class DefusableBomb : MonoBehaviour
     }
 
     private void FixedUpdate() {
-        Debug.Log(defusing);
+        //Debug.Log(defusing);
         timer -= Time.deltaTime;
         if (timer <= 0 && !defused) {
             Detonate();

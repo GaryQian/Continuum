@@ -3526,7 +3526,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1322476788873332}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.15, z: -3.47}
+  m_LocalPosition: {x: 0, y: 13.17, z: -0.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4447144552739214}
@@ -4126,11 +4126,13 @@ MonoBehaviour:
   Hand: {fileID: 1815981211101238}
   muzzlePositionHolder: {fileID: 1621541747751116}
   bullet: {fileID: 1966532732242780, guid: a525a2b089dbc47cdb656d539ddd59f5, type: 2}
-  camera: {fileID: 0}
+  mainCamera: {fileID: 0}
   ShotLayerMask:
     serializedVersion: 2
     m_Bits: 257
-  shotDelay: 0.5
+  recorder: {fileID: 114906383050142656}
+  shotDelay: 0.15
+  isClone: 0
 --- !u!114 &114651125692072212
 MonoBehaviour:
   m_ObjectHideFlags: 1

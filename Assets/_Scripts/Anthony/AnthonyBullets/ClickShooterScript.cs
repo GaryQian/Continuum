@@ -15,11 +15,14 @@ public class ClickShooterScript : MonoBehaviour {
 	public LayerMask ShotLayerMask;
 
     public Recorder recorder;
+    public Puppet puppet;
 
 
-    public float shotDelay = 0.5f;
+    public float shotDelay = 0.15f;
 	private bool aimHasTarget = false;
 	private float lastShotTime = 0f;
+
+    public bool isClone = false;
 
 	void Awake(){
 		ShotLayerMask = LayerMask.GetMask(new string[]{"Default"});
@@ -27,7 +30,7 @@ public class ClickShooterScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        recorder.OnEvent += OnEvent;
+        if (puppet != null) puppet.OnEvent += OnEvent;
         Debug.Log("OnEvent registered: " + recorder.OnEvent);
         FindCamera();
 		if (Hand != null) handAnimator = Hand.GetComponent<Animator>();
@@ -41,6 +44,7 @@ public class ClickShooterScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (isClone) return;
         if (mainCamera == null) FindCamera();
 		Debug.DrawRay (cameraTransform.position, cameraTransform.forward * 100, Color.magenta);
 		if (Physics.Raycast (cameraTransform.position, cameraTransform.forward.normalized, out hit, 500, ShotLayerMask)) {
@@ -100,11 +104,13 @@ public class ClickShooterScript : MonoBehaviour {
 
     void OnEvent() {
         Debug.Log("Recorded Shoot playing");
-        Puppet p = GetComponentInParent<Puppet>();
-        if (p == null) { Debug.Log("No Puppet!"); return; }
-        switch ((string)p.eventData["type"]) {
+        //Puppet p = GetComponentInParent<Puppet>();
+        //if (p == null) { Debug.Log("No Puppet!"); return; }
+        Debug.Log(puppet);
+        if (puppet.eventData == null) { Debug.Log("EventData null"); return; }
+        switch ((string)puppet.eventData["type"]) {
             case "shoot": {
-                    Shoot(p.eventData);
+                    Shoot(puppet.eventData);
                     break;
                 }
         }

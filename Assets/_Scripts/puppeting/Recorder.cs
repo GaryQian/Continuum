@@ -150,10 +150,12 @@ public class Recorder : MonoBehaviour {
             p.Setup(recording, isPlayer, OnEvent);
             Destroy(clone.GetComponentInChildren<Camera>().gameObject);
             Destroy(clone.GetComponentInChildren<FirstPersonController>());
-			Destroy(clone.GetComponentInChildren<ClickShooterScript>());
+            //Destroy(clone.GetComponentInChildren<ClickShooterScript>());
+            clone.GetComponentInChildren<ClickShooterScript>().isClone = true;
+            clone.GetComponentInChildren<ClickShooterScript>().puppet = p;
             Destroy(clone.GetComponent<Recorder>());
 
-			p.SwapPlayerModel ();
+			p.SwapPlayerModel();
 
             Debug.Log("Cloned");
             Invoke("StartRecording", 15f);
