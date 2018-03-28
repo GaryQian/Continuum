@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DefusableBomb : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class DefusableBomb : MonoBehaviour
     public GameObject explosionEffect;
     public float defusalTime = 5.0f;
     public float timer = 15.0f;
+    public Slider defusalSlider;
 
     float defusalProgress = 0.0f;
     bool defusing = false;
@@ -22,31 +24,34 @@ public class DefusableBomb : MonoBehaviour
     }
 
     private void FixedUpdate() {
+        Debug.Log(defusing);
         timer -= Time.deltaTime;
         if (timer <= 0 && !defused) {
             Detonate();
         }
         if (defusing) {
             defusalProgress += Time.deltaTime;
-
+            defusalSlider.value = defusalProgress / defusalTime;
         }
         if (defusalProgress >= defusalTime)
         {
             defused = true;
+            defusalSlider.gameObject.SetActive(false);
             Destroy(gameObject);
         }
-
     }
 
     private void OnTriggerStay(Collider col) {
         if (col.gameObject.tag == "Player" && Input.GetKey("f")){
             defusing = true;
+            defusalSlider.gameObject.SetActive(true);
         }
     }
 
     private void OnTriggerExit(Collider col) {
         if (col.gameObject.tag == "Player") {
             defusing = false;
+            defusalSlider.gameObject.SetActive(false);
         }
     }
 
