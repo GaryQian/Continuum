@@ -123,7 +123,7 @@ public class Puppet : MonoBehaviour {
 		Debug.Log ("swapping enabled");
 		Debug.Log (gameObject.name);
 
-		//gameObject.GetComponent<PlayerPuppetModelHolder>().ActivatePuppetModel ();
+		gameObject.GetComponent<PlayerPuppetModelHolder>().ActivatePuppetModel ();
 //		Debug.Log (gameObject.GetComponentInChildren<PlayerPuppetModelFlag> ().gameObject.name + "enabled");
 //		gameObject.GetComponentInChildren<PlayerPuppetModelFlag> ().gameObject.SetActive (true);
 	}

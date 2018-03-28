@@ -69,19 +69,6 @@ public class ClickShooterScript : MonoBehaviour {
                 Shoot(data);
                 recorder.recording.AddEvent(data);
 
-				//lastShotTime = Time.time;
-				//GameObject instanceBullet = Instantiate (bullet, muzzlePositionHolder.transform.position, Quaternion.identity);
-				//instanceBullet.SetActive (true);
-				//if (aimHasTarget) {
-				//	instanceBullet.transform.rotation = Quaternion.LookRotation (bulletTargetPoint - muzzlePositionHolder.transform.position);
-				//} else {
-				//	instanceBullet.transform.rotation = Quaternion.LookRotation (bulletTargetPoint);
-				//}
-				//BulletMovement bulletScript = instanceBullet.GetComponent<BulletMovement> ();
-				//bulletScript.ShotSource = this.gameObject;
-                //
-				//handAnimator.Play ("GunFire");
-
 			}
 		}
 	}
@@ -104,9 +91,6 @@ public class ClickShooterScript : MonoBehaviour {
 
     void OnEvent() {
         Debug.Log("Recorded Shoot playing");
-        //Puppet p = GetComponentInParent<Puppet>();
-        //if (p == null) { Debug.Log("No Puppet!"); return; }
-        Debug.Log(puppet);
         if (puppet.eventData == null) { Debug.Log("EventData null"); return; }
         switch ((string)puppet.eventData["type"]) {
             case "shoot": {
