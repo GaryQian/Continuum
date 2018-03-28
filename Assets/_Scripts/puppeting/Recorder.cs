@@ -107,19 +107,21 @@ public class Recorder : MonoBehaviour {
     }
 
     private void OnEnable() {
-        recording = new Recording(type, recordDelay);
+        //recording = new Recording(type, recordDelay);
     }
 
     // Use this for initialization
     void Start () {
-        recording = new Recording(type, recordDelay);
+        //recording = new Recording(type, recordDelay);
         if (recordOnStart) StartRecording();
 
-        PuppetRegister.recorders.Add(this);
+        //PuppetRegister.recorders.Add(this);
         if (isPlayer) PuppetRegister.playerRecorder = this;
 	}
 
     public void StartRecording() {
+        PuppetRegister.recorders.Add(this);
+        recording = new Recording(type, recordDelay);
         isRecording = true;
         startRecordTime = Time.time;
         StartCoroutine(Record());
