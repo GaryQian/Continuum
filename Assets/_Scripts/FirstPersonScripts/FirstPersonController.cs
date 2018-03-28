@@ -14,6 +14,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 		[SerializeField] private bool m_IsWalking;
 		[SerializeField] private bool m_IsCrouched;
 		[SerializeField] private bool m_IsDashing;
+		[SerializeField] private bool m_Jumping;	
 		[SerializeField] [Range(0f, 1f)] private float m_RunstepLenghten;
 		[SerializeField] private float m_JumpSpeed;
 		[SerializeField] private float m_StickToGroundForce;
@@ -49,7 +50,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
 		private Vector3 m_OriginalCameraPosition;
 		private float m_StepCycle;
 		private float m_NextStep;
-		private bool m_Jumping;
 		private AudioSource m_AudioSource;
         public static UIBars bars;
         public static Health health;
@@ -58,6 +58,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 		public GameObject Hand;
 		private Animator handAnimator;
+		public Transform PuppetModelReference;
 
 
 		// Use this for initialization
