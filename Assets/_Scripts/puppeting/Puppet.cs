@@ -19,8 +19,16 @@ public class Puppet : MonoBehaviour {
     public float startPlaybackTime;
 
     public UnityAction OnEvent;
+    public Action<Hashtable> OnEventAction;
 
     public bool isPlayer;
+
+
+
+    //PARAMS FOR ONEVENT
+    public Hashtable eventData;
+    //PARAMS FOR ONEVENT
+
 
     public void Setup(Recording r, bool isPlayer, UnityAction OnEvent) {
         recording = r;
@@ -43,6 +51,7 @@ public class Puppet : MonoBehaviour {
         GrabNextRecord();
         SnapToTarg();
         StartCoroutine(PullRecords());
+        StartCoroutine(ReadEvents());
     }
     public void SnapToTarg() {
         transform.position = targetPos;
@@ -56,13 +65,26 @@ public class Puppet : MonoBehaviour {
             yield return new WaitForSeconds(recording.recordDelay);
         }
         SwitchToRecord();
-
     }
     void GrabNextRecord() {
         Record r = recording.NextRecord();
         targetPos = r.position;
         targetRot = r.rotation;
     }
+    IEnumerator ReadEvents() {
+        float elapsed = 0;
+        while (recording.HasEvent()) {
+            if (recording.events.Peek().timestamp < elapsed) {
+                EventRecord e = recording.events.Dequeue();
+                eventData = e.data;
+                if (OnEvent != null) { OnEvent(); Debug.Log("Calling OnEvent"); }
+                else Debug.LogWarning("Warning: Event registered but no OnEvent method!");
+            }
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+    }
+
 
     public void SwitchToRecord() {
         //Spawn Puppet Script Here
@@ -90,18 +112,18 @@ public class Puppet : MonoBehaviour {
             transform.rotation = rot;
         }
 
-        if (recording.events.Count > 0 && Time.time - startPlaybackTime >= recording.events.Peek().timestamp) {
-            EventRecord e = recording.events.Dequeue();
-            if (OnEvent != null) OnEvent();
-            else Debug.LogWarning("Warning: Event registered but no OnEvent method!");
-        }
+        //if (recording.events.Count > 0 && Time.time - startPlaybackTime >= recording.events.Peek().timestamp) {
+        //    EventRecord e = recording.events.Dequeue();
+        //    if (OnEvent != null) OnEvent();
+        //    else Debug.LogWarning("Warning: Event registered but no OnEvent method!");
+        //}
 	}
 		
 	public void SwapPlayerModel(){
 		Debug.Log ("swapping enabled");
 		Debug.Log (gameObject.name);
 
-		gameObject.GetComponent<PlayerPuppetModelHolder> ().ActivatePuppetModel ();
+		//gameObject.GetComponent<PlayerPuppetModelHolder>().ActivatePuppetModel ();
 //		Debug.Log (gameObject.GetComponentInChildren<PlayerPuppetModelFlag> ().gameObject.name + "enabled");
 //		gameObject.GetComponentInChildren<PlayerPuppetModelFlag> ().gameObject.SetActive (true);
 	}

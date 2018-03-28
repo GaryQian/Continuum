@@ -14,7 +14,10 @@ public class ClickShooterScript : MonoBehaviour {
 	private Vector3 bulletTargetPoint;
 	public LayerMask ShotLayerMask;
 
-	public float shotDelay = 0.5f;
+    public Recorder recorder;
+
+
+    public float shotDelay = 0.5f;
 	private bool aimHasTarget = false;
 	private float lastShotTime = 0f;
 
@@ -24,9 +27,12 @@ public class ClickShooterScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        recorder.OnEvent += OnEvent;
+        Debug.Log("OnEvent registered: " + recorder.OnEvent);
         FindCamera();
-		handAnimator = Hand.GetComponent<Animator> ();
-	}
+		if (Hand != null) handAnimator = Hand.GetComponent<Animator>();
+
+    }
 
     void FindCamera() {
         camera = Camera.main.gameObject;
@@ -50,20 +56,57 @@ public class ClickShooterScript : MonoBehaviour {
 
 		if (Input.GetMouseButtonDown (0)) {
 			if (Time.time - lastShotTime > shotDelay) {
-				lastShotTime = Time.time;
-				GameObject instanceBullet = Instantiate (bullet, muzzlePositionHolder.transform.position, Quaternion.identity);
-				instanceBullet.SetActive (true);
-				if (aimHasTarget) {
-					instanceBullet.transform.rotation = Quaternion.LookRotation (bulletTargetPoint - muzzlePositionHolder.transform.position);
-				} else {
-					instanceBullet.transform.rotation = Quaternion.LookRotation (bulletTargetPoint);
-				}
-				BulletMovement bulletScript = instanceBullet.GetComponent<BulletMovement> ();
-				bulletScript.ShotSource = this.gameObject;
+                Hashtable data = new Hashtable();
+                data.Add("type", "shoot");
+                data.Add("aimHasTarget", aimHasTarget);
+                data.Add("bulletTargetPoint", bulletTargetPoint);
+                data.Add("muzzlePosition", muzzlePositionHolder.transform.position);
 
-				handAnimator.Play ("GunFire");
+                Shoot(data);
+                recorder.recording.AddEvent(data);
+
+				//lastShotTime = Time.time;
+				//GameObject instanceBullet = Instantiate (bullet, muzzlePositionHolder.transform.position, Quaternion.identity);
+				//instanceBullet.SetActive (true);
+				//if (aimHasTarget) {
+				//	instanceBullet.transform.rotation = Quaternion.LookRotation (bulletTargetPoint - muzzlePositionHolder.transform.position);
+				//} else {
+				//	instanceBullet.transform.rotation = Quaternion.LookRotation (bulletTargetPoint);
+				//}
+				//BulletMovement bulletScript = instanceBullet.GetComponent<BulletMovement> ();
+				//bulletScript.ShotSource = this.gameObject;
+                //
+				//handAnimator.Play ("GunFire");
 
 			}
 		}
 	}
+
+    public void Shoot(Hashtable data) {
+        lastShotTime = Time.time;
+        GameObject instanceBullet = Instantiate(bullet, (Vector3)data["muzzlePosition"], Quaternion.identity);
+        instanceBullet.SetActive(true);
+        if ((bool)data["aimHasTarget"]) {
+            instanceBullet.transform.rotation = Quaternion.LookRotation((Vector3)data["bulletTargetPoint"] - (Vector3)data["muzzlePosition"]);
+        }
+        else {
+            instanceBullet.transform.rotation = Quaternion.LookRotation((Vector3)data["bulletTargetPoint"]);
+        }
+        BulletMovement bulletScript = instanceBullet.GetComponent<BulletMovement>();
+        bulletScript.ShotSource = this.gameObject;
+
+        if (handAnimator != null) handAnimator.Play("GunFire");
+    }
+
+    void OnEvent() {
+        Debug.Log("Recorded Shoot playing");
+        Puppet p = GetComponentInParent<Puppet>();
+        if (p == null) { Debug.Log("No Puppet!"); return; }
+        switch ((string)p.eventData["type"]) {
+            case "shoot": {
+                    Shoot(p.eventData);
+                    break;
+                }
+        }
+    }
 }

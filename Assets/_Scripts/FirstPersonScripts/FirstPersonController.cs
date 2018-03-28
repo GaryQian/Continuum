@@ -93,15 +93,17 @@ namespace UnityStandardAssets.Characters.FirstPerson
 		// Update is called once per frame
 		private void Update()
 		{
-			#if !MOBILE_INPUT
+#if !MOBILE_INPUT
 
-			if ((Input.GetKey (KeyCode.W) || Input.GetKey (KeyCode.A) || Input.GetKey (KeyCode.S) || Input.GetKey (KeyCode.D))) {
-				handAnimator.SetBool ("isWalking", true);
-			} else {
-				handAnimator.SetBool ("isWalking", false);
-			}
-
-			#endif
+            if (handAnimator != null) {
+                if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))) {
+                    handAnimator.SetBool("isWalking", true);
+                }
+                else {
+                    handAnimator.SetBool("isWalking", false);
+                }
+            }
+#endif
 
 			RotateView();
 			// the jump state needs to read here to make sure it is not missed

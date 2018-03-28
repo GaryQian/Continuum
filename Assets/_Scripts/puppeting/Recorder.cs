@@ -25,12 +25,10 @@ public class Record {
 
 public class EventRecord {
     public Hashtable data;
-    public int type;
     public float timestamp;
 
-    public EventRecord(float startTime, int type, Hashtable data) {
+    public EventRecord(float startTime, Hashtable data) {
         this.data = data;
-        this.type = type;
         timestamp = Time.time - startTime;
     }
 }
@@ -59,8 +57,8 @@ public class Recording {
         }
     }
 
-    public void AddEvent(int type, Hashtable data) {
-        events.Enqueue(new EventRecord(startTime, type, data));
+    public void AddEvent(Hashtable data) {
+        events.Enqueue(new EventRecord(startTime, data));
     }
 
     public Record NextRecord() {
@@ -69,6 +67,9 @@ public class Recording {
 
     public bool HasRecord() {
         return records.Count >= 1;
+    }
+    public bool HasEvent() {
+        return events.Count >= 1;
     }
 
     public float GetDuration() {
@@ -175,8 +176,8 @@ public class Recorder : MonoBehaviour {
     ///     hash.Add("somekey", data);
     ///     GetComponent<Recorder>().AddEvent(EventType.typenamehere, hash);
     /// </summary>
-    public void AddEvent(int type, Hashtable data) {
-        recording.events.Enqueue(new EventRecord(startRecordTime, type, data));
+    public void AddEvent(Hashtable data) {
+        if (isRecording) recording.events.Enqueue(new EventRecord(startRecordTime, data));
     }
 
     IEnumerator Record() {
