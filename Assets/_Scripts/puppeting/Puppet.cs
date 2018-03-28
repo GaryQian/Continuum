@@ -73,7 +73,6 @@ public class Puppet : MonoBehaviour {
             p.Setup(isPlayer, OnEvent);
 
             Destroy(this);
-
         }
     }
 	
