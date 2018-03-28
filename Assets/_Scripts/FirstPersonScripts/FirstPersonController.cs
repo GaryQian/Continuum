@@ -14,6 +14,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 		[SerializeField] private bool m_IsWalking;
 		[SerializeField] private bool m_IsCrouched;
 		[SerializeField] private bool m_IsDashing;
+		[SerializeField] private bool m_Jumping;	
 		[SerializeField] [Range(0f, 1f)] private float m_RunstepLenghten;
 		[SerializeField] private float m_JumpSpeed;
 		[SerializeField] private float m_StickToGroundForce;
@@ -49,12 +50,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
 		private Vector3 m_OriginalCameraPosition;
 		private float m_StepCycle;
 		private float m_NextStep;
-		private bool m_Jumping;
 		private AudioSource m_AudioSource;
         public static UIBars bars;
         public static Health health;
 
         public AudioClip dashClip;
+
+		public GameObject Hand;
+		private Animator handAnimator;
+		public Transform PuppetModelReference;
 
 
 		// Use this for initialization
@@ -82,12 +86,23 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 
             GameManager.Instance.player = gameObject;
+			handAnimator = Hand.GetComponent<Animator> ();
 		}
 
 
 		// Update is called once per frame
 		private void Update()
 		{
+			#if !MOBILE_INPUT
+
+			if ((Input.GetKey (KeyCode.W) || Input.GetKey (KeyCode.A) || Input.GetKey (KeyCode.S) || Input.GetKey (KeyCode.D))) {
+				handAnimator.SetBool ("isWalking", true);
+			} else {
+				handAnimator.SetBool ("isWalking", false);
+			}
+
+			#endif
+
 			RotateView();
 			// the jump state needs to read here to make sure it is not missed
 			if (!m_Jump)
@@ -140,12 +155,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 		private void FixedUpdate()
 		{
+			
 			float speed;
 			GetInput(out speed);
 			// always move along the camera forward as it is the direction that it being aimed at
 			Vector3 desiredMove = transform.forward*m_Input.y + transform.right*m_Input.x;
 
 			// get a normal for the surface that is being touched to move along it
+
+
 			RaycastHit hitInfo;
             int mask = 1 << 10;
             Physics.SphereCast(transform.position, m_CharacterController.radius, Vector3.down, out hitInfo,
