@@ -3526,7 +3526,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1322476788873332}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 13.17, z: -0.12}
+  m_LocalPosition: {x: 0, y: 0.15, z: -3.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4447144552739214}
@@ -4131,6 +4131,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 257
   recorder: {fileID: 114906383050142656}
+  puppet: {fileID: 0}
   shotDelay: 0.15
   isClone: 0
 --- !u!114 &114651125692072212
@@ -4167,7 +4168,7 @@ LensFlare:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1897473372013676}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Flare: {fileID: 12100000, guid: 54fbbf098d116effa00081aba8ad6659, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Brightness: 1
