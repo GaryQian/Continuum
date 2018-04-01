@@ -11,15 +11,13 @@ public class EnemyMovement : MonoBehaviour
     public bool playerDetected;
 
     // Use this for initialization
-    void Start()
-    {
+    void Start() {
         enemy = GetComponent<NavMeshAgent>();
         enemy.destination = WorldManager.Instance.destinations[0].position;
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         if (GameManager.Instance.player)
         {
             DetectPlayer();
