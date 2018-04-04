@@ -125,7 +125,12 @@ public class Recorder : MonoBehaviour {
 
         //PuppetRegister.recorders.Add(this);
         if (isPlayer) PuppetRegister.playerRecorder = this;
-	}
+
+        Health hp = GetComponent<Health>();
+        if (hp != null) {
+            hp.OnDie += OnDie;
+        }
+    }
 
     public void StartRecording() {
         PuppetRegister.recorders.Add(this);
@@ -189,4 +194,15 @@ public class Recorder : MonoBehaviour {
         }
     }
 
+
+    private void OnDie() {
+        if (isRecording) {
+            SwitchToPuppet();
+            gameObject.SetActive(false);
+            PuppetRegister.dead.Add(gameObject);
+        }
+        else {
+            Destroy(gameObject);
+        }
+    }
 }
