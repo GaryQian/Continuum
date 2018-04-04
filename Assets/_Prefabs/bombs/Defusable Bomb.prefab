@@ -148,6 +148,7 @@ MonoBehaviour:
   explosionEffect: {fileID: 100004, guid: 164aaa7e1b58e17408278903dd66786f, type: 2}
   defusalTime: 5
   timer: 15
+  defusalSlider: {fileID: 0}
 --- !u!114 &114911839346040614
 MonoBehaviour:
   m_ObjectHideFlags: 1

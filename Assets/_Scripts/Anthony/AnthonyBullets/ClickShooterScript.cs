@@ -67,7 +67,7 @@ public class ClickShooterScript : MonoBehaviour {
                 data.Add("muzzlePosition", muzzlePositionHolder.transform.position);
 
                 Shoot(data);
-                recorder.recording.AddEvent(data);
+                recorder.AddEvent(data);
 
 			}
 		}

@@ -58,7 +58,11 @@ public class DefusableBomb : MonoBehaviour
 
     void Detonate()
     {
-
+        Debug.Log("boom");
+        GameObject canvas = GameObject.Find("Canvas (2)");
+        Subtitle txt = (Subtitle) canvas.GetComponent<Subtitle>();
+        txt.setInput("Boom", 20);
+           
         Vector3 explosionPosition = gameObject.transform.position;
         GameObject particles = Instantiate(explosionEffect, this.transform.position, Quaternion.identity);
         particles.SetActive(true);
