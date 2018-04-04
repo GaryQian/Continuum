@@ -34,6 +34,10 @@ public class Puppet : MonoBehaviour {
         recording = r;
         this.isPlayer = isPlayer;
         this.OnEvent = OnEvent;
+        Health hp = GetComponent<Health>();
+        if (hp != null) {
+            hp.OnDie += OnDie;
+        }
     }
 
 	// Use this for initialization
@@ -127,4 +131,8 @@ public class Puppet : MonoBehaviour {
 //		Debug.Log (gameObject.GetComponentInChildren<PlayerPuppetModelFlag> ().gameObject.name + "enabled");
 //		gameObject.GetComponentInChildren<PlayerPuppetModelFlag> ().gameObject.SetActive (true);
 	}
+
+    private void OnDie() {
+        Destroy(gameObject);
+    }
 }

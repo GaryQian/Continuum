@@ -71,7 +71,7 @@ public class ClickShooterScript : MonoBehaviour {
 
 
                 Shoot(data);
-                recorder.recording.AddEvent(data);
+                recorder.AddEvent(data);
 
 			}
 		}

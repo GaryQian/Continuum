@@ -7,6 +7,7 @@ public class PuppetRegister : MonoBehaviour {
 
     public static List<Recorder> recorders;
     public static List<Puppet> puppets;
+    public static List<GameObject> dead;
 
     public static Recorder playerRecorder;
     public static Puppet playerPuppet;
@@ -29,6 +30,7 @@ public class PuppetRegister : MonoBehaviour {
     public void InitLists() {
         recorders = new List<Recorder>();
         puppets = new List<Puppet>();
+        dead = new List<GameObject>();
 
         ready = false;
         Invoke("SetReady", 15.5f);
@@ -54,6 +56,10 @@ public class PuppetRegister : MonoBehaviour {
             if (r != null) r.SwitchToPuppet();
         }
         recorders = new List<Recorder>();
+        foreach (GameObject obj in dead) {
+            obj.SetActive(true);
+        }
+        dead = new List<GameObject>();
     }
 
     private void Update() {
