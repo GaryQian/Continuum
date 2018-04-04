@@ -297,6 +297,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 //m_AudioSource.Play();
                 m_AudioSource.PlayOneShot(dashClip);
                 SoundManager.PlaySingleSfx(dashClip);
+				Camera.main.GetComponent<CameraEffects>().DashCameraZoom();
             }
 			#endif
 			// set the desired speed to be walking or running
