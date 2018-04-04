@@ -46,11 +46,14 @@ public class ClickShooterScript : MonoBehaviour {
 	void Update () {
         if (isClone) return;
         if (mainCamera == null) FindCamera();
-		Debug.DrawRay (cameraTransform.position, cameraTransform.forward * 100, Color.magenta);
+//		Debug.DrawRay (cameraTransform.position, cameraTransform.forward * 100, Color.magenta);
 		if (Physics.Raycast (cameraTransform.position, cameraTransform.forward.normalized, out hit, 500, ShotLayerMask)) {
 			aimHasTarget = true;
 			bulletTargetPoint = hit.point;
-//			Debug.Log ("Hit: " + hit.transform.gameObject.name + " in " + hit.point);
+
+			Debug.Log ("Hit: " + hit.transform.gameObject.name + " in " + hit.point);
+			Debug.DrawRay (cameraTransform.position, hit.point - cameraTransform.position, Color.yellow);
+
 
 
 		} else {
@@ -65,6 +68,7 @@ public class ClickShooterScript : MonoBehaviour {
                 data.Add("aimHasTarget", aimHasTarget);
                 data.Add("bulletTargetPoint", bulletTargetPoint);
                 data.Add("muzzlePosition", muzzlePositionHolder.transform.position);
+
 
                 Shoot(data);
                 recorder.AddEvent(data);
