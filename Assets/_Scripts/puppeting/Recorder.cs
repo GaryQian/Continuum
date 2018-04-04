@@ -200,6 +200,10 @@ public class Recorder : MonoBehaviour {
             SwitchToPuppet();
             gameObject.SetActive(false);
             PuppetRegister.dead.Add(gameObject);
+            Health hp = GetComponent<Health>();
+            if (hp != null) {
+                hp.OnDie -= OnDie;
+            }
         }
         else {
             Destroy(gameObject);

@@ -101,6 +101,10 @@ public class Puppet : MonoBehaviour {
 
             Destroy(this);
         }
+        Health hp = GetComponent<Health>();
+        if (hp != null) {
+            hp.OnDie -= OnDie;
+        }
     }
 	
 	// Update is called once per frame
