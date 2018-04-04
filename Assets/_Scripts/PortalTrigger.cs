@@ -8,7 +8,7 @@ public class PortalTrigger : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+        portalScreen.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -17,6 +17,7 @@ public class PortalTrigger : MonoBehaviour {
 	}
 
 	private void OnTriggerEnter(Collider other) {
+        Debug.Log("trigger");
 		if (other.tag == "Player")
 			portalScreen.SetActive(true);
 	}
