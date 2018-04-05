@@ -16,10 +16,12 @@ public class PortalTrigger : MonoBehaviour {
 		
 	}
 
-	private void OnTriggerEnter(Collider other) {
+    private void OnTriggerEnter(Collider other) {
         Debug.Log("trigger");
-		if (other.tag == "Player")
-			portalScreen.SetActive(true);
+        if (other.tag == "Player") {
+            portalScreen.SetActive(true);
+            Debug.Log("player triggered");
+        }
 	}
 
 	private void OnTriggerExit(Collider other) {
