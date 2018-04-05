@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: ae715d81406e4a949a75af855c7554b5
+timeCreated: 1522953485
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: DK Midnight Chalker
+  fontNames:
+  - DK Midnight Chalker
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
