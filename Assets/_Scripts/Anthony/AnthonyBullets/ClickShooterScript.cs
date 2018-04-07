@@ -51,8 +51,8 @@ public class ClickShooterScript : MonoBehaviour {
 			aimHasTarget = true;
 			bulletTargetPoint = hit.point;
 
-			Debug.Log ("Hit: " + hit.transform.gameObject.name + " in " + hit.point);
-			Debug.DrawRay (cameraTransform.position, hit.point - cameraTransform.position, Color.yellow);
+			//Debug.Log ("Hit: " + hit.transform.gameObject.name + " in " + hit.point);
+			//Debug.DrawRay (cameraTransform.position, hit.point - cameraTransform.position, Color.yellow);
 
 
 
@@ -94,7 +94,7 @@ public class ClickShooterScript : MonoBehaviour {
     }
 
     void OnEvent() {
-        Debug.Log("Recorded Shoot playing");
+        //Debug.Log("Recorded Shoot playing");
         if (puppet.eventData == null) { Debug.Log("EventData null"); return; }
         switch ((string)puppet.eventData["type"]) {
             case "shoot": {

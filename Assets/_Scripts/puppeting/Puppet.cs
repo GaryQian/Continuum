@@ -13,6 +13,7 @@ public class Puppet : MonoBehaviour {
     public Recording recording;
     public Vector3 targetPos;
     public Quaternion targetRot;
+    public float targetHp;
 
     public Rigidbody body;
     public float lerpSpeed = 10f;
@@ -60,6 +61,11 @@ public class Puppet : MonoBehaviour {
     public void SnapToTarg() {
         transform.position = targetPos;
         transform.rotation = targetRot;
+        Health hp = GetComponent<Health>();
+        if (hp != null) {
+            hp.health = targetHp;
+            hp.isAlive = true;
+        }
     }
 
     IEnumerator PullRecords() {
@@ -74,6 +80,7 @@ public class Puppet : MonoBehaviour {
         Record r = recording.NextRecord();
         targetPos = r.position;
         targetRot = r.rotation;
+        targetHp = r.hp;
     }
     IEnumerator ReadEvents() {
         float elapsed = 0;
@@ -81,7 +88,7 @@ public class Puppet : MonoBehaviour {
             if (recording.events.Peek().timestamp < elapsed) {
                 EventRecord e = recording.events.Dequeue();
                 eventData = e.data;
-                if (OnEvent != null) { OnEvent(); Debug.Log("Calling OnEvent"); }
+                if (OnEvent != null) { OnEvent(); }
                 else Debug.LogWarning("Warning: Event registered but no OnEvent method!");
             }
             elapsed += Time.deltaTime;

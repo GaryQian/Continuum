@@ -96,11 +96,14 @@ public class Health : MonoBehaviour {
 
     // Callbacks for when this object dies. Register callbacks using: GetComponent<Health>().OnDie += functionname;
     public void Die() {
+        Debug.Log("Unit is dying");
         if (OnDie != null) {
+            Debug.Log("Calling Health OnDie");
             OnDie();
+            //if (GetComponent<Recorder>() == null || !GetComponent<Recorder>().isRecording) Destroy(gameObject);
         }
         else {
-            Debug.LogWarning("Warning: Entity died but no OnDie method registered. Destroying.");
+            Debug.Log("Warning: Entity died but no OnDie method registered. Destroying.");
             Destroy(gameObject);
         }
 	}
