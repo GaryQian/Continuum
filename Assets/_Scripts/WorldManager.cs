@@ -32,7 +32,8 @@ public class WorldManager : MonoBehaviour {
         props = new List<GameObject>();
         env = new List<GameObject>();
 
-        InvokeRepeating("SpawnEnemy", 10, 10);
+        Debug.Log("WorldManager Started");
+        InvokeRepeating("SpawnEnemy", 5f, 5f);
     }
 
     public void Register(GameObject obj, TrackType type) {
@@ -51,6 +52,7 @@ public class WorldManager : MonoBehaviour {
     }
 
     public void SpawnEnemy() {
+        Debug.Log("Spawning Enemy");
         Instantiate(enemyPrefab, spawnpoints[Random.Range(0, spawnpoints.Length)].position, Quaternion.identity);
     }
 
