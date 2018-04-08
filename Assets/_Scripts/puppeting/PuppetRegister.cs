@@ -13,6 +13,9 @@ public class PuppetRegister : MonoBehaviour {
     public static Puppet playerPuppet;
 
     public static bool ready;
+    public static bool inRewind;
+
+    public static float duration = 15f;
 
     private void Awake() {
         if (Instance != null) {
@@ -25,6 +28,7 @@ public class PuppetRegister : MonoBehaviour {
     // Use this for initialization
     void Start() {
         InitLists();
+        inRewind = false;
     }
 
     public void InitLists() {
@@ -43,6 +47,7 @@ public class PuppetRegister : MonoBehaviour {
 
     public void RemoveDistortion() {
         TimeDistortion.targ = 0;
+        inRewind = false;
     }
 
     public void Rewind() {
@@ -50,8 +55,9 @@ public class PuppetRegister : MonoBehaviour {
         Debug.Log("REWINDING");
         TimeDistortion.targ = 1f;
         ready = false;
-        Invoke("SetReady", 31f);
-        Invoke("RemoveDistortion", 15f);
+        inRewind = true;
+        Invoke("SetReady", duration * 2 + 0.5f);
+        Invoke("RemoveDistortion", duration);
         foreach (Recorder r in recorders) {
             if (r != null) r.SwitchToPuppet();
         }
