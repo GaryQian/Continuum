@@ -212,4 +212,11 @@ public class Recorder : MonoBehaviour {
             Destroy(gameObject);
         }
     }
+
+    private void OnDestroy() {
+        Health hp = GetComponent<Health>();
+        if (hp != null) {
+            hp.OnDie -= OnDie;
+        }
+    }
 }

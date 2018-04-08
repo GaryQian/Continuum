@@ -57,7 +57,8 @@ public class PuppetRegister : MonoBehaviour {
         }
         recorders = new List<Recorder>();
         foreach (GameObject obj in dead) {
-            obj.SetActive(true);
+
+            if (obj != null) obj.SetActive(true);
         }
         dead = new List<GameObject>();
     }

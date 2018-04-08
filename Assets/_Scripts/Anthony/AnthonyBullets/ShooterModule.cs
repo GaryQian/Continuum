@@ -17,11 +17,14 @@ public class ShooterModule : MonoBehaviour {
 	public Material NormalStateMaterial;
 	public Material AlarmedStateMaterial;
 
+    Health hp;
+
 	void Awake () {
 	}
 
 	// Use this for initialization
 	void Start () {
+        hp = GetComponentInParent<Health>();
 		InvokeRepeating ("shootBulletFromEnemy", 0f, shootInterval);
 	}
 	
@@ -69,6 +72,7 @@ public class ShooterModule : MonoBehaviour {
 	}
 
 	void shootBulletFromEnemy() {
+        if (!hp.isAlive) return;
         //enemy.destination = GameManager.Instance.player.transform.position;
 		if (targetSighted) {
 			GameObject instanceBullet = Instantiate (Bullet, Muzzle.transform.position, Quaternion.identity);

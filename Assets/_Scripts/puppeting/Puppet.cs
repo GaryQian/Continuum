@@ -146,4 +146,11 @@ public class Puppet : MonoBehaviour {
     private void OnDie() {
         Destroy(gameObject);
     }
+
+    private void OnDestroy() {
+        Health hp = GetComponent<Health>();
+        if (hp != null) {
+            hp.OnDie -= OnDie;
+        }
+    }
 }
