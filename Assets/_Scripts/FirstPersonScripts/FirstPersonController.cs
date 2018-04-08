@@ -11,10 +11,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
 	[RequireComponent(typeof (AudioSource))]
 	public class FirstPersonController : MonoBehaviour
 	{
-		[SerializeField] private bool m_IsWalking;
-		[SerializeField] private bool m_IsCrouched;
-		[SerializeField] private bool m_IsDashing;
-		[SerializeField] private bool m_Jumping;	
+		[SerializeField] public bool m_IsWalking;
+		[SerializeField] public bool m_IsCrouched;
+		[SerializeField] public bool m_IsDashing;
+		[SerializeField] public bool isDashing_delayed;
+		[SerializeField] public bool m_Jumping;	
 		[SerializeField] [Range(0f, 1f)] private float m_RunstepLenghten;
 		[SerializeField] private float m_JumpSpeed;
 		[SerializeField] private float m_StickToGroundForce;
@@ -22,7 +23,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 		[SerializeField] private float m_WalkSpeed;
 		[SerializeField] private float m_RunSpeed;
-		[SerializeField] private float m_Energy;
+		[SerializeField] public float m_Energy;
 		[SerializeField] private float m_MaxEnergy;
 		[SerializeField] private float m_DashMultiplier;
 		[SerializeField] private float m_EnergyDrainMultiplier;
@@ -298,6 +299,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 m_AudioSource.PlayOneShot(dashClip);
                 SoundManager.PlaySingleSfx(dashClip);
 				Camera.main.GetComponent<CameraEffects>().DashCameraZoom();
+				isDashing_delayed = true;
+				Invoke("setDashingDelayedFalse", 0.5f);
             }
 			#endif
 			// set the desired speed to be walking or running
@@ -343,6 +346,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
 				return;
 			}
 			body.AddForceAtPosition(m_CharacterController.velocity*0.1f, hit.point, ForceMode.Impulse);
+		}
+
+		private void setDashingDelayedFalse(){
+			isDashing_delayed = false;
 		}
 	}
 }
