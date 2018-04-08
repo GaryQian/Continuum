@@ -16,6 +16,7 @@ public class PuppetRegister : MonoBehaviour {
     public static bool inRewind;
 
     public static float duration = 15f;
+    public static float timer;
 
     private void Awake() {
         if (Instance != null) {
@@ -29,6 +30,7 @@ public class PuppetRegister : MonoBehaviour {
     void Start() {
         InitLists();
         inRewind = false;
+        timer = 0;
     }
 
     public void InitLists() {
@@ -37,7 +39,7 @@ public class PuppetRegister : MonoBehaviour {
         dead = new List<GameObject>();
 
         ready = false;
-        Invoke("SetReady", 15.5f);
+        Invoke("SetReady", duration);
     }
 
     public void SetReady() {
@@ -56,7 +58,7 @@ public class PuppetRegister : MonoBehaviour {
         TimeDistortion.targ = 1f;
         ready = false;
         inRewind = true;
-        Invoke("SetReady", duration * 2 + 0.5f);
+        Invoke("SetReady", duration * 2f);
         Invoke("RemoveDistortion", duration);
         foreach (Recorder r in recorders) {
             if (r != null) r.SwitchToPuppet();
@@ -72,6 +74,12 @@ public class PuppetRegister : MonoBehaviour {
     private void Update() {
         if (Input.GetKeyDown(KeyCode.R)) {
             Rewind();
+        }
+        if (inRewind) {
+            timer = Mathf.Max(0, timer - Time.deltaTime);
+        }
+        else {
+            timer = Mathf.Min(duration, timer + Time.deltaTime);
         }
     }
 }
