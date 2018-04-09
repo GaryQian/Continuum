@@ -123,7 +123,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 			//Adjust character model height when crouched or standing
 			if (m_IsCrouched) {
-				characterController.height = 1.46f;
+				characterController.height = 1.2f;
 			} else {
 				characterController.height = 2.92f;
 			}
@@ -306,7 +306,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			// On standalone builds, walk/run speed is modified by a key press.
 			// keep track of whether or not the character is walking or running
 			m_IsWalking = true;
-			m_IsCrouched = Input.GetKey(KeyCode.C);
+			m_IsCrouched = Input.GetKey(KeyCode.LeftControl);
             bool prevDash = m_IsDashing;
 			m_IsDashing = (Input.GetKey(KeyCode.LeftShift) && m_Energy > 99 && !prevDash) || 
 				(Input.GetKey(KeyCode.LeftShift) && m_Energy > 32 && prevDash);
