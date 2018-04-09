@@ -3589,6 +3589,12 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 399212944}
+--- !u!114 &401686627 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114363725889982368, guid: 6e0fea9e1691349feba6efb592a734d9,
+    type: 2}
+  m_PrefabInternal: {fileID: 249549587}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &407131304
 GameObject:
   m_ObjectHideFlags: 0
@@ -6862,7 +6868,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 753820664}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 477f64469270544c181c15bd91b1ceec, type: 3}
   m_Name: 
@@ -6961,6 +6967,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 1214824236}
   damageFlashDuration: 0.2
+  energyBarImage: {fileID: 401686627}
 --- !u!1 &756030684
 GameObject:
   m_ObjectHideFlags: 0
