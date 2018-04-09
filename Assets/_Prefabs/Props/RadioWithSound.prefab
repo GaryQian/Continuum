@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 82094188012295744}
   - component: {fileID: 54280783590671802}
   - component: {fileID: 65091970848619878}
+  - component: {fileID: 114502619636199488}
   m_Layer: 0
   m_Name: RadioWithSound
   m_TagString: Untagged
@@ -321,7 +322,7 @@ AudioSource:
       outSlope: 0
       tangentMode: 0
     - serializedVersion: 2
-      time: 0.10764694
+      time: 0.54107285
       value: 0
       inSlope: -0.49028066
       outSlope: -0.49028066
@@ -365,3 +366,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114502619636199488
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1569160187406706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32ec56f3393b2274aba9e8a1e0c73f66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 82094188012295744}
