@@ -2083,6 +2083,21 @@ Prefab:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 114363725889982368, guid: 6e0fea9e1691349feba6efb592a734d9,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114363725889982368, guid: 6e0fea9e1691349feba6efb592a734d9,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114363725889982368, guid: 6e0fea9e1691349feba6efb592a734d9,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0.81960785
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6e0fea9e1691349feba6efb592a734d9, type: 2}
   m_IsPrefabParent: 0
