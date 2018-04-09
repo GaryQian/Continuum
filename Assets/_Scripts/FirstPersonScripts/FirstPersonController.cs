@@ -54,6 +54,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 		private AudioSource m_AudioSource;
         public static UIBars bars;
         public static Health health;
+		public Color energyBarColor; 
+
 
         public AudioClip dashClip;
 
@@ -91,6 +93,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			handAnimator = Hand.GetComponent<Animator> ();
 
 			characterController = gameObject.GetComponent<CharacterController>();
+			energyBarColor = UIManager.instance.energyBarImage.color;
+
 		}
 
 
@@ -129,8 +133,16 @@ namespace UnityStandardAssets.Characters.FirstPerson
 				m_Energy -= (m_EnergyDrainMultiplier*Time.fixedDeltaTime);
 			} else {
 				if (m_Energy + 1 <= 100) {
-					m_Energy += (m_EnergyRegenMultiplier*Time.fixedDeltaTime);
-				} 
+					m_Energy += (m_EnergyRegenMultiplier * Time.fixedDeltaTime);
+				} else {
+					m_Energy = 100;
+				}
+			}
+
+			if (m_Energy > 99) {
+				UIManager.instance.energyBarImage.color = energyBarColor;
+			} else {
+				UIManager.instance.energyBarImage.color = Color.white * .5f;
 			}
 
 			if (!m_PreviouslyGrounded && m_CharacterController.isGrounded)
@@ -296,7 +308,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			m_IsWalking = true;
 			m_IsCrouched = Input.GetKey(KeyCode.C);
             bool prevDash = m_IsDashing;
-			m_IsDashing = Input.GetKey(KeyCode.LeftShift) && m_Energy > 32;
+			m_IsDashing = (Input.GetKey(KeyCode.LeftShift) && m_Energy > 99 && !prevDash) || 
+				(Input.GetKey(KeyCode.LeftShift) && m_Energy > 32 && prevDash);
 
             if (m_IsDashing) {
                 //m_AudioSource.clip = dashClip;// m_JumpSound;

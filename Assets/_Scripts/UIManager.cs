@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour {
 	public GameObject panel;
 	private Image redPanel;
 	public float damageFlashDuration;
+	public Image energyBarImage; 
 
 	void Awake() {
 		if (instance != null) {
