@@ -58,6 +58,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public AudioClip dashClip;
 
 		public GameObject Hand;
+		public CharacterController characterController;
 		private Animator handAnimator;
 		public Transform PuppetModelReference;
 
@@ -88,6 +89,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             GameManager.Instance.player = gameObject;
 			handAnimator = Hand.GetComponent<Animator> ();
+
+			characterController = gameObject.GetComponent<CharacterController>();
 		}
 
 
@@ -104,6 +107,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     handAnimator.SetBool("isWalking", false);
                 }
             }
+				
 #endif
 
 			RotateView();
@@ -115,9 +119,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 			//Adjust character model height when crouched or standing
 			if (m_IsCrouched) {
-				transform.localScale = new Vector3(1f, 0.5f, 1f);
+				characterController.height = 1.46f;
 			} else {
-				transform.localScale = new Vector3(1f, 1f, 1f);
+				characterController.height = 2.92f;
 			}
 
 			//Control energy levels when dashing or recovering
@@ -145,6 +149,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			m_PreviouslyGrounded = m_CharacterController.isGrounded;
 			bars.SetHealthBar(health.health, health.maxHealth);
             bars.SetStaminaBar(m_Energy, (float)100.0);
+
 		}
 
 
