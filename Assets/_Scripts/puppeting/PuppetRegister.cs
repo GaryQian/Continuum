@@ -29,6 +29,7 @@ public class PuppetRegister : MonoBehaviour {
     // Use this for initialization
     void Start() {
         InitLists();
+        RemoveDistortion();
         inRewind = false;
         timer = 0;
     }

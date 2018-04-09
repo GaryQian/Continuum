@@ -4090,6 +4090,7 @@ MonoBehaviour:
   m_IsWalking: 0
   m_IsCrouched: 0
   m_IsDashing: 0
+  isDashing_delayed: 0
   m_Jumping: 0
   m_RunstepLenghten: 0.7
   m_JumpSpeed: 10
@@ -4212,8 +4213,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a288580eb964441a0b6b4045b68c33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1000
-  maxHealth: 3000
+  health: 400
+  maxHealth: 400
   invincible: 0
   armor: 1
   isAlive: 1
