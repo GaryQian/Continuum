@@ -14,6 +14,7 @@ public class PlayerDeath : MonoBehaviour
     void Start()
     {
         GetComponent<Health>().OnDie += TriggerMenu;
+        deathUI = UIManager.instance.deathUI;
     }
 
 
