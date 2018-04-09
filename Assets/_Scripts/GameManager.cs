@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 /// <summary>
@@ -42,6 +43,11 @@ public class GameManager : MonoBehaviour {
 	/// Global update. Run on every frame. Try to put things in more local update loops, but some things like global counters can go here.
 	/// </summary>
 	void Update () {
-	}
+
+        if (Input.GetKeyDown(KeyCode.Alpha1)) SceneManager.LoadScene("Title");
+        if (Input.GetKeyDown(KeyCode.Alpha2)) SceneManager.LoadScene("Tutorial");
+        if (Input.GetKeyDown(KeyCode.Alpha3)) SceneManager.LoadScene("blue");
+        if (Input.GetKeyDown(KeyCode.Alpha4)) SceneManager.LoadScene("Green");
+    }
 
 }
