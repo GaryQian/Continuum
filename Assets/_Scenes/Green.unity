@@ -19893,22 +19893,22 @@ Prefab:
       propertyPath: m_Name
       value: Canvas (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 224571127228753244, guid: 4ba288ddb7a6e98439f6eb779a640986,
+    - target: {fileID: 224125283037491202, guid: 4ba288ddb7a6e98439f6eb779a640986,
         type: 2}
       propertyPath: m_AnchorMax.x
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 224571127228753244, guid: 4ba288ddb7a6e98439f6eb779a640986,
+    - target: {fileID: 224125283037491202, guid: 4ba288ddb7a6e98439f6eb779a640986,
         type: 2}
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 224125283037491202, guid: 4ba288ddb7a6e98439f6eb779a640986,
+    - target: {fileID: 224571127228753244, guid: 4ba288ddb7a6e98439f6eb779a640986,
         type: 2}
       propertyPath: m_AnchorMax.x
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 224125283037491202, guid: 4ba288ddb7a6e98439f6eb779a640986,
+    - target: {fileID: 224571127228753244, guid: 4ba288ddb7a6e98439f6eb779a640986,
         type: 2}
       propertyPath: m_AnchorMax.y
       value: 1
