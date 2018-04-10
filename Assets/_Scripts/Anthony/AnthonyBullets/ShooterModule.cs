@@ -16,6 +16,7 @@ public class ShooterModule : MonoBehaviour {
 	private bool targetSighted = false;
 	public Material NormalStateMaterial;
 	public Material AlarmedStateMaterial;
+	public bool randomizeShotInterval = true;
 
     Health hp;
 
@@ -25,7 +26,12 @@ public class ShooterModule : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         hp = GetComponentInParent<Health>();
-		InvokeRepeating ("shootBulletFromEnemy", 0f, shootInterval);
+		if (randomizeShotInterval) {
+			InvokeRepeating ("shootBulletFromEnemy", 0f, Random.Range(0.1f, 0.5f));
+		} else {
+			InvokeRepeating ("shootBulletFromEnemy", 0f, shootInterval);
+		}
+
 	}
 	
 	// Update is called once per frame
@@ -76,7 +82,8 @@ public class ShooterModule : MonoBehaviour {
         //enemy.destination = GameManager.Instance.player.transform.position;
 		if (targetSighted) {
 			GameObject instanceBullet = Instantiate (Bullet, Muzzle.transform.position, Quaternion.identity);
-			instanceBullet.transform.rotation = Quaternion.LookRotation (GameManager.Instance.player.transform.position - transform.position);
+			instanceBullet.transform.rotation = Quaternion.Euler(Quaternion.LookRotation (GameManager.Instance.player.transform.position - transform.position).eulerAngles
+				+ new Vector3(Random.Range(-5f, 5f), Random.Range(-5f, 5f), Random.Range(-5f, 5f)));
 			BulletMovement bulletScript = instanceBullet.GetComponent<BulletMovement> ();
 			bulletScript.ShotSource = this.gameObject;
 		}
@@ -85,4 +92,5 @@ public class ShooterModule : MonoBehaviour {
 	void shootBullet(){
 
 	}
+
 }

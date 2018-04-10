@@ -734,11 +734,11 @@ MonoBehaviour:
   Gun: {fileID: 1901938388001828}
   Body: {fileID: 1900685113539768}
   Muzzle: {fileID: 1266252029195176}
-  Bullet: {fileID: 1966532732242780, guid: 18c97c57c7bd14d9c9c03d0002343918, type: 2}
+  Bullet: {fileID: 1966532732242780, guid: 24167653aa6944cdeb61c4acd739736c, type: 2}
   enemy: {fileID: 0}
   shootInterval: 1
-  sightRange: 15
-  detectionRange: 30
+  sightRange: 300
+  detectionRange: 600
   NormalStateMaterial: {fileID: 2100000, guid: 5b334a50544cc4ba992d08b310d10bd2, type: 2}
   AlarmedStateMaterial: {fileID: 2100000, guid: b1d8ab6de18c24ea0bb972053e09f2f6,
     type: 2}
@@ -780,11 +780,11 @@ MonoBehaviour:
   Gun: {fileID: 1947233034851028}
   Body: {fileID: 1692237367603860}
   Muzzle: {fileID: 1994692820313188}
-  Bullet: {fileID: 1966532732242780, guid: 18c97c57c7bd14d9c9c03d0002343918, type: 2}
+  Bullet: {fileID: 1966532732242780, guid: 24167653aa6944cdeb61c4acd739736c, type: 2}
   enemy: {fileID: 0}
   shootInterval: 1
-  sightRange: 15
-  detectionRange: 30
+  sightRange: 300
+  detectionRange: 600
   NormalStateMaterial: {fileID: 2100000, guid: 5b334a50544cc4ba992d08b310d10bd2, type: 2}
   AlarmedStateMaterial: {fileID: 2100000, guid: b1d8ab6de18c24ea0bb972053e09f2f6,
     type: 2}
