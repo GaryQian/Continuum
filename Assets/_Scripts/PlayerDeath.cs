@@ -21,13 +21,14 @@ public class PlayerDeath : MonoBehaviour
 
     public void TriggerMenu()
     {
-        deathUI.SetActive(true);
-        Vector3 vec = new Vector3(0, 24, 0);
-        Quaternion rotation = new Quaternion((float)64.80, 0, 0, 0);
-        Camera cam = Instantiate(deathCamera, vec, rotation);
-        cam.enabled = true;
-        Time.timeScale = 0f;
-        Cursor.lockState = CursorLockMode.None;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //deathUI.SetActive(true);
+        //Vector3 vec = new Vector3(0, 24, 0);
+        //Quaternion rotation = new Quaternion((float)64.80, 0, 0, 0);
+        //Camera cam = Instantiate(deathCamera, vec, rotation);
+        //cam.enabled = true;
+        //Time.timeScale = 0f;
+        //Cursor.lockState = CursorLockMode.None;
     }
 }
 
