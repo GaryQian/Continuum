@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 54872831697539950}
   - component: {fileID: 114954318882247944}
   m_Layer: 0
-  m_Name: BulletPrefab
+  m_Name: CannonBallBig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39,7 +39,7 @@ Transform:
   m_GameObject: {fileID: 1966532732242780}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -58,7 +58,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6620391bb9f8b464a80c50baa93ee622, type: 2}
+  - {fileID: 2100000, guid: c6f89535ab55143e69cf782fea09751b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -112,9 +112,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShotSource: {fileID: 0}
-  bulletSpeed: 500
+  bulletSpeed: 3001
   bulletDamage: 20
-  timeTillDestroy: 4
+  timeTillDestroy: 10
   trailTime: 0.5
   trailWidth: 0.05
   trailMaterial: {fileID: 2100000, guid: d12b53553e3ec4982ad66e5a59894807, type: 2}
