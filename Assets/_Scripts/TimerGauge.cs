@@ -15,11 +15,11 @@ public class TimerGauge : MonoBehaviour {
 	void Update () {
         curTimer = PuppetRegister.timer;
 
-        if (curTimer <= maxTimer) {
-            text.text = (int)curTimer + "%";
+        if (curTimer <= maxTimer - 0.1f) {
+            text.text = "" + (int)curTimer;
             fill.fillAmount = curTimer / maxTimer;
         } else {
-            text.text = "Ready!";
+            text.text = "R";
             fill.fillAmount = 1;
         }
 	}
