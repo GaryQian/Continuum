@@ -16,7 +16,7 @@ public class TimerGauge : MonoBehaviour {
         curTimer = PuppetRegister.timer;
 
         if (curTimer <= maxTimer) {
-            text.text = curTimer + "%";
+            text.text = (int)curTimer + "%";
             fill.fillAmount = curTimer / maxTimer;
         } else {
             text.text = "Ready!";
