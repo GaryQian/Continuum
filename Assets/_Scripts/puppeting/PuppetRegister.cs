@@ -15,7 +15,7 @@ public class PuppetRegister : MonoBehaviour {
     public static bool ready;
     public static bool inRewind;
 
-    public static float duration = 15f;
+    public static float duration = 10f;
     public static float timer;
 
     private void Awake() {

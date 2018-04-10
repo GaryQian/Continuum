@@ -6,13 +6,17 @@ using UnityEngine.UI;
 public class TimerGauge : MonoBehaviour {
 
     private float curTimer;
-    public float maxTimer = 10f;
+    float maxTimer;
 
     public Text text;
     public Image fill;
 
-	// Update is called once per frame
-	void Update () {
+    private void Start() {
+        maxTimer = PuppetRegister.duration;
+    }
+
+    // Update is called once per frame
+    void Update () {
         curTimer = PuppetRegister.timer;
 
         if (curTimer <= maxTimer - 0.1f) {
