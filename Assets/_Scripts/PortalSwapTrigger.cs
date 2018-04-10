@@ -20,6 +20,7 @@ public class PortalSwapTrigger : MonoBehaviour {
 		if (!destroyComplete && PuppetRegister.inRewind && other.gameObject.tag.Equals ("Player") && other.gameObject.GetComponent<Puppet>() == null) {
 			Destroy (originalModel);
 			portalModel.SetActive (true);
+
 		}
 	}
 }
