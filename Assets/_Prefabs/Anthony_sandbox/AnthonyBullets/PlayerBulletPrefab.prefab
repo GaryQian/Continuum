@@ -112,11 +112,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShotSource: {fileID: 0}
-  bulletSpeed: 1500
+  bulletSpeed: 2000
   bulletDamage: 20
-  timeTillDestroy: 4
+  timeTillDestroy: 10
   trailTime: 0.5
-  trailWidth: 0.05
+  trailWidth: 0.07
   trailMaterial: {fileID: 2100000, guid: d12b53553e3ec4982ad66e5a59894807, type: 2}
   trailGradient:
     serializedVersion: 2

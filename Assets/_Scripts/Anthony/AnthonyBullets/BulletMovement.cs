@@ -26,13 +26,12 @@ public class BulletMovement : MonoBehaviour {
 		// Shoot the bullet
 		bulletRb = this.gameObject.GetComponent<Rigidbody> ();
 		bulletRb.AddForce (transform.forward * bulletSpeed);
+        Invoke("Die", timeTillDestroy);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (createdAt + timeTillDestroy < Time.time) {
-			Destroy (this.gameObject);
-		}
+
 	}
 
 	void OnTriggerEnter(Collider other){
@@ -68,6 +67,10 @@ public class BulletMovement : MonoBehaviour {
 		trailRenderer.colorGradient = trailGradient;
 		trailRenderer.time = trailTime;
 	}
+
+    void Die() {
+        Destroy(gameObject);
+    }
 
 
 }

@@ -113,7 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShotSource: {fileID: 0}
   bulletSpeed: 3001
-  bulletDamage: 20
+  bulletDamage: 50
   timeTillDestroy: 10
   trailTime: 0.5
   trailWidth: 0.05

@@ -46,7 +46,7 @@ public class Recording {
         events = new Queue<EventRecord>();
         this.type = type;
         this.recordDelay = recordDelay;
-        this.maxRecords = (int)(15f / recordDelay);
+        this.maxRecords = (int)(PuppetRegister.duration / recordDelay);
         this.startTime = Time.time;
     }
 
@@ -166,7 +166,7 @@ public class Recorder : MonoBehaviour {
 			p.SwapPlayerModel();
 
             Debug.Log("Cloned");
-            Invoke("StartRecording", 15f);
+            Invoke("StartRecording", PuppetRegister.duration);
             transform.position = recording.records.Peek().position;
 
             StopRecording();
