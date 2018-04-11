@@ -1483,6 +1483,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1739986794317446
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4340593042506288}
+  m_Layer: 11
+  m_Name: CameraFollowingMuzzlePositionHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1746894665709008
 GameObject:
   m_ObjectHideFlags: 1
@@ -2538,6 +2553,19 @@ Transform:
   m_Father: {fileID: 4942789107180954}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4340593042506288
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1739986794317446}
+  m_LocalRotation: {x: -0.020077659, y: -0, z: 0.000000028871, w: 0.9997984}
+  m_LocalPosition: {x: 0.3429999, y: -0.20710683, z: 1.1786134}
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_Children: []
+  m_Father: {fileID: 4447144552739214}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4342993517560364
 Transform:
   m_ObjectHideFlags: 1
@@ -2813,7 +2841,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 2.809, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4340593042506288}
   m_Father: {fileID: 4386139863695374}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3587,8 +3616,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1322476788873332}
-  m_LocalRotation: {x: -0, y: -0.11066626, z: -0, w: 0.9938577}
-  m_LocalPosition: {x: 73.4, y: 33.9, z: -125.6}
+  m_LocalRotation: {x: 0, y: 0.5994428, z: 0, w: 0.8004176}
+  m_LocalPosition: {x: -3.73, y: 3.03, z: -14.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4420342042251580}
@@ -3596,7 +3625,7 @@ Transform:
   - {fileID: 4386139863695374}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -12.707001, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 73.66, z: 0}
 --- !u!4 &4925642508732858
 Transform:
   m_ObjectHideFlags: 1
@@ -4187,8 +4216,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
   m_JumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
   m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
+  energyBarColor: {r: 0, g: 0, b: 0, a: 0}
   dashClip: {fileID: 8300000, guid: aa60ebc9845610d41a49e2f00b6e9545, type: 3}
   Hand: {fileID: 1815981211101238}
+  characterController: {fileID: 0}
   PuppetModelReference: {fileID: 0}
 --- !u!114 &114257625368910740
 MonoBehaviour:
@@ -4230,7 +4261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hand: {fileID: 1815981211101238}
-  muzzlePositionHolder: {fileID: 1621541747751116}
+  muzzlePositionHolder: {fileID: 1739986794317446}
   bullet: {fileID: 1966532732242780, guid: a525a2b089dbc47cdb656d539ddd59f5, type: 2}
   mainCamera: {fileID: 0}
   ShotLayerMask:
