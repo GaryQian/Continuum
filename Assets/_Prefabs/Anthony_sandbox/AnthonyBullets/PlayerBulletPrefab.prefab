@@ -39,7 +39,7 @@ Transform:
   m_GameObject: {fileID: 1966532732242780}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -112,11 +112,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShotSource: {fileID: 0}
-  bulletSpeed: 2000
+  bulletSpeed: 5000
   bulletDamage: 20
   timeTillDestroy: 10
-  trailTime: 0.5
-  trailWidth: 0.07
+  trailTime: 1
+  trailWidth: 0.1
   trailMaterial: {fileID: 2100000, guid: d12b53553e3ec4982ad66e5a59894807, type: 2}
   trailGradient:
     serializedVersion: 2

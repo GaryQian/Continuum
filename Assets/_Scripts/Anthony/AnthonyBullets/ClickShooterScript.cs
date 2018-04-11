@@ -90,7 +90,9 @@ public class ClickShooterScript : MonoBehaviour {
         BulletMovement bulletScript = instanceBullet.GetComponent<BulletMovement>();
         bulletScript.ShotSource = this.gameObject;
 
-        if (handAnimator != null) handAnimator.Play("GunFire");
+		if (handAnimator != null) {
+			handAnimator.CrossFade ("GunFire", 0.1f);
+		}
     }
 
     void OnEvent() {
