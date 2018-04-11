@@ -1549,6 +1549,11 @@ Prefab:
       propertyPath: m_Name
       value: TurretObjectV2 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 114578324728785274, guid: 06caca6e4cb1946fab2c7d78f5f5d788,
+        type: 2}
+      propertyPath: maxHealth
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 06caca6e4cb1946fab2c7d78f5f5d788, type: 2}
   m_IsPrefabParent: 0
@@ -1616,6 +1621,11 @@ Prefab:
     - target: {fileID: 1323448369925108, guid: 06caca6e4cb1946fab2c7d78f5f5d788, type: 2}
       propertyPath: m_Name
       value: TurretObjectV2 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114578324728785274, guid: 06caca6e4cb1946fab2c7d78f5f5d788,
+        type: 2}
+      propertyPath: maxHealth
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 06caca6e4cb1946fab2c7d78f5f5d788, type: 2}
@@ -15850,6 +15860,11 @@ Prefab:
       propertyPath: m_Name
       value: TurretObjectV2 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 114578324728785274, guid: 06caca6e4cb1946fab2c7d78f5f5d788,
+        type: 2}
+      propertyPath: maxHealth
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 06caca6e4cb1946fab2c7d78f5f5d788, type: 2}
   m_IsPrefabParent: 0
@@ -15997,6 +16012,11 @@ Prefab:
     - target: {fileID: 4044110133989042, guid: 06caca6e4cb1946fab2c7d78f5f5d788, type: 2}
       propertyPath: m_LocalScale.z
       value: 10.839533
+      objectReference: {fileID: 0}
+    - target: {fileID: 114578324728785274, guid: 06caca6e4cb1946fab2c7d78f5f5d788,
+        type: 2}
+      propertyPath: maxHealth
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 06caca6e4cb1946fab2c7d78f5f5d788, type: 2}
@@ -25280,7 +25300,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-1614596
+  m_Name: pb_Mesh-223442
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -27465,6 +27485,11 @@ Prefab:
       propertyPath: m_Name
       value: TurretObjectV2 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 114578324728785274, guid: 06caca6e4cb1946fab2c7d78f5f5d788,
+        type: 2}
+      propertyPath: maxHealth
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 06caca6e4cb1946fab2c7d78f5f5d788, type: 2}
   m_IsPrefabParent: 0
@@ -27532,6 +27557,11 @@ Prefab:
     - target: {fileID: 1323448369925108, guid: 06caca6e4cb1946fab2c7d78f5f5d788, type: 2}
       propertyPath: m_Name
       value: TurretObjectV2 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114578324728785274, guid: 06caca6e4cb1946fab2c7d78f5f5d788,
+        type: 2}
+      propertyPath: maxHealth
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 06caca6e4cb1946fab2c7d78f5f5d788, type: 2}
