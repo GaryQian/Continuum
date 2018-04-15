@@ -91,7 +91,8 @@ public class ClickShooterScript : MonoBehaviour {
         bulletScript.ShotSource = this.gameObject;
 
 		if (handAnimator != null) {
-			handAnimator.CrossFade ("GunFire", 0.1f);
+//			handAnimator.CrossFade ("GunShooting", 0.1f);
+			handAnimator.SetTrigger ("isFiring");
 		}
     }
 
