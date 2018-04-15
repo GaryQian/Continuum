@@ -2231,6 +2231,11 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 114857355280928650, guid: 62c408069c45a45febdb368be00ab891,
+        type: 2}
+      propertyPath: targetScene
+      value: _Scenes/_Levels/Red
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 62c408069c45a45febdb368be00ab891, type: 2}
   m_IsPrefabParent: 0
@@ -3290,7 +3295,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-1482
+  m_Name: pb_Mesh-510014
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -8850,7 +8855,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-325672
+  m_Name: pb_Mesh-509194
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2

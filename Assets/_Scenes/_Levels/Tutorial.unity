@@ -1063,7 +1063,7 @@ Prefab:
     - target: {fileID: 114857355280928650, guid: 62c408069c45a45febdb368be00ab891,
         type: 2}
       propertyPath: targetScene
-      value: blue
+      value: _Scenes/_Levels/Blue
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 62c408069c45a45febdb368be00ab891, type: 2}
@@ -9872,7 +9872,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-3492368
+  m_Name: pb_Mesh-35188
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
