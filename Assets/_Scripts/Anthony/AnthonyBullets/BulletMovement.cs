@@ -37,7 +37,7 @@ public class BulletMovement : MonoBehaviour {
 	void OnTriggerEnter(Collider other){
 //		Debug.Log ("Collided with: " + other.gameObject.name);
 
-		if(other.tag.Equals("Environment")){
+		if(other.gameObject.layer == 12){
 			Destroy (this.gameObject);
             return;
 		} else if (other.tag.Equals ("Player") && ShotSource.tag.Equals("Enemy")) {
