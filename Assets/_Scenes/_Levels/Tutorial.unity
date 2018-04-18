@@ -2891,7 +2891,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 250878649}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 27.277, y: 6.17, z: 21.92}
+  m_LocalPosition: {x: 35.14, y: 6.17, z: 21.92}
   m_LocalScale: {x: 0.6000002, y: 0.59999996, z: 0.6000002}
   m_Children: []
   m_Father: {fileID: 97261222}
@@ -11782,7 +11782,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 998753819}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.77, y: 4.2, z: 16.75}
+  m_LocalPosition: {x: 17.34, y: 4.2, z: 16.75}
   m_LocalScale: {x: 8.548832, y: 9.59086, z: 29.511835}
   m_Children: []
   m_Father: {fileID: 97261222}
@@ -11845,7 +11845,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.09, y: 1, z: 1}
+  m_Size: {x: 2.72, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &998753824
 MeshFilter:
@@ -12966,7 +12966,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4714091378011150, guid: 7faf24d5aa2b04466a059873ee96d73c, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 23.65
+      value: 30.2025
       objectReference: {fileID: 0}
     - target: {fileID: 4714091378011150, guid: 7faf24d5aa2b04466a059873ee96d73c, type: 2}
       propertyPath: m_LocalRotation.x

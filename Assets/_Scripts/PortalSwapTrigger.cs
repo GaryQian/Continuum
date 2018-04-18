@@ -23,4 +23,8 @@ public class PortalSwapTrigger : MonoBehaviour {
 
 		}
 	}
+
+    private void OnTriggerExit(Collider other) {
+        OnTriggerEnter(other);
+    }
 }
