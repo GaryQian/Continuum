@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Glitch_waterfall
+  m_Name: Peter_waterfall
   m_Shader: {fileID: 4800000, guid: 8714bf7bd7d8c4497bdccb97c2db814b, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
@@ -39,7 +39,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: a030686f3014f4fcd98837a14012a754, type: 3}
+        m_Texture: {fileID: 2800000, guid: 082d56a56438e47c3a6d32656ffe2f13, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
