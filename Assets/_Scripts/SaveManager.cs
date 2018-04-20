@@ -36,8 +36,14 @@ public class SettingsData {
     //public bool setting;
     public bool soundOn;
     public bool musicOn;
+    public int controlScheme;
+    public int furthestLevel;
     public SettingsData() {
         //setting = false;
+        soundOn = true;
+        musicOn = true;
+        controlScheme = 0;
+        furthestLevel = 0;
     }
 
 }
