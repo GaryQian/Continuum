@@ -8,19 +8,23 @@ public class MovingPlatform : MonoBehaviour {
     public Vector3 startPos;
     public bool autoSetStart = false;
     public float duration = 5f;
-    float t = 0;
+    float t;
     bool dir = true;
     public float initOffset = 0;
+    public bool freeze = false;
     public Rigidbody body;
 	// Use this for initialization
 	void Start () {
         if (autoSetStart) startPos = transform.position;
-        t = (initOffset % duration) / duration;
+        t = 1.0f * initOffset * duration;
+        Debug.Log("" + t + " " + initOffset + " " + duration);
         body = GetComponent<Rigidbody>();
+        FixedUpdate();
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+        if (freeze) return;
         t += Time.fixedDeltaTime;
         if (t > duration) {
             t = 0;
@@ -50,6 +54,10 @@ public class MovingPlatform : MonoBehaviour {
     public void GoToEnd() {
         transform.position = endPos;
     }
+
+    public void RandomInitOffset() {
+        initOffset = (float)Random.Range(0f, 1f);
+    }
 }
 
 [CustomEditor(typeof(MovingPlatform))]
@@ -71,6 +79,10 @@ public class MovingPlatformEditor : Editor {
         }
         if (GUILayout.Button("Go To End")) {
             myScript.GoToEnd();
+        }
+
+        if (GUILayout.Button("Randomize Init")) {
+            myScript.RandomInitOffset();
         }
     }
 }
