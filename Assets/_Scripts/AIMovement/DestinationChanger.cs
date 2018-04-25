@@ -98,14 +98,14 @@ public class DestinationChanger : MonoBehaviour {
 		LaserIndicatorRenderer.SetPositions (new Vector3[]{TurretFireLight.transform.position, laserTargetPoint});
 		LaserIndicatorRenderer.enabled = true;
 
-		yield return new WaitForSeconds(3f);
+		yield return new WaitForSeconds(1.5f);
 
 		//Fire laser sequence
 		scorpionRenderer.material = AfterShotMaterial;
 		LaserIndicatorRenderer.enabled = false;
 		LaserRenderer.SetPositions (new Vector3[]{TurretFireLight.transform.position, laserTargetPoint});
 		LaserRenderer.enabled = true;
-		yield return new WaitForSeconds(3f);
+		yield return new WaitForSeconds(1.5f);
 
 		//Laser turnoff sequence
 		LaserChargeLight.enabled = false;
