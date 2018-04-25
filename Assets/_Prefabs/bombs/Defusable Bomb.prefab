@@ -23,9 +23,7 @@ GameObject:
   - component: {fileID: 23219619540318882}
   - component: {fileID: 64936094279206552}
   - component: {fileID: 135663219527200630}
-  - component: {fileID: 114911839346040614}
   - component: {fileID: 114856350255610132}
-  - component: {fileID: 114523274341579318}
   - component: {fileID: 114239774912589968}
   m_Layer: 0
   m_Name: Defusable Bomb
@@ -41,8 +39,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1621963970670206}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.7, y: 0.18, z: 5.88}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalPosition: {x: 51.26789, y: 357.72375, z: 183.45633}
+  m_LocalScale: {x: 0.08, y: 0.08, z: 0.08}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -114,23 +112,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
---- !u!114 &114523274341579318
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1621963970670206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4404934efa6f824097512031a81b85e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 3
-  recordDelay: 0.1
-  isRecording: 0
-  recordOnStart: 1
-  health: {fileID: 0}
-  isPlayer: 0
 --- !u!114 &114856350255610132
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -146,25 +127,11 @@ MonoBehaviour:
   power: 10
   upforce: 1
   explosionEffect: {fileID: 100004, guid: 164aaa7e1b58e17408278903dd66786f, type: 2}
-  defusalTime: 5
-  timer: 15
+  defusalTime: 10
+  timer: 50
   defusalSlider: {fileID: 0}
---- !u!114 &114911839346040614
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1621963970670206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7a288580eb964441a0b6b4045b68c33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 0
-  maxHealth: 50
-  invincible: 0
-  armor: 1
-  isAlive: 1
+  sliderPrefab: {fileID: 1005804669639878, guid: 8e332f1d8072c4be99f6657cf294a778,
+    type: 2}
 --- !u!135 &135663219527200630
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -175,5 +142,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 300
+  m_Radius: 150
   m_Center: {x: -0.007499695, y: 28.1856, z: -15.6052475}
