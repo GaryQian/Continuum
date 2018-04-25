@@ -86,7 +86,7 @@ public class Puppet : MonoBehaviour {
         float elapsed = 0;
         while (recording.HasEvent()) {
             if (recording.events.Peek().timestamp < elapsed) {
-                Debug.Log("Event Firing: " + elapsed);
+                //Debug.Log("Event Firing: " + elapsed);
                 EventRecord e = recording.events.Dequeue();
                 eventData = e.data;
                 if (OnEvent != null) { OnEvent(); }
