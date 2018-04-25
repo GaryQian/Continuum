@@ -82,8 +82,13 @@ public class ShooterModule : MonoBehaviour {
         //enemy.destination = GameManager.Instance.player.transform.position;
 		if (targetSighted) {
 			GameObject instanceBullet = Instantiate (Bullet, Muzzle.transform.position, Quaternion.identity);
+//			float distanceSpreadMultiplier = 50000f /(GameManager.Instance.player.transform.position - transform.position).sqrMagnitude;
+			float distanceSpreadMultiplier = 2.5f / Mathf.Log((GameManager.Instance.player.transform.position - transform.position).sqrMagnitude);
+			Debug.Log (distanceSpreadMultiplier + "");
 			instanceBullet.transform.rotation = Quaternion.Euler(Quaternion.LookRotation (GameManager.Instance.player.transform.position - transform.position).eulerAngles
-				+ new Vector3(Random.Range(-5f, 5f), Random.Range(-5f, 5f), Random.Range(-5f, 5f)));
+				+ new Vector3(Random.Range(-1f * distanceSpreadMultiplier, 1f * distanceSpreadMultiplier), 
+					Random.Range(-1f * distanceSpreadMultiplier, 1f * distanceSpreadMultiplier), 
+					Random.Range(-1f * distanceSpreadMultiplier, 1f * distanceSpreadMultiplier)));
 			BulletMovement bulletScript = instanceBullet.GetComponent<BulletMovement> ();
 			bulletScript.ShotSource = this.gameObject;
 		}
