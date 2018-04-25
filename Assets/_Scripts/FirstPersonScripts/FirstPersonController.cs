@@ -51,7 +51,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 		private Vector3 m_OriginalCameraPosition;
 		private float m_StepCycle;
 		private float m_NextStep;
-		private AudioSource m_AudioSource;
+		public AudioSource m_AudioSource;
+        public AudioSource DashAudioSource;
         public static UIBars bars;
         public static Health health;
 		public Color energyBarColor; 
@@ -76,7 +77,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			m_StepCycle = 0f;
 			m_NextStep = m_StepCycle/2f;
 			m_Jumping = false;
-			m_AudioSource = GetComponent<AudioSource>();
+			//m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
             health = (Health) GetComponent(typeof(Health));
             bars = (UIBars)GetComponent(typeof(UIBars));
@@ -308,14 +309,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			m_IsWalking = true;
 			m_IsCrouched = Input.GetKey(KeyCode.LeftControl);
             bool prevDash = m_IsDashing;
-			m_IsDashing = (Input.GetKey(KeyCode.LeftShift) && m_Energy > 99 && !prevDash) || 
-				(Input.GetKey(KeyCode.LeftShift) && m_Energy > 32 && prevDash);
+			m_IsDashing = (Input.GetKey(KeyCode.LeftShift) && m_Energy > 99 && !prevDash)
+                || (Input.GetKey(KeyCode.LeftShift) && m_Energy > 32 && prevDash)
+                ;
 
             if (m_IsDashing) {
                 //m_AudioSource.clip = dashClip;// m_JumpSound;
                 //m_AudioSource.Play();
-                m_AudioSource.PlayOneShot(dashClip);
-                SoundManager.PlaySingleSfx(dashClip);
+                if (m_Energy > 99) DashAudioSource.PlayOneShot(dashClip);
+                //SoundManager.PlaySingleSfx(dashClip);
 				Camera.main.GetComponent<CameraEffects>().DashCameraZoom();
 				isDashing_delayed = true;
 				Invoke("setDashingDelayedFalse", 0.5f);
