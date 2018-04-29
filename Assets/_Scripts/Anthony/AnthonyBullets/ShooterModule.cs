@@ -47,9 +47,11 @@ public class ShooterModule : MonoBehaviour {
         if (Vector3.Distance(GameManager.Instance.player.transform.position, transform.position) < sightRange)
         {
             RaycastHit hit;
-            if (GameManager.Instance.player && Physics.Raycast(transform.position, ((GameManager.Instance.player.transform.position + new Vector3(0, 0.5f, 0)) - transform.position).normalized, out hit, detectionRange))
+            int mask = 1 << 12 + 1 << 10;
+            mask = ~mask;
+            if (GameManager.Instance.player && Physics.Raycast(transform.position, ((GameManager.Instance.player.transform.position + new Vector3(0, 0.5f, 0)) - transform.position).normalized, out hit, detectionRange, mask))
             {
-                if (hit.transform.gameObject.CompareTag("Player"))
+                if (hit.transform.gameObject.CompareTag("Player") || hit.transform.gameObject.CompareTag("Enemy"))
                 {
                     if (!targetSighted)
                     {
@@ -84,7 +86,7 @@ public class ShooterModule : MonoBehaviour {
 			GameObject instanceBullet = Instantiate (Bullet, Muzzle.transform.position, Quaternion.identity);
 //			float distanceSpreadMultiplier = 50000f /(GameManager.Instance.player.transform.position - transform.position).sqrMagnitude;
 			float distanceSpreadMultiplier = 2.5f / Mathf.Log((GameManager.Instance.player.transform.position - transform.position).sqrMagnitude);
-			Debug.Log (distanceSpreadMultiplier + "");
+			//Debug.Log (distanceSpreadMultiplier + "");
 			instanceBullet.transform.rotation = Quaternion.Euler(Quaternion.LookRotation (GameManager.Instance.player.transform.position - transform.position).eulerAngles
 				+ new Vector3(Random.Range(-1f * distanceSpreadMultiplier, 1f * distanceSpreadMultiplier), 
 					Random.Range(-1f * distanceSpreadMultiplier, 1f * distanceSpreadMultiplier), 

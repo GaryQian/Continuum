@@ -26,8 +26,8 @@ TagManager:
   - PlayerHUDObjects
   - Walls
   - Enemy
-  - 
-  - 
+  - Bomb
+  - Bullet
   - 
   - 
   - 
