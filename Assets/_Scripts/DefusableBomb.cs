@@ -39,6 +39,14 @@ public class DefusableBomb : MonoBehaviour
             defusalSlider.gameObject.SetActive(false);
             Destroy(gameObject);
         }
+
+        string s = "00:";
+        if (timer < 10f) s += "0";
+        s += (int)timer + ":";
+        float remain = 10f * (timer - (int)timer);
+        //if (remain < 10f) s += 0;
+        s += (int)remain;
+        GetComponentInChildren<FollowText>().SetText(s);
     }
 
     private void OnTriggerStay(Collider col) {
