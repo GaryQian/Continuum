@@ -54,7 +54,7 @@ public class DestinationChanger : MonoBehaviour {
 
 
 		if (Physics.Raycast (this.gameObject.transform.position, playerCoordinates - this.gameObject.transform.position + new Vector3(0, 1f, 0), out hit, 1000, ShotLayerMask)) {
-			Debug.Log (hit.collider.gameObject.name);
+			//Debug.Log (hit.collider.gameObject.name);
 			Debug.DrawRay (this.gameObject.transform.position, hit.point - this.gameObject.transform.position, Color.magenta);
 
 

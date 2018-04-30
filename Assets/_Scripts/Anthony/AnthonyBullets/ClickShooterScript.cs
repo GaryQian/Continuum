@@ -17,6 +17,7 @@ public class ClickShooterScript : MonoBehaviour {
     public Recorder recorder;
     public Puppet puppet;
 
+    public GameObject NowTargeting;
 
     public float shotDelay = 0.15f;
 	private bool aimHasTarget = false;
@@ -25,7 +26,7 @@ public class ClickShooterScript : MonoBehaviour {
     public bool isClone = false;
 
 	void Awake(){
-		ShotLayerMask = LayerMask.GetMask(new string[]{"Default"});
+		ShotLayerMask = LayerMask.GetMask(new string[]{"Default", "Walls", "Enemy"});
 	}
 
 	// Use this for initialization
@@ -50,9 +51,10 @@ public class ClickShooterScript : MonoBehaviour {
 		if (Physics.Raycast (cameraTransform.position, cameraTransform.forward.normalized, out hit, 500, ShotLayerMask)) {
 			aimHasTarget = true;
 			bulletTargetPoint = hit.point;
+            NowTargeting = hit.transform.gameObject;
 
 			//Debug.Log ("Hit: " + hit.transform.gameObject.name + " in " + hit.point);
-			//Debug.DrawRay (cameraTransform.position, hit.point - cameraTransform.position, Color.yellow);
+			Debug.DrawRay (cameraTransform.position, hit.point - cameraTransform.position, Color.yellow);
 
 
 
