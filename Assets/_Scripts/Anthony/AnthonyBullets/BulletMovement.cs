@@ -19,6 +19,8 @@ public class BulletMovement : MonoBehaviour {
     public GameObject bulletParticles;
     private bool particlesSet = false;
 
+    public bool player = false;
+
 	// Use this for initialization
 	void Start () {
 		createdAt = Time.time;

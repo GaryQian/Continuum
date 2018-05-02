@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Alpha3)) SceneManager.LoadScene("blue");
         if (Input.GetKeyDown(KeyCode.Alpha4)) SceneManager.LoadScene("Green");
         if (Input.GetKeyDown(KeyCode.Alpha5)) SceneManager.LoadScene("Red");
+        if (Input.GetKeyDown(KeyCode.Alpha6)) SceneManager.LoadScene("Black");
     }
 
 }
