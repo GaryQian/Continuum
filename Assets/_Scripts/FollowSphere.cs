@@ -15,6 +15,7 @@ public class FollowSphere : MonoBehaviour {
     Color lightColor;
     Material initMaterial;
     public Material redMaterial;
+    public AudioClip[] screams;
 
 	// Use this for initialization
 	void Start () {
@@ -46,6 +47,7 @@ public class FollowSphere : MonoBehaviour {
                 intensity = hitIntensity;
                 GetComponent<MeshRenderer>().material = redMaterial;
                 Invoke("ResetMat", 0.75f);
+                GetComponent<AudioSource>().PlayOneShot(screams[Random.Range(0, screams.Length)]);
             }
         }
     }
