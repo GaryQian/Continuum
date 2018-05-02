@@ -938,6 +938,7 @@ GameObject:
   - component: {fileID: 322306327}
   - component: {fileID: 322306326}
   - component: {fileID: 322306329}
+  - component: {fileID: 322306330}
   m_Layer: 1
   m_Name: Sphere
   m_TagString: Untagged
@@ -1028,6 +1029,95 @@ MonoBehaviour:
   hitColor: {r: 1, g: 0, b: 0, a: 1}
   hitIntensity: 10
   redMaterial: {fileID: 2100000, guid: 9b41784e8266f1f4ebcf37a23e1c943c, type: 2}
+  screams:
+  - {fileID: 8300000, guid: ac123de60ed382f4a96f96214e9edd82, type: 3}
+  - {fileID: 8300000, guid: 20f8e4622791fde41908ec1a47c38ead, type: 3}
+  - {fileID: 8300000, guid: d69c5604764a9fd409e67827926db20e, type: 3}
+  - {fileID: 8300000, guid: ae5198523ecbbff48868d71a538cc18f, type: 3}
+  - {fileID: 8300000, guid: 8e5df248ea0ccbb4c8d5924981cbdcbf, type: 3}
+  - {fileID: 8300000, guid: 4d45d76c1b594f34bbfb39d70c55e1d8, type: 3}
+  - {fileID: 8300000, guid: 3df20f398e1e9b94a8532975cf991e18, type: 3}
+  - {fileID: 8300000, guid: f7c0e08424ec01c4db001061dcf92c28, type: 3}
+--- !u!82 &322306330
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 322306324}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &338080782
 GameObject:
   m_ObjectHideFlags: 0
