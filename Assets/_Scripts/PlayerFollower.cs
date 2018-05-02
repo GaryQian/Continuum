@@ -25,15 +25,13 @@ public class PlayerFollower : MonoBehaviour {
 	}
 
     private void OnTriggerEnter(Collider other) {
-        Debug.Log("Triggered");
-        if (other.gameObject.layer == 12) {
+        if (par == null && other.gameObject.layer == 12 && other.tag != "NoStick") {
             par = other.gameObject;
             parPrevPos = par.transform.position;
         }
     }
     private void OnTriggerExit(Collider other) {
-        Debug.Log("Trigger exit");
-        if (other.gameObject.layer == 12) {
+        if (other.gameObject.layer == 12 && other.tag != "NoStick") {
             if (par == other) {
                 par = null;
 
