@@ -17,7 +17,7 @@ public class MovingPlatform : MonoBehaviour {
 	void Start () {
         if (autoSetStart) startPos = transform.position;
         t = 1.0f * initOffset * duration;
-        Debug.Log("" + t + " " + initOffset + " " + duration);
+        //Debug.Log("" + t + " " + initOffset + " " + duration);
         body = GetComponent<Rigidbody>();
         FixedUpdate();
 	}
@@ -57,6 +57,19 @@ public class MovingPlatform : MonoBehaviour {
 
     public void RandomInitOffset() {
         initOffset = (float)Random.Range(0f, 1f);
+    }
+
+    private void OnCollisionEnter(Collision collision) {
+        Debug.Log("Collided");
+        if (collision.gameObject.layer == 10) {
+            collision.gameObject.GetComponent<PlayerFollower>().player.transform.SetParent(transform);
+        }
+    }
+
+    private void OnCollisionExit(Collision collision) {
+        if (collision.gameObject.layer == 10) {
+            collision.gameObject.GetComponent<PlayerFollower>().player.transform.SetParent(transform.root);
+        }
     }
 }
 
