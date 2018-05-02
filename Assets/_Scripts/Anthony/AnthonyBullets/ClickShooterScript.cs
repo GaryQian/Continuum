@@ -39,7 +39,7 @@ public class ClickShooterScript : MonoBehaviour {
     }
 
     void FindCamera() {
-        mainCamera = Camera.main.gameObject;
+        mainCamera = GameObject.FindWithTag("MainCamera");
         cameraTransform = mainCamera.transform;
     }
 	
