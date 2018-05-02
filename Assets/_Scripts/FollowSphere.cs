@@ -46,6 +46,7 @@ public class FollowSphere : MonoBehaviour {
                 lightColor = hitColor;
                 intensity = hitIntensity;
                 GetComponent<MeshRenderer>().material = redMaterial;
+                CancelInvoke("ResetMat");
                 Invoke("ResetMat", 0.75f);
                 GetComponent<AudioSource>().PlayOneShot(screams[Random.Range(0, screams.Length)]);
             }

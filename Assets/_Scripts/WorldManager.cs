@@ -53,7 +53,7 @@ public class WorldManager : MonoBehaviour {
 
     public void SpawnEnemy() {
         Debug.Log("Spawning Enemy");
-        Instantiate(enemyPrefab, spawnpoints[Random.Range(0, spawnpoints.Length)].position, Quaternion.identity);
+        if (enemyPrefab != null) Instantiate(enemyPrefab, spawnpoints[Random.Range(0, spawnpoints.Length)].position, Quaternion.identity);
     }
 
     // Update is called once per frame
