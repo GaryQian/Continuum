@@ -148,6 +148,7 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   bulletParticles: {fileID: 100002, guid: 59a6290e5156a884ca2e569fc74b5ada, type: 2}
+  player: 1
 --- !u!135 &135436742821524442
 SphereCollider:
   m_ObjectHideFlags: 1
