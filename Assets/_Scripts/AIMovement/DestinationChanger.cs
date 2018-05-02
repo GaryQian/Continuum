@@ -14,29 +14,35 @@ public class DestinationChanger : MonoBehaviour {
 	public float OKDistance = 3f;
 	public GameObject TurretFireLight, TurretHeadLight, TurretTrackBeam;
 	private Light LaserChargeLight;
-	private LineRenderer LaserRenderer, LaserIndicatorRenderer;
+	private LineRenderer LaserIndicatorRenderer;
 	private LayerMask laserEndpointLayerMask;
 	Vector3 laserTargetPoint;
 
+    public float chargeTime = 1f;
+    public float beamTime = 0.25f;
+    public float rechargeTime = 0.25f;
+    public float detectionRadius = 40f;
 	public bool hasTargetedPlayer = false;
 	public bool isAttacking = false;
 	public bool isDead = false;
 
+    public GameObject laserColliderObject;
+      
 	private Vector3 playerCoordinates;
 	private RaycastHit hit;
 	public LayerMask ShotLayerMask;
 
 	// Use this for initialization
-	void Start () {		
-		ShotLayerMask = LayerMask.GetMask(new string[]{"Walls", "Player"});
+	void Start () {		        
+        ShotLayerMask = LayerMask.GetMask(new string[]{"Walls", "Player"});
 		laserEndpointLayerMask = LayerMask.GetMask (new string[]{ "Walls" });
 		scorpionRenderer = MeshHolderObject.GetComponent<SkinnedMeshRenderer> ();
 		LaserChargeLight = TurretFireLight.GetComponent<Light> ();
-		LaserRenderer = TurretFireLight.GetComponent<LineRenderer> ();
+		    //LaserRenderer = TurretFireLight.GetComponent<LineRenderer> ();
 		LaserIndicatorRenderer = TurretTrackBeam.GetComponent<LineRenderer> ();
 	
 		laserTargetPoint = Vector3.zero;
-		LaserRenderer.useWorldSpace = true;
+		    //LaserRenderer.useWorldSpace = true;
 		LaserIndicatorRenderer.useWorldSpace = true;
 		index = 0;
 		agent.SetDestination(DestinationList [index].transform.position);
@@ -49,21 +55,28 @@ public class DestinationChanger : MonoBehaviour {
 //		Debug.DrawRay (this.gameObject.transform.position, playerCoordinates - this.gameObject.transform.position);
 		if (laserTargetPoint != Vector3.zero) {
 			LaserIndicatorRenderer.SetPositions (new Vector3[]{ TurretFireLight.transform.position, laserTargetPoint });
-			LaserRenderer.SetPositions (new Vector3[]{ TurretFireLight.transform.position, laserTargetPoint });
+			    //LaserRenderer.SetPositions (new Vector3[]{ TurretFireLight.transform.position, laserTargetPoint });
 		}
 
 
-		if (Physics.Raycast (this.gameObject.transform.position, playerCoordinates - this.gameObject.transform.position + new Vector3(0, 1f, 0), out hit, 1000, ShotLayerMask)) {
+        if (Physics.Raycast (this.gameObject.transform.position, playerCoordinates - this.gameObject.transform.position + new Vector3(0, 1f, 0), out hit, detectionRadius, ShotLayerMask)) {
 			//Debug.Log (hit.collider.gameObject.name);
 			Debug.DrawRay (this.gameObject.transform.position, hit.point - this.gameObject.transform.position, Color.magenta);
 
 
 			if (hit.collider.gameObject.CompareTag ("Player")) {
+                float speed = 3f;
+                var targetRotation = Quaternion.LookRotation(hit.transform.position - transform.position);
+
+                // Smoothly rotate towards the target point.
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, speed * Time.deltaTime);
+
 				if (!isAttacking) {
 					isAttacking = true;
-					this.gameObject.transform.LookAt (playerCoordinates);
 					StartCoroutine ("attackFormRoutine");
-				}
+                } else {
+                    
+                }
 			} else {
 				if (!isAttacking) {
 					agent.isStopped = false;
@@ -98,18 +111,21 @@ public class DestinationChanger : MonoBehaviour {
 		LaserIndicatorRenderer.SetPositions (new Vector3[]{TurretFireLight.transform.position, laserTargetPoint});
 		LaserIndicatorRenderer.enabled = true;
 
-		yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(chargeTime);
 
 		//Fire laser sequence
 		scorpionRenderer.material = AfterShotMaterial;
 		LaserIndicatorRenderer.enabled = false;
-		LaserRenderer.SetPositions (new Vector3[]{TurretFireLight.transform.position, laserTargetPoint});
-		LaserRenderer.enabled = true;
-		yield return new WaitForSeconds(1.5f);
+		    //LaserRenderer.SetPositions (new Vector3[]{TurretFireLight.transform.position, laserTargetPoint});
+		    //LaserRenderer.enabled = true;
+        createLaserCollider(TurretFireLight.transform.position, laserTargetPoint);
+        yield return new WaitForSeconds(beamTime);
 
 		//Laser turnoff sequence
 		LaserChargeLight.enabled = false;
-		LaserRenderer.enabled = false;
+		    //LaserRenderer.enabled = false;
+        laserColliderObject.SetActive(false);
+        yield return new WaitForSeconds(rechargeTime);
 
 		//Return to patrol state
 		scorpionRenderer.material = AlarmedMaterial;
@@ -127,6 +143,17 @@ public class DestinationChanger : MonoBehaviour {
 	private void deathRoutine(){
 
 	}
+
+    private void createLaserCollider(Vector3 origin, Vector3 target){
+        Vector3 spawnPosition = Vector3.Lerp(origin, target, 0.5f);
+        laserColliderObject.transform.position = spawnPosition;
+        laserColliderObject.transform.LookAt(target);
+        laserColliderObject.transform.Rotate(0f, 90f, 90f);
+        Vector3 scaleVector = laserColliderObject.transform.localScale;
+        scaleVector.y = Vector3.Distance(spawnPosition, target)/3;
+        laserColliderObject.transform.localScale = scaleVector;
+        laserColliderObject.SetActive(true);
+    }
 
 	private int calculateIndex(){
 		if (index++ >= DestinationList.Count - 1)
