@@ -25,7 +25,7 @@ public class PlayerFollower : MonoBehaviour {
 	}
 
     private void OnTriggerEnter(Collider other) {
-        if (par == null && other.gameObject.layer == 12 && other.tag != "NoStick") {
+        if (other.gameObject.layer == 12 && other.tag != "NoStick") {
             par = other.gameObject;
             parPrevPos = par.transform.position;
         }

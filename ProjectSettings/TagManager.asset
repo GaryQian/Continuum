@@ -11,6 +11,7 @@ TagManager:
   - Fire
   - Environment
   - Wall
+  - NoStick
   layers:
   - Default
   - TransparentFX
