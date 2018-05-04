@@ -10,14 +10,16 @@ public class DestinationChanger : MonoBehaviour {
 	public Material AlarmedMaterial, AfterShotMaterial;
 	public NavMeshAgent agent;
 	public List<GameObject> DestinationList;
-	private int count, index;
-	public float OKDistance = 3f;
+	public int count, index;
+    public float DestinationArrivalOKDistance;
 	public GameObject TurretFireLight, TurretHeadLight, TurretTrackBeam;
 	private Light LaserChargeLight;
 	private LineRenderer LaserIndicatorRenderer;
 	private LayerMask laserEndpointLayerMask;
 	Vector3 laserTargetPoint;
-
+    public GameObject debug_ViewTargetting;
+    public float debug_magnitudeTillDestination;
+    public GameObject debug_GoingToDestination;
     public float chargeTime = 1f;
     public float beamTime = 0.25f;
     public float rechargeTime = 0.25f;
@@ -88,7 +90,9 @@ public class DestinationChanger : MonoBehaviour {
 
 
 	private void patrolRoutine(){
-		if ((gameObject.transform.position - DestinationList [index].transform.position).magnitude < OKDistance) {			
+        debug_magnitudeTillDestination = (gameObject.transform.position - DestinationList[index].transform.position).magnitude;
+        debug_GoingToDestination = DestinationList[index];
+        if ((gameObject.transform.position - DestinationList [index].transform.position).magnitude < DestinationArrivalOKDistance) {			
 			agent.SetDestination (DestinationList [calculateIndex()].transform.position);
 		}
 	}
@@ -102,8 +106,9 @@ public class DestinationChanger : MonoBehaviour {
 
 
 		RaycastHit laserHit;
-		Physics.Raycast (TurretFireLight.transform.position, delayedPlayerCoordinates - this.gameObject.transform.position + new Vector3 (0, 0, 0), out laserHit, 10000, laserEndpointLayerMask);
+        Physics.Raycast (TurretFireLight.transform.position, delayedPlayerCoordinates - TurretFireLight.transform.position, out laserHit, 10000, laserEndpointLayerMask);
 		laserTargetPoint = laserHit.point;
+        debug_ViewTargetting = laserHit.transform.gameObject;
 			
 		//Charge laser sequence
 		scorpionRenderer.material = AlarmedMaterial;
@@ -150,7 +155,7 @@ public class DestinationChanger : MonoBehaviour {
         laserColliderObject.transform.LookAt(target);
         laserColliderObject.transform.Rotate(0f, 90f, 90f);
         Vector3 scaleVector = laserColliderObject.transform.localScale;
-        scaleVector.y = Vector3.Distance(spawnPosition, target)/3;
+        scaleVector.y = Vector3.Distance(spawnPosition, target) / this.transform.localScale.y;
         laserColliderObject.transform.localScale = scaleVector;
         laserColliderObject.SetActive(true);
     }

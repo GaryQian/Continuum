@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731725, g: 0.13414752, b: 0.121078566, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -114,7 +114,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 356968e3b1a42b8408b2bc941fcbd072, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 1041d9aee1913418bbf11fb84d0a6097, type: 2}
 --- !u!1 &3655800
 GameObject:
   m_ObjectHideFlags: 0
@@ -9137,6 +9137,39 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.01, y: 1.35, z: 5.75}
   m_Center: {x: 0, y: 0.89, z: 0}
+--- !u!4 &709357667 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4913837126639968, guid: 42a0189d9ce2947a9bff0e1cd5da3cdd,
+    type: 2}
+  m_PrefabInternal: {fileID: 741288444}
+--- !u!1 &726293929
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 726293930}
+  m_Layer: 0
+  m_Name: Scorpion1_Waypoint (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &726293930
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 726293929}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 15.2, y: 30.1, z: -48.29}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1087159708}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &736250885
 Prefab:
   m_ObjectHideFlags: 0
@@ -9720,6 +9753,139 @@ Mesh:
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshOptimized: 0
+--- !u!1001 &741288444
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1635779186}
+    m_Modifications:
+    - target: {fileID: 114836842274085232, guid: 42a0189d9ce2947a9bff0e1cd5da3cdd,
+        type: 2}
+      propertyPath: DestinationList.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913837126639968, guid: 42a0189d9ce2947a9bff0e1cd5da3cdd, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 18.419373
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913837126639968, guid: 42a0189d9ce2947a9bff0e1cd5da3cdd, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 15.717075
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913837126639968, guid: 42a0189d9ce2947a9bff0e1cd5da3cdd, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -72.84461
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913837126639968, guid: 42a0189d9ce2947a9bff0e1cd5da3cdd, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.025374934
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913837126639968, guid: 42a0189d9ce2947a9bff0e1cd5da3cdd, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.9373877
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913837126639968, guid: 42a0189d9ce2947a9bff0e1cd5da3cdd, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.06990684
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913837126639968, guid: 42a0189d9ce2947a9bff0e1cd5da3cdd, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: -0.340255
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913837126639968, guid: 42a0189d9ce2947a9bff0e1cd5da3cdd, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913837126639968, guid: 42a0189d9ce2947a9bff0e1cd5da3cdd, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913837126639968, guid: 42a0189d9ce2947a9bff0e1cd5da3cdd, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913837126639968, guid: 42a0189d9ce2947a9bff0e1cd5da3cdd, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134827099207960, guid: 42a0189d9ce2947a9bff0e1cd5da3cdd, type: 2}
+      propertyPath: m_Name
+      value: Scorpion1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114836842274085232, guid: 42a0189d9ce2947a9bff0e1cd5da3cdd,
+        type: 2}
+      propertyPath: DestinationList.Array.data[0]
+      value: 
+      objectReference: {fileID: 1383974981}
+    - target: {fileID: 114836842274085232, guid: 42a0189d9ce2947a9bff0e1cd5da3cdd,
+        type: 2}
+      propertyPath: DestinationList.Array.data[1]
+      value: 
+      objectReference: {fileID: 1907976834}
+    - target: {fileID: 114836842274085232, guid: 42a0189d9ce2947a9bff0e1cd5da3cdd,
+        type: 2}
+      propertyPath: DestinationList.Array.data[2]
+      value: 
+      objectReference: {fileID: 726293929}
+    - target: {fileID: 114836842274085232, guid: 42a0189d9ce2947a9bff0e1cd5da3cdd,
+        type: 2}
+      propertyPath: DestinationList.Array.data[3]
+      value: 
+      objectReference: {fileID: 2130294501}
+    - target: {fileID: 114836842274085232, guid: 42a0189d9ce2947a9bff0e1cd5da3cdd,
+        type: 2}
+      propertyPath: DestinationList.Array.data[4]
+      value: 
+      objectReference: {fileID: 1409159995}
+    - target: {fileID: 114836842274085232, guid: 42a0189d9ce2947a9bff0e1cd5da3cdd,
+        type: 2}
+      propertyPath: DestinationList.Array.data[5]
+      value: 
+      objectReference: {fileID: 1077101385}
+    - target: {fileID: 114836842274085232, guid: 42a0189d9ce2947a9bff0e1cd5da3cdd,
+        type: 2}
+      propertyPath: DestinationList.Array.data[6]
+      value: 
+      objectReference: {fileID: 1698040337}
+    - target: {fileID: 114836842274085232, guid: 42a0189d9ce2947a9bff0e1cd5da3cdd,
+        type: 2}
+      propertyPath: DestinationList.Array.data[7]
+      value: 
+      objectReference: {fileID: 805545252}
+    - target: {fileID: 114836842274085232, guid: 42a0189d9ce2947a9bff0e1cd5da3cdd,
+        type: 2}
+      propertyPath: DestinationList.Array.data[8]
+      value: 
+      objectReference: {fileID: 1533613810}
+    - target: {fileID: 195640343818909328, guid: 42a0189d9ce2947a9bff0e1cd5da3cdd,
+        type: 2}
+      propertyPath: m_Speed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 195640343818909328, guid: 42a0189d9ce2947a9bff0e1cd5da3cdd,
+        type: 2}
+      propertyPath: m_Acceleration
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 195640343818909328, guid: 42a0189d9ce2947a9bff0e1cd5da3cdd,
+        type: 2}
+      propertyPath: m_AngularSpeed
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 114836842274085232, guid: 42a0189d9ce2947a9bff0e1cd5da3cdd,
+        type: 2}
+      propertyPath: OKDistance
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114836842274085232, guid: 42a0189d9ce2947a9bff0e1cd5da3cdd,
+        type: 2}
+      propertyPath: DestinationArrivalOKDistance
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 42a0189d9ce2947a9bff0e1cd5da3cdd, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &751783926
 Prefab:
   m_ObjectHideFlags: 0
@@ -10271,6 +10437,34 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.01, y: 1.35, z: 5.75}
   m_Center: {x: 0, y: 0.89, z: 0}
+--- !u!1 &805545252
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 805545253}
+  m_Layer: 0
+  m_Name: Scorpion1_Waypoint (7)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &805545253
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 805545252}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 104.979996, y: 30.1, z: 31.28}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1087159708}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &809196929
 Mesh:
   m_ObjectHideFlags: 0
@@ -13588,6 +13782,71 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1076432663}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1077101385
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1077101386}
+  m_Layer: 0
+  m_Name: Scorpion1_Waypoint (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1077101386
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1077101385}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 60.51, y: 30.1, z: 28.41}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1087159708}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1087159707
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1087159708}
+  m_Layer: 0
+  m_Name: EnemyWaypoints
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1087159708
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1087159707}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1383974982}
+  - {fileID: 1907976835}
+  - {fileID: 726293930}
+  - {fileID: 2130294502}
+  - {fileID: 1409159996}
+  - {fileID: 1077101386}
+  - {fileID: 1698040338}
+  - {fileID: 805545253}
+  - {fileID: 1533613811}
+  m_Father: {fileID: 0}
+  m_RootOrder: 42
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1087498015
 GameObject:
   m_ObjectHideFlags: 0
@@ -17207,6 +17466,34 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 06caca6e4cb1946fab2c7d78f5f5d788, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1383974981
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1383974982}
+  m_Layer: 0
+  m_Name: Scorpion1_Waypoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1383974982
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1383974981}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 95.159996, y: 30.1, z: -48.29}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1087159708}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1391061582
 GameObject:
   m_ObjectHideFlags: 0
@@ -17291,6 +17578,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1391061582}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1409159995
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1409159996}
+  m_Layer: 0
+  m_Name: Scorpion1_Waypoint (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1409159996
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1409159995}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.4000015, y: 30.1, z: 28.41}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1087159708}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1427766343
 Mesh:
   m_ObjectHideFlags: 0
@@ -18085,6 +18400,34 @@ Mesh:
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshOptimized: 0
+--- !u!1 &1533613810
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1533613811}
+  m_Layer: 0
+  m_Name: Scorpion1_Waypoint (8)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1533613811
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1533613810}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 104.979996, y: 30.1, z: -20.93}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1087159708}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1539200052
 Prefab:
   m_ObjectHideFlags: 0
@@ -18407,6 +18750,16 @@ Prefab:
     - target: {fileID: 4917916096054434, guid: 023c8efcc733043ec81019f69a950d0a, type: 2}
       propertyPath: m_RootOrder
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 82298007370061730, guid: 023c8efcc733043ec81019f69a950d0a,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114300825143741924, guid: 023c8efcc733043ec81019f69a950d0a,
+        type: 2}
+      propertyPath: invincible
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 023c8efcc733043ec81019f69a950d0a, type: 2}
@@ -19600,6 +19953,35 @@ MonoBehaviour:
   refractLayers:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!1 &1635779185
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1635779186}
+  m_Layer: 0
+  m_Name: Enemies
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1635779186
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1635779185}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 65.42124, y: 9.049042, z: 2.7021942}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 709357667}
+  m_Father: {fileID: 0}
+  m_RootOrder: 41
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1638862181
 Mesh:
   m_ObjectHideFlags: 0
@@ -21065,6 +21447,34 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.01, y: 1.35, z: 5.75}
   m_Center: {x: 0, y: 0.89, z: 0}
+--- !u!1 &1698040337
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1698040338}
+  m_Layer: 0
+  m_Name: Scorpion1_Waypoint (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1698040338
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1698040337}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 60.51, y: 30.1, z: 28.41}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1087159708}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1705607822
 GameObject:
   m_ObjectHideFlags: 0
@@ -27103,6 +27513,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1895793410}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1907976834
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1907976835}
+  m_Layer: 0
+  m_Name: Scorpion1_Waypoint (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1907976835
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1907976834}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 42.499996, y: 30.1, z: -48.29}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1087159708}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1909105381
 Prefab:
   m_ObjectHideFlags: 0
@@ -29666,6 +30104,34 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 30da45170ecfc4a0ebdb5033f9d023d9, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &2130294501
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2130294502}
+  m_Layer: 0
+  m_Name: Scorpion1_Waypoint (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2130294502
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2130294501}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 15.199997, y: 30.1, z: -13.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1087159708}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2135097901
 GameObject:
   m_ObjectHideFlags: 0
