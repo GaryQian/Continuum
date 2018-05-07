@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
-public class MovingPlatform : MonoBehaviour {
+public class MovingPlatform : MonoBehaviour
+{
     public Vector3 endPos;
     public Vector3 startPos;
     public bool autoSetStart = false;
@@ -13,20 +16,23 @@ public class MovingPlatform : MonoBehaviour {
     public float initOffset = 0;
     public bool freeze = false;
     public Rigidbody body;
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         if (autoSetStart) startPos = transform.position;
         t = 1.0f * initOffset * duration;
         //Debug.Log("" + t + " " + initOffset + " " + duration);
         body = GetComponent<Rigidbody>();
         FixedUpdate();
-	}
-	
-	// Update is called once per frame
-	void FixedUpdate () {
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
         if (freeze) return;
         t += Time.fixedDeltaTime;
-        if (t > duration) {
+        if (t > duration)
+        {
             t = 0;
             dir = !dir;
         }
@@ -39,63 +45,82 @@ public class MovingPlatform : MonoBehaviour {
                                                Mathf.SmoothStep(endPos.z, startPos.z, offset)));
     }
 
-    public void SetStart() {
+    public void SetStart()
+    {
         startPos = transform.position;
     }
 
-    public void SetEnd() {
+    public void SetEnd()
+    {
         endPos = transform.position;
     }
 
-    public void GoToStart() {
+    public void GoToStart()
+    {
         transform.position = startPos;
     }
 
-    public void GoToEnd() {
+    public void GoToEnd()
+    {
         transform.position = endPos;
     }
 
-    public void RandomInitOffset() {
+    public void RandomInitOffset()
+    {
         initOffset = (float)Random.Range(0f, 1f);
     }
 
-    private void OnCollisionEnter(Collision collision) {
+    private void OnCollisionEnter(Collision collision)
+    {
         Debug.Log("Collided");
-        if (collision.gameObject.layer == 10) {
+        if (collision.gameObject.layer == 10)
+        {
             collision.gameObject.GetComponent<PlayerFollower>().player.transform.SetParent(transform);
         }
     }
 
-    private void OnCollisionExit(Collision collision) {
-        if (collision.gameObject.layer == 10) {
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.layer == 10)
+        {
             collision.gameObject.GetComponent<PlayerFollower>().player.transform.SetParent(transform.root);
         }
     }
 }
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(MovingPlatform))]
-public class MovingPlatformEditor : Editor {
-    public override void OnInspectorGUI() {
+public class MovingPlatformEditor : Editor
+{
+    public override void OnInspectorGUI()
+    {
         base.OnInspectorGUI();
 
         MovingPlatform myScript = (MovingPlatform)target;
-        if (GUILayout.Button("Set Start")) {
+        if (GUILayout.Button("Set Start"))
+        {
             myScript.SetStart();
         }
 
-        if (GUILayout.Button("Set End")) {
+        if (GUILayout.Button("Set End"))
+        {
             myScript.SetEnd();
         }
 
-        if (GUILayout.Button("Go To Start")) {
+        if (GUILayout.Button("Go To Start"))
+        {
             myScript.GoToStart();
         }
-        if (GUILayout.Button("Go To End")) {
+        if (GUILayout.Button("Go To End"))
+        {
             myScript.GoToEnd();
         }
 
-        if (GUILayout.Button("Randomize Init")) {
+        if (GUILayout.Button("Randomize Init"))
+        {
             myScript.RandomInitOffset();
         }
     }
 }
+#endif
+

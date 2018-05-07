@@ -35,7 +35,8 @@ public class DestinationChanger : MonoBehaviour {
 	public LayerMask ShotLayerMask;
 
 	// Use this for initialization
-	void Start () {		        
+	void Start () {
+        detectionRadius *= Mathf.Pow(this.gameObject.transform.localScale.y, 0.25f);
         ShotLayerMask = LayerMask.GetMask(new string[]{"Walls", "Player"});
 		laserEndpointLayerMask = LayerMask.GetMask (new string[]{ "Walls" });
 		scorpionRenderer = MeshHolderObject.GetComponent<SkinnedMeshRenderer> ();
@@ -61,31 +62,52 @@ public class DestinationChanger : MonoBehaviour {
 		}
 
 
-        if (Physics.Raycast (this.gameObject.transform.position, playerCoordinates - this.gameObject.transform.position + new Vector3(0, 1f, 0), out hit, detectionRadius, ShotLayerMask)) {
-			//Debug.Log (hit.collider.gameObject.name);
-			Debug.DrawRay (this.gameObject.transform.position, hit.point - this.gameObject.transform.position, Color.magenta);
+        if (Physics.Raycast(this.gameObject.transform.position, playerCoordinates - this.gameObject.transform.position + new Vector3(0, 1f, 0), out hit, detectionRadius, ShotLayerMask))
+        {
+            //Debug.Log (hit.collider.gameObject.name);
+            Debug.DrawRay(this.gameObject.transform.position, hit.point - this.gameObject.transform.position, Color.magenta);
 
+            Debug.Log("Ray SHOT");
 
-			if (hit.collider.gameObject.CompareTag ("Player")) {
+            if (hit.collider.gameObject.CompareTag("Player"))
+            {
+                Debug.Log("Found Player");
+
                 float speed = 3f;
                 var targetRotation = Quaternion.LookRotation(hit.transform.position - transform.position);
 
                 // Smoothly rotate towards the target point.
                 transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, speed * Time.deltaTime);
 
-				if (!isAttacking) {
-					isAttacking = true;
-					StartCoroutine ("attackFormRoutine");
-                } else {
-                    
+                if (!isAttacking)
+                {
+                    isAttacking = true;
+                    StartCoroutine("attackFormRoutine");
                 }
-			} else {
-				if (!isAttacking) {
-					agent.isStopped = false;
-					patrolRoutine ();
-				}
-			}
-		}
+                else
+                {
+
+                }
+            }
+            else
+            {
+                if (!isAttacking)
+                {
+                    agent.isStopped = false;
+                    Debug.Log("Patrolling");
+                    patrolRoutine();
+                }
+            }
+        }
+        else
+        {
+            if (!isAttacking)
+            {
+                agent.isStopped = false;
+                Debug.Log("Patrolling");
+                patrolRoutine();
+            }
+        }
 	}
 
 
