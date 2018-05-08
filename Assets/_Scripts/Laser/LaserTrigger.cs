@@ -26,7 +26,6 @@ public class LaserTrigger : MonoBehaviour {
         }
         Debug.Log("" + players.Count + " " + count);
         if (players.Count - count <= 0) {
-            Debug.Log("Reactivating Lasers");
             foreach (GameObject laserBeam in laserBeams) {
                 laserBeam.SetActive(true);
             }
@@ -36,7 +35,6 @@ public class LaserTrigger : MonoBehaviour {
     private void OnTriggerEnter(Collider other) {
         if (other.tag == "Player")
         {
-            Debug.Log("Triggered Laser!");
             players.Add(other.gameObject);
             foreach(GameObject laserBeam in laserBeams) {
                 laserBeam.SetActive(false);
