@@ -3944,7 +3944,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 400
   maxHealth: 400
-  invincible: 1
+  invincible: 0
   armor: 1
   isAlive: 1
 --- !u!114 &114324930616007046
@@ -3965,7 +3965,10 @@ MonoBehaviour:
   ShotLayerMask:
     serializedVersion: 2
     m_Bits: 257
-  gunClip: {fileID: 8300000, guid: 1f109922c4957a74c88f78f873ce5938, type: 3}
+  gunClips:
+  - {fileID: 8300000, guid: d9d2025cc8c2b5440b18417e17abecda, type: 3}
+  - {fileID: 8300000, guid: 72b73ae9584debd4d93ff9a4483a5e3c, type: 3}
+  - {fileID: 8300000, guid: 8a7a702d109b50643a734f2443e98e93, type: 3}
   recorder: {fileID: 114906383050142656}
   puppet: {fileID: 0}
   NowTargeting: {fileID: 0}
