@@ -2334,10 +2334,15 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  OKDistance: 3
+  count: 0
+  index: 0
+  DestinationArrivalOKDistance: 7
   TurretFireLight: {fileID: 1971586909164104}
   TurretHeadLight: {fileID: 1045116923155706}
   TurretTrackBeam: {fileID: 1127099173752742}
+  debug_ViewTargetting: {fileID: 0}
+  debug_magnitudeTillDestination: 0
+  debug_GoingToDestination: {fileID: 0}
   chargeTime: 1
   beamTime: 0.25
   rechargeTime: 0.25
