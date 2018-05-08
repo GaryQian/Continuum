@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour {
 
 	public GameObject player;
 
+    public AudioClip[] whizzes;
+
 	/// <summary>
 	/// EARLY setup that is done before the start function.
 	/// </summary>

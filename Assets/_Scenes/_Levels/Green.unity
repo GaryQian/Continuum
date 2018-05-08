@@ -9001,6 +9001,12 @@ MonoBehaviour:
     controlScheme: 0
     furthestLevel: 0
   player: {fileID: 0}
+  whizzes:
+  - {fileID: 8300000, guid: 8676c07d0a5920b45afc94ee3f0cd8f3, type: 3}
+  - {fileID: 8300000, guid: 02baef365e0f285428646b08d8abeb4a, type: 3}
+  - {fileID: 8300000, guid: e000968a2caaa17488daab39b5e5f613, type: 3}
+  - {fileID: 8300000, guid: cb952321dd2925e40829cdbb17fb4dfb, type: 3}
+  - {fileID: 8300000, guid: be9769768e88773418a91cc45f39a805, type: 3}
 --- !u!4 &857782331
 Transform:
   m_ObjectHideFlags: 0

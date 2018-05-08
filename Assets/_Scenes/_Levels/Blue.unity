@@ -18785,6 +18785,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 65069604793372298, guid: 023c8efcc733043ec81019f69a950d0a,
+        type: 2}
+      propertyPath: m_Size.z
+      value: 0.15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 023c8efcc733043ec81019f69a950d0a, type: 2}
   m_IsPrefabParent: 0
@@ -19052,6 +19057,12 @@ MonoBehaviour:
     controlScheme: 0
     furthestLevel: 0
   player: {fileID: 899528327}
+  whizzes:
+  - {fileID: 8300000, guid: 8676c07d0a5920b45afc94ee3f0cd8f3, type: 3}
+  - {fileID: 8300000, guid: 02baef365e0f285428646b08d8abeb4a, type: 3}
+  - {fileID: 8300000, guid: e000968a2caaa17488daab39b5e5f613, type: 3}
+  - {fileID: 8300000, guid: cb952321dd2925e40829cdbb17fb4dfb, type: 3}
+  - {fileID: 8300000, guid: be9769768e88773418a91cc45f39a805, type: 3}
 --- !u!4 &1564394493
 Transform:
   m_ObjectHideFlags: 0

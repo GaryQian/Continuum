@@ -59,6 +59,10 @@ public class BulletMovement : MonoBehaviour {
             }
 			if ((health = other.GetComponent<Health> ()) != null) health.Damage (bulletDamage, ShotSource);
         }
+        else if (other.gameObject.layer == 17) {
+            //Whizzz
+            SoundManager.PlaySfx(0.7f, GameManager.Instance.whizzes);
+        }
 	}
 
 	void setupTrailRenderer(){
