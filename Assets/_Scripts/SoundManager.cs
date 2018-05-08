@@ -15,6 +15,8 @@ public class SoundManager : MonoBehaviour {
     public AudioSource musicSource;
     public static AudioSource musicSourceStatic;
 
+    public AudioClip[] atmos;
+
     public AudioClip titleMusic;
     public AudioClip menuMusic;
     public AudioClip inGameMusic;
@@ -49,12 +51,17 @@ public class SoundManager : MonoBehaviour {
 
         musicVol = maxMusicVol;
         targMusicVol = maxMusicVol;
+
+        musicSource.clip = atmos[Random.Range(0, atmos.Length)];
+        musicSource.loop = true;
+        musicSource.volume = targMusicVol;
+        musicSource.Play();
     }
 
     private void Update() {
 
-        musicVol += (targMusicVol - musicVol) * Time.deltaTime * 5f;
-        musicSource.volume = musicVol;
+        //musicVol += (targMusicVol - musicVol) * Time.deltaTime * 5f;
+        //musicSource.volume = musicVol;
     }
 
     public static void PlaySfx(params AudioClip[] clips) {
