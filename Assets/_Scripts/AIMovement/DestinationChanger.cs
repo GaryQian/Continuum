@@ -67,12 +67,9 @@ public class DestinationChanger : MonoBehaviour {
             //Debug.Log (hit.collider.gameObject.name);
             Debug.DrawRay(this.gameObject.transform.position, hit.point - this.gameObject.transform.position, Color.magenta);
 
-            Debug.Log("Ray SHOT");
 
             if (hit.collider.gameObject.CompareTag("Player"))
             {
-                Debug.Log("Found Player");
-
                 float speed = 3f;
                 var targetRotation = Quaternion.LookRotation(hit.transform.position - transform.position);
 
@@ -94,7 +91,6 @@ public class DestinationChanger : MonoBehaviour {
                 if (!isAttacking)
                 {
                     agent.isStopped = false;
-                    Debug.Log("Patrolling");
                     patrolRoutine();
                 }
             }
@@ -104,7 +100,6 @@ public class DestinationChanger : MonoBehaviour {
             if (!isAttacking)
             {
                 agent.isStopped = false;
-                Debug.Log("Patrolling");
                 patrolRoutine();
             }
         }
