@@ -14,6 +14,8 @@ public class ClickShooterScript : MonoBehaviour {
 	private Vector3 bulletTargetPoint;
 	public LayerMask ShotLayerMask;
 
+    public AudioClip gunClip;
+
     public Recorder recorder;
     public Puppet puppet;
 
@@ -96,6 +98,7 @@ public class ClickShooterScript : MonoBehaviour {
 //			handAnimator.CrossFade ("GunShooting", 0.1f);
 			handAnimator.SetTrigger ("isFiring");
 		}
+        SoundManager.PlaySfx(gunClip);
     }
 
     void OnEvent() {

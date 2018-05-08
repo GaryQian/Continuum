@@ -3209,8 +3209,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1322476788873332}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -13.8, y: 369.9, z: 419.5}
+  m_LocalRotation: {x: -0, y: -0.11066626, z: -0, w: 0.9938577}
+  m_LocalPosition: {x: 79.96, y: 28.79, z: -125.6}
   m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
   m_Children:
   - {fileID: 4420342042251580}
@@ -3655,7 +3655,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -3944,7 +3944,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 400
   maxHealth: 400
-  invincible: 0
+  invincible: 1
   armor: 1
   isAlive: 1
 --- !u!114 &114324930616007046
@@ -3965,8 +3965,10 @@ MonoBehaviour:
   ShotLayerMask:
     serializedVersion: 2
     m_Bits: 257
+  gunClip: {fileID: 8300000, guid: 1f109922c4957a74c88f78f873ce5938, type: 3}
   recorder: {fileID: 114906383050142656}
   puppet: {fileID: 0}
+  NowTargeting: {fileID: 0}
   shotDelay: 0.15
   isClone: 0
 --- !u!114 &114577047049522792
