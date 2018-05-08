@@ -266,7 +266,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 		}
 
 		private void PlayDashAudio() {
-            SoundManager.PlaySfx(dashClip);
+            //SoundManager.PlaySfx(dashClip);
         }
 
 
@@ -316,7 +316,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (m_IsDashing) {
                 //m_AudioSource.clip = dashClip;// m_JumpSound;
                 //m_AudioSource.Play();
-                if (m_Energy > 99) DashAudioSource.PlayOneShot(dashClip);
+                if (m_Energy > 99) DashAudioSource.PlayOneShot(dashClip, 0.6f);
                 //SoundManager.PlaySingleSfx(dashClip);
 				Camera.main.GetComponent<CameraEffects>().DashCameraZoom();
 				isDashing_delayed = true;
