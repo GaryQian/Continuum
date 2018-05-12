@@ -81,5 +81,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 62357317b6a758148b360491517d7c5e, type: 3}
-  delay: 1.5
+  delay: 0
   destroyOnPlay: 1
