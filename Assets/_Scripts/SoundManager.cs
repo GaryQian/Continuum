@@ -13,6 +13,7 @@ public class SoundManager : MonoBehaviour {
     public static AudioSource sfxSourceStatic3;
 
     public AudioSource musicSource;
+    public AudioSource musicSource2;
     public static AudioSource musicSourceStatic;
 
     public AudioClip[] atmos;
@@ -23,6 +24,8 @@ public class SoundManager : MonoBehaviour {
 
     public AudioClip menuWooshClip;
 
+    public AudioClip musicClip;
+
     AudioClip nextMusicClip;
     float musicVol;
     public float maxMusicVol;
@@ -30,8 +33,10 @@ public class SoundManager : MonoBehaviour {
 
     public static SoundManager instance;
 
+    public 
+
     void Awake() {
-        DontDestroyOnLoad(transform.gameObject);
+        //DontDestroyOnLoad(transform.gameObject);
         if (instance != null) {
             Destroy(gameObject);
             return;
@@ -56,6 +61,11 @@ public class SoundManager : MonoBehaviour {
         musicSource.loop = true;
         musicSource.volume = targMusicVol;
         musicSource.Play();
+
+        if (musicClip != null) {
+            musicSource2.clip = musicClip;
+            musicSource2.Play();
+        }
     }
 
     private void Update() {
