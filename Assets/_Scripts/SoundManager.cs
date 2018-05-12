@@ -34,6 +34,9 @@ public class SoundManager : MonoBehaviour {
 
     public static SoundManager instance;
 
+    public AudioClip[] bulletImpactWalls;
+    public AudioClip[] bulletImpactEnemy;
+
     public 
 
     void Awake() {

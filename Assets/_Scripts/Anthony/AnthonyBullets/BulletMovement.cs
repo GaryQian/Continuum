@@ -41,6 +41,7 @@ public class BulletMovement : MonoBehaviour {
 
 		if(other.gameObject.layer == 12){
 			Destroy (this.gameObject);
+            if (player) SoundManager.PlaySfx(0.15f, SoundManager.instance.bulletImpactWalls);
             return;
 		} else if (other.tag.Equals ("Player") && ShotSource.tag.Equals("Enemy")) {
 			UIManager.instance.FlashRedOnDamage ();
@@ -48,6 +49,7 @@ public class BulletMovement : MonoBehaviour {
 			Health health;
 			if ((health = other.GetComponent<Health> ()) != null) health.Damage (bulletDamage, ShotSource);
             Destroy (this.gameObject);
+            //if (player) SoundManager.PlaySfx(0.3f, SoundManager.instance.bulletImpactEnemy);
             return;
 		} else if (other.tag.Equals ("Enemy") && ShotSource.tag.Equals("Player")) {
 			//damage handling for shots fired by player
@@ -58,6 +60,7 @@ public class BulletMovement : MonoBehaviour {
                 this.particlesSet = true;
             }
 			if ((health = other.GetComponent<Health> ()) != null) health.Damage (bulletDamage, ShotSource);
+            if (player) SoundManager.PlaySfx(0.2f, SoundManager.instance.bulletImpactEnemy);
         }
         else if (other.gameObject.layer == 17) {
             //Whizzz
