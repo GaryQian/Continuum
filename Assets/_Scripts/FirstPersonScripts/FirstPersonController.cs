@@ -53,6 +53,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 		private float m_NextStep;
 		public AudioSource m_AudioSource;
         public AudioSource DashAudioSource;
+        public AudioSource StoryAudioSource;
         public static UIBars bars;
         public static Health health;
 		public Color energyBarColor; 
