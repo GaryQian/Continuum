@@ -26,5 +26,6 @@ public class tutorialDoor : MonoBehaviour {
 	{
 		boxCollider.enabled = true;
 		glassRenderer.enabled = true;
+		UIManager.instance.SendMessage("");
 	}
 }
