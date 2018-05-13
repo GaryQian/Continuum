@@ -61,6 +61,8 @@ public class BulletMovement : MonoBehaviour {
             }
 			if ((health = other.GetComponent<Health> ()) != null) health.Damage (bulletDamage, ShotSource);
             if (player) SoundManager.PlaySfx(0.2f, SoundManager.instance.bulletImpactEnemy);
+            Destroy(this.gameObject);
+            return;
         }
         else if (other.gameObject.layer == 17) {
             //Whizzz
