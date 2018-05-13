@@ -25,13 +25,13 @@ public class PlayerFollower : MonoBehaviour {
 	}
 
     private void OnTriggerEnter(Collider other) {
-        if (other.gameObject.layer == 12 && other.tag != "NoStick") {
+        if (other.gameObject.layer == 12 && other.tag != "NoStick" && other.tag != "NOBULLET") {
             par = other.gameObject;
             parPrevPos = par.transform.position;
         }
     }
     private void OnTriggerExit(Collider other) {
-        if (other.gameObject.layer == 12 && other.tag != "NoStick") {
+        if (other.gameObject.layer == 12 && other.tag != "NoStick" && other.tag != "NOBULLET") {
             if (par == other) {
                 par = null;
 
