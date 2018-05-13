@@ -103,7 +103,7 @@ NavMeshSettings:
     agentRadius: 0.5
     agentHeight: 2
     agentSlope: 45
-    agentClimb: 0.4
+    agentClimb: 0.5
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
@@ -5246,7 +5246,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 473519457}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -71.1, y: 49.1, z: -11.5}
+  m_LocalPosition: {x: -71.1, y: 49, z: -11.5}
   m_LocalScale: {x: 14.68944, y: 0.58997, z: 85.93606}
   m_Children: []
   m_Father: {fileID: 564020345}
@@ -6705,7 +6705,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 638207182}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -71.1, y: 61.1, z: -11.5}
+  m_LocalPosition: {x: -71.1, y: 61.09, z: -11.5}
   m_LocalScale: {x: 14.68944, y: 0.58997, z: 85.93606}
   m_Children: []
   m_Father: {fileID: 564020345}
@@ -16271,7 +16271,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1449463537}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -71.1, y: 11.8, z: -11.5}
+  m_LocalPosition: {x: -71.1, y: 11.61, z: -11.5}
   m_LocalScale: {x: 14.689444, y: 3.66522, z: 85.93605}
   m_Children: []
   m_Father: {fileID: 564020345}
@@ -17261,7 +17261,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1524021919}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -71.1, y: 25.3, z: -11.5}
+  m_LocalPosition: {x: -71.1, y: 25.31, z: -11.5}
   m_LocalScale: {x: 14.68944, y: 0.58996683, z: 85.93606}
   m_Children: []
   m_Father: {fileID: 564020345}
@@ -20232,7 +20232,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1800312809}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -4.17, y: 25.281, z: 13.500001}
+  m_LocalPosition: {x: -4.18, y: 25.32, z: 13.500001}
   m_LocalScale: {x: 7.2430434, y: 0.57468, z: 10.766004}
   m_Children: []
   m_Father: {fileID: 564020345}
@@ -23968,6 +23968,11 @@ Prefab:
       propertyPath: maxTimer
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 224356123322544600, guid: 4ba288ddb7a6e98439f6eb779a640986,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.03942871
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ba288ddb7a6e98439f6eb779a640986, type: 2}
   m_IsPrefabParent: 0
@@ -24111,7 +24116,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2078217077}
   m_LocalRotation: {x: 0.20082916, y: -0.677988, z: 0.20082916, w: 0.677988}
-  m_LocalPosition: {x: -54.38, y: 31.41, z: -35.95}
+  m_LocalPosition: {x: -54.35, y: 31.37, z: -35.95}
   m_LocalScale: {x: 7.2430334, y: 0.5746801, z: 22.054031}
   m_Children: []
   m_Father: {fileID: 564020345}
