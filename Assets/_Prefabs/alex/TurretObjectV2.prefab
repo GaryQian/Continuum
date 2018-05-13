@@ -70,6 +70,7 @@ GameObject:
   - component: {fileID: 4044110133989042}
   - component: {fileID: 114578324728785274}
   - component: {fileID: 136233267828413818}
+  - component: {fileID: 114133350205123270}
   m_Layer: 0
   m_Name: TurretObjectV2
   m_TagString: Enemy
@@ -251,7 +252,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1323448369925108}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -49.08, y: 64.9, z: -143.5}
+  m_LocalPosition: {x: -1.6552124, y: 23.936115, z: -13.526928}
   m_LocalScale: {x: 10.839532, y: 10.839533, z: 10.839533}
   m_Children:
   - {fileID: 4132065685255642}
@@ -742,6 +743,7 @@ MonoBehaviour:
   NormalStateMaterial: {fileID: 2100000, guid: 5b334a50544cc4ba992d08b310d10bd2, type: 2}
   AlarmedStateMaterial: {fileID: 2100000, guid: b1d8ab6de18c24ea0bb972053e09f2f6,
     type: 2}
+  randomizeShotInterval: 1
 --- !u!114 &114098714724450034
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -754,6 +756,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationQuat: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &114133350205123270
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1323448369925108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b68266e541fc4e1a893912180353fae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealthCube: {fileID: 1558508196064000, guid: 1f94f14d7e0884de4988cdc9393c2342, type: 2}
+  healthPerCube: 10
+  cubeDistance: 0.5
+  aboveHeadDistance: 1
+  horizontalOffset: -0.5
+  HealthComponent: {fileID: 114578324728785274}
+  healthCubeScale: {x: 1, y: 1, z: 1}
+  currentHealthCubeNum: 0
 --- !u!114 &114304240098638780
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -788,6 +809,7 @@ MonoBehaviour:
   NormalStateMaterial: {fileID: 2100000, guid: 5b334a50544cc4ba992d08b310d10bd2, type: 2}
   AlarmedStateMaterial: {fileID: 2100000, guid: b1d8ab6de18c24ea0bb972053e09f2f6,
     type: 2}
+  randomizeShotInterval: 1
 --- !u!114 &114578324728785274
 MonoBehaviour:
   m_ObjectHideFlags: 1
