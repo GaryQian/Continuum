@@ -5,6 +5,12 @@ using UnityEngine;
 public class HealthPickup : MonoBehaviour {
 
     public float amountToHeal = 30.0f;
+	public float speed = 10f;
+
+	private void Update()
+	{
+		transform.Rotate(Vector3.up, speed * Time.deltaTime);
+	}
 
 	private void OnTriggerEnter(Collider other)
 	{

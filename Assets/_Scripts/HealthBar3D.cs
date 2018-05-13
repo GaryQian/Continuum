@@ -8,11 +8,13 @@ public class HealthBar3D : MonoBehaviour {
     public int healthPerCube = 10;
     public float cubeDistance = 0.5f;
     public float aboveHeadDistance = 1f;
+    public float horizontalOffset = 0f;
     public Health HealthComponent;
     public Vector3 healthCubeScale = Vector3.one;
     public int currentHealthCubeNum = 0;
     private Stack<GameObject> HealthCubes;
     private GameObject HealthBarContainer;
+
 
 	// Use this for initialization
 	void Start () {        
@@ -22,7 +24,7 @@ public class HealthBar3D : MonoBehaviour {
         currentHealthCubeNum = (int)HealthComponent.health / healthPerCube;
         HealthBarContainer = new GameObject();
         HealthBarContainer.transform.parent = this.gameObject.transform;
-        HealthBarContainer.transform.localPosition = new Vector3(0f, aboveHeadDistance, 0f);
+        HealthBarContainer.transform.localPosition = new Vector3(horizontalOffset, aboveHeadDistance, 0f);
 
         Vector3 cubePosition = Vector3.zero;
         cubePosition.y += aboveHeadDistance;
