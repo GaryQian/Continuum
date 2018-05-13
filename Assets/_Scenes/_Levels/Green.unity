@@ -13352,12 +13352,12 @@ Prefab:
     - target: {fileID: 114820007257796218, guid: 42a0189d9ce2947a9bff0e1cd5da3cdd,
         type: 2}
       propertyPath: health
-      value: 200
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 114820007257796218, guid: 42a0189d9ce2947a9bff0e1cd5da3cdd,
         type: 2}
       propertyPath: maxHealth
-      value: 200
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 137946366780041786, guid: 42a0189d9ce2947a9bff0e1cd5da3cdd,
         type: 2}
@@ -21507,8 +21507,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1.8339295, z: 1}
+  m_Center: {x: 0, y: -0.4169643, z: -2.398871e-10}
 --- !u!33 &1863772336
 MeshFilter:
   m_ObjectHideFlags: 0
