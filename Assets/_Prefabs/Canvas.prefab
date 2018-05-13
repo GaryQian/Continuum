@@ -1111,7 +1111,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 60
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -2553,8 +2553,8 @@ RectTransform:
   m_Father: {fileID: 224966809349805164}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.44700003, y: 0.046000004}
-  m_AnchorMax: {x: 0.58416563, y: 0.116000004}
+  m_AnchorMin: {x: 0.3281984, y: 0.05585692}
+  m_AnchorMax: {x: 0.75042474, y: 0.18630385}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
