@@ -99,7 +99,7 @@ public class LaserShotModule : MonoBehaviour {
         //Charge laser sequence
         LaserIndicatorRenderer.SetPositions(new Vector3[] { this.transform.position, laserTargetPoint });
         LaserIndicatorRenderer.enabled = true;
-
+        SoundManager.PlaySfx(SoundManager.instance.chargeClip);
         yield return new WaitForSeconds(chargeTime);
 
         //Fire laser sequence
@@ -107,6 +107,7 @@ public class LaserShotModule : MonoBehaviour {
         //LaserRenderer.SetPositions (new Vector3[]{TurretFireLight.transform.position, laserTargetPoint});
         //LaserRenderer.enabled = true;
         createLaserCollider(this.transform.position, laserTargetPoint);
+        SoundManager.PlaySfx(SoundManager.instance.laserClip);
         yield return new WaitForSeconds(beamTime);
 
         //Laser turnoff sequence
