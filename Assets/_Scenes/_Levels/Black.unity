@@ -575,6 +575,10 @@ Prefab:
       propertyPath: clip
       value: 
       objectReference: {fileID: 8300000, guid: 3798c5aca0f2f584caf471ee4d7a7556, type: 3}
+    - target: {fileID: 1483053952685528, guid: 312166b964245f2428fdfd375a6ce665, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 312166b964245f2428fdfd375a6ce665, type: 2}
   m_IsPrefabParent: 0
@@ -2449,7 +2453,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4095632334886034, guid: 312166b964245f2428fdfd375a6ce665, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 354.18045
+      value: 285.8
       objectReference: {fileID: 0}
     - target: {fileID: 4095632334886034, guid: 312166b964245f2428fdfd375a6ce665, type: 2}
       propertyPath: m_LocalPosition.y
@@ -5934,6 +5938,11 @@ Prefab:
         type: 2}
       propertyPath: spreadCustomCurve.m_RotationOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114425433263920288, guid: 613fc86a0f9cef145b85a9f1c65027de,
+        type: 2}
+      propertyPath: maxMusicVol
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 613fc86a0f9cef145b85a9f1c65027de, type: 2}

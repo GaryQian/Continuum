@@ -473,8 +473,8 @@ MonoBehaviour:
   inGameMusic: {fileID: 0}
   menuWooshClip: {fileID: 0}
   musicClip: {fileID: 0}
-  maxMusicVol: 0.7
-  ambienceVolume: 0
+  maxMusicVol: 0.5
+  ambienceVolume: 0.3
   bulletImpactWalls:
   - {fileID: 8300000, guid: d4b3d0febb7b2014fada4f4c04371d62, type: 3}
   - {fileID: 8300000, guid: d7db690abe1f5bc4aa9f071840627f71, type: 3}
