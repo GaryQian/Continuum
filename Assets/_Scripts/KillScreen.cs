@@ -15,7 +15,7 @@ public class KillScreen : MonoBehaviour {
             SceneManager.LoadScene(levelName);
             //health.Damage(100000);
         } else {
-            Destroy(other);
+            ///Destroy(other);
         }
     }
 }
