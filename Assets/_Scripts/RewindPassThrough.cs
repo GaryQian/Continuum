@@ -16,11 +16,11 @@ public class RewindPassThrough : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (PuppetRegister.inRewind) {
-			boxCollider.enabled = false;
-            glassRenderer.enabled = false;
-		} else {
-			//boxCollider.enabled = true;
-		}
+		//if (PuppetRegister.inRewind) {
+		//	boxCollider.enabled = false;
+  //          glassRenderer.enabled = false;
+		//} else {
+		//	//boxCollider.enabled = true;
+		//}
 	}
 }
