@@ -289,7 +289,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -314,12 +314,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsWalking: 0
-  m_WalkSpeed: 5
-  m_RunSpeed: 10
+  m_IsCrouched: 0
+  m_IsDashing: 0
+  isDashing_delayed: 0
+  m_Jumping: 0
   m_RunstepLenghten: 0.7
   m_JumpSpeed: 10
   m_StickToGroundForce: 10
   m_GravityMultiplier: 2
+  m_WalkSpeed: 5
+  m_RunSpeed: 10
+  m_Energy: 0
+  m_MaxEnergy: 0
+  m_DashMultiplier: 0
+  m_EnergyDrainMultiplier: 0
+  m_EnergyRegenMultiplier: 0
   m_MouseLook:
     XSensitivity: 2
     YSensitivity: 2
@@ -404,6 +413,14 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
   m_JumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
   m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
+  m_AudioSource: {fileID: 0}
+  DashAudioSource: {fileID: 0}
+  StoryAudioSource: {fileID: 0}
+  energyBarColor: {r: 0, g: 0, b: 0, a: 0}
+  dashClip: {fileID: 0}
+  Hand: {fileID: 0}
+  characterController: {fileID: 0}
+  PuppetModelReference: {fileID: 0}
 --- !u!124 &124266083544949582
 Behaviour:
   m_ObjectHideFlags: 1

@@ -11,11 +11,20 @@ public class RisePlatform : MonoBehaviour {
     public Vector3 endPos;
     Rigidbody body;
     bool moved = false;
+    public float moveSpeed = 1f;
+    public Collider triggerCollider;
 
 	// Use this for initialization
 	void Start () {
         transform.position = startPos;
         body = GetComponent<Rigidbody>();
+        Collider[] col = this.GetComponents<Collider>();
+        if (col.Length == 2)
+        {
+            triggerCollider = col[1];
+        } else {
+            triggerCollider = null;
+        }
 	}
 	
 	// Update is called once per frame
@@ -25,7 +34,7 @@ public class RisePlatform : MonoBehaviour {
 
     IEnumerator Move() {
         while (Vector3.SqrMagnitude(transform.position - endPos) > 0.08f) {
-            body.MovePosition(Vector3.Lerp(transform.position, endPos, Time.fixedDeltaTime * 4f));
+            body.MovePosition(Vector3.Lerp(transform.position, endPos, Time.fixedDeltaTime * 4f * moveSpeed));
             yield return new WaitForFixedUpdate();
         }
 
@@ -34,6 +43,7 @@ public class RisePlatform : MonoBehaviour {
 
     private void OnTriggerEnter(Collider collision) {
         if (collision.gameObject.layer == 10) {
+            triggerCollider.enabled = false;
             StartCoroutine(Move());
             moved = true;
         }
