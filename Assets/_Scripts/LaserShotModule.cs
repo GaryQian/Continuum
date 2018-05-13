@@ -58,8 +58,8 @@ public class LaserShotModule : MonoBehaviour {
             if (Physics.Raycast(this.gameObject.transform.position, playerCoordinates - this.gameObject.transform.position + new Vector3(0, 1f, 0), out hit, ShotLayerMask))
             {
                 //Debug.Log("Raycasting laser");
-                Debug.Log (hit.collider.gameObject.name);
-                Debug.DrawRay(this.gameObject.transform.position, hit.point - this.gameObject.transform.position, Color.magenta);
+                //Debug.Log (hit.collider.gameObject.name);
+                //Debug.DrawRay(this.gameObject.transform.position, hit.point - this.gameObject.transform.position, Color.magenta);
 
 
                 if (hit.collider.gameObject.CompareTag("Player"))

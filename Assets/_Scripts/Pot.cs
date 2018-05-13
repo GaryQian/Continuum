@@ -4,13 +4,30 @@ using UnityEngine;
 
 public class Pot : MonoBehaviour {
 
+    Vector3 lockdownPos;
+    bool locked = false;
+    public float targScale;
 	// Use this for initialization
 	void Start () {
 		
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	IEnumerator Lockdown() {
+        while (true) {
+            GameManager.Instance.player.transform.position = lockdownPos;
+            transform.localScale = Vector3.one * Mathf.Lerp(transform.localScale.x, targScale, Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, lockdownPos, Time.deltaTime);
+            yield return null;
+        }
+    }
+
+
+    private void OnTriggerEnter(Collider other) {
+        if (locked) return;
+        if (other.gameObject.layer == 10) {
+            lockdownPos = GameManager.Instance.player.transform.position;
+            locked = true;
+            StartCoroutine(Lockdown());
+        }
+    }
 }
