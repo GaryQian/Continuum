@@ -37,8 +37,8 @@ public class BulletMovement : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other){
-//		Debug.Log ("Collided with: " + other.gameObject.name);
-
+        //		Debug.Log ("Collided with: " + other.gameObject.name);
+        if (other.gameObject.tag == "NOBULLET") return;
 		if(other.gameObject.layer == 12){
 			Destroy (this.gameObject);
             if (player) SoundManager.PlaySfx(0.15f, SoundManager.instance.bulletImpactWalls);
