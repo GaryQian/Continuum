@@ -12,6 +12,7 @@ TagManager:
   - Environment
   - Wall
   - NoStick
+  - NOBULLET
   layers:
   - Default
   - TransparentFX
