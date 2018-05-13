@@ -15,6 +15,9 @@ public class DefusableBomb : MonoBehaviour
     public Slider defusalSlider;
     public GameObject sliderPrefab;
 
+    public float initialDelay;
+    bool activated = false;
+
     float defusalProgress = 0.0f;
     bool defusing = false;
     bool defused = false;
@@ -22,31 +25,42 @@ public class DefusableBomb : MonoBehaviour
     void Start() {
         //GetComponent<Health>().OnDie += Detonate;
         PuppetRegister.bombs.Add(gameObject);
+
+        Invoke("BeginBomb", initialDelay);
+    }
+
+    void BeginBomb() {
+        activated = true;
     }
 
     private void Update() {
         //Debug.Log(defusing);
-        timer -= Time.deltaTime;
-        if (timer <= 0 && !defused) {
-            Detonate();
-        }
-        if (defusing) {
-            defusalProgress += Time.deltaTime;
-            defusalSlider.value = defusalProgress / defusalTime;
-        }
-        if (defusalProgress >= defusalTime) {
-            defused = true;
-            defusalSlider.gameObject.SetActive(false);
-            Destroy(gameObject);
-        }
+        if (activated) {
+            timer -= Time.deltaTime;
+            if (timer <= 0 && !defused) {
+                Detonate();
+            }
+            if (defusing) {
+                defusalProgress += Time.deltaTime;
+                defusalSlider.value = defusalProgress / defusalTime;
+            }
+            if (defusalProgress >= defusalTime) {
+                defused = true;
+                defusalSlider.gameObject.SetActive(false);
+                Destroy(gameObject);
+            }
 
-        string s = "00:";
-        if (timer < 10f) s += "0";
-        s += (int)timer + ":";
-        float remain = 10f * (timer - (int)timer);
-        //if (remain < 10f) s += 0;
-        s += (int)remain;
-        GetComponentInChildren<FollowText>().SetText(s);
+            string s = "00:";
+            if (timer < 10f) s += "0";
+            s += (int)timer + ":";
+            float remain = 10f * (timer - (int)timer);
+            //if (remain < 10f) s += 0;
+            s += (int)remain;
+            GetComponentInChildren<FollowText>().SetText(s);
+        }
+        else {
+            GetComponentInChildren<FollowText>().SetText("");
+        }
     }
 
     private void OnTriggerStay(Collider col) {
@@ -56,6 +70,7 @@ public class DefusableBomb : MonoBehaviour
                 defusalSlider = Instantiate(sliderPrefab, UIManager.instance.gameObject.transform).GetComponent<Slider>();
             }
             defusalSlider.gameObject.SetActive(true);
+            GameManager.Instance.player.GetComponentInChildren<ClickShooterScript>().canShoot = false;
         }
     }
 
@@ -63,6 +78,7 @@ public class DefusableBomb : MonoBehaviour
         if (col.gameObject.tag == "Player") {
             defusing = false;
             defusalSlider.gameObject.SetActive(false);
+            GameManager.Instance.player.GetComponentInChildren<ClickShooterScript>().canShoot = true;
         }
     }
 
@@ -74,6 +90,7 @@ public class DefusableBomb : MonoBehaviour
     void Detonate()
     {
         Debug.Log("boom");
+        GameManager.Instance.player.gameObject.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().StoryAudioSource.PlayOneShot(SoundManager.instance.explosionClip);
         GameObject canvas = UIManager.instance.gameObject;
         Subtitle txt = (Subtitle) canvas.GetComponent<Subtitle>();
         if (txt != null) txt.setInput("Boom", 20);
@@ -99,6 +116,10 @@ public class DefusableBomb : MonoBehaviour
             }
         }
         Destroy(gameObject);
-        if (defusalProgress >= defusalTime) GameManager.Instance.player.GetComponent<Health>().Damage(100000000f);
+        if (defusalProgress < defusalTime) GameManager.Instance.player.GetComponent<Health>().Damage(100000000f);
+    }
+
+    private void OnDestroy() {
+        GameManager.Instance.player.GetComponentInChildren<ClickShooterScript>().canShoot = true;
     }
 }

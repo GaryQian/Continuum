@@ -13,6 +13,9 @@ public class UIManager : MonoBehaviour {
 
     public GameObject deathUI;
 
+    public GameObject messagePrefab;
+    GameObject message;
+
 	void Awake() {
 		if (instance != null) {
 			Destroy(this.gameObject);
@@ -39,4 +42,12 @@ public class UIManager : MonoBehaviour {
 	void CancelRedFlash() {
 		redPanel.enabled = false;
 	}
+
+    public void SendMessage(string msg) {
+        if (message != null) {
+            Destroy(message);
+        }
+        message = Instantiate(messagePrefab, gameObject.transform);
+        message.GetComponent<Text>().text = msg;
+    }
 }

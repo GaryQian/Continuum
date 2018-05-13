@@ -27,6 +27,8 @@ public class ClickShooterScript : MonoBehaviour {
 
     public bool isClone = false;
 
+    public bool canShoot = true;
+
 	void Awake(){
 		ShotLayerMask = LayerMask.GetMask(new string[]{"Default", "Walls", "Enemy"});
 	}
@@ -66,18 +68,23 @@ public class ClickShooterScript : MonoBehaviour {
 		}
 
 		if (Input.GetMouseButtonDown (0)) {
-			if (Time.time - lastShotTime > shotDelay) {
-                Hashtable data = new Hashtable();
-                data.Add("type", "shoot");
-                data.Add("aimHasTarget", aimHasTarget);
-                data.Add("bulletTargetPoint", bulletTargetPoint);
-                data.Add("muzzlePosition", muzzlePositionHolder.transform.position);
+            if (canShoot) {
+                if (Time.time - lastShotTime > shotDelay) {
+                    Hashtable data = new Hashtable();
+                    data.Add("type", "shoot");
+                    data.Add("aimHasTarget", aimHasTarget);
+                    data.Add("bulletTargetPoint", bulletTargetPoint);
+                    data.Add("muzzlePosition", muzzlePositionHolder.transform.position);
 
 
-                Shoot(data);
-                recorder.AddEvent(data);
+                    Shoot(data);
+                    recorder.AddEvent(data);
 
-			}
+                }
+            }
+            else {
+                UIManager.instance.SendMessage("CANNOT SHOOT WHILE DISARMING");
+            }
 		}
 	}
 
