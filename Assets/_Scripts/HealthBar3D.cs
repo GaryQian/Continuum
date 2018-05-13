@@ -28,7 +28,7 @@ public class HealthBar3D : MonoBehaviour {
         cubePosition.y += aboveHeadDistance;
         int midpoint = currentHealthCubeNum / 2;
         for (int i = midpoint; i > midpoint * (-1); i--){
-            cubePosition.x = (HealthCube.transform.localScale.x + cubeDistance) * i;
+            cubePosition.x = ((healthCubeScale.x) + cubeDistance) * i;
             GameObject cubeInstance = Instantiate(HealthCube, Vector3.zero, Quaternion.identity);
             cubeInstance.transform.parent = HealthBarContainer.transform;
             cubeInstance.transform.localPosition = cubePosition;
