@@ -40,6 +40,7 @@ public class SoundManager : MonoBehaviour {
     public AudioClip chargeClip;
     public AudioClip explosionClip;
     public AudioClip gulpClip;
+    public AudioClip healClip;
 
     void Awake() {
         //DontDestroyOnLoad(transform.gameObject);

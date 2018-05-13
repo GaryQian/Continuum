@@ -13359,7 +13359,7 @@ Prefab:
     - target: {fileID: 114820007257796218, guid: 42a0189d9ce2947a9bff0e1cd5da3cdd,
         type: 2}
       propertyPath: maxHealth
-      value: 500
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 137946366780041786, guid: 42a0189d9ce2947a9bff0e1cd5da3cdd,
         type: 2}

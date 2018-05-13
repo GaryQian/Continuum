@@ -486,3 +486,5 @@ MonoBehaviour:
   laserClip: {fileID: 8300000, guid: fd2b0477c7da2d240aa2348163b47189, type: 3}
   chargeClip: {fileID: 8300000, guid: eaed49a2f8c50fa41a7d04d506f943e3, type: 3}
   explosionClip: {fileID: 8300000, guid: 36595b7d5033ab2438b556fb54a0d17d, type: 3}
+  gulpClip: {fileID: 8300000, guid: c91b2f811f0e2af45bedd0cf89c80ea0, type: 3}
+  healClip: {fileID: 8300000, guid: 43a525c92125fee4e8155a62da6af52f, type: 3}
