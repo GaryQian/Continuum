@@ -200,6 +200,7 @@ GameObject:
   - component: {fileID: 195640343818909328}
   - component: {fileID: 114836842274085232}
   - component: {fileID: 114820007257796218}
+  - component: {fileID: 114079952481742892}
   m_Layer: 0
   m_Name: Drone_Walker_Smooth
   m_TagString: Enemy
@@ -1996,7 +1997,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1134827099207960}
   m_LocalRotation: {x: 0.025374934, y: -0.9373877, z: -0.06990684, w: -0.340255}
-  m_LocalPosition: {x: 23.37, y: 4.9, z: 11.18}
+  m_LocalPosition: {x: 24.01, y: 2.24, z: 7.87}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4794007463652138}
@@ -2286,6 +2287,24 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114079952481742892
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1134827099207960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b68266e541fc4e1a893912180353fae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealthCube: {fileID: 1558508196064000, guid: 1f94f14d7e0884de4988cdc9393c2342, type: 2}
+  healthPerCube: 10
+  cubeDistance: 0.1
+  aboveHeadDistance: 0.8
+  HealthComponent: {fileID: 114820007257796218}
+  healthCubeScale: {x: 0.25, y: 0.25, z: 0.25}
+  currentHealthCubeNum: 0
 --- !u!114 &114349255009043170
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2310,8 +2329,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a288580eb964441a0b6b4045b68c33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 300
-  maxHealth: 300
+  health: 100
+  maxHealth: 100
   invincible: 0
   armor: 1
   isAlive: 1
@@ -2354,6 +2373,7 @@ MonoBehaviour:
   ShotLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  laserClip: {fileID: 0}
 --- !u!120 &120018962574389050
 LineRenderer:
   m_ObjectHideFlags: 1
