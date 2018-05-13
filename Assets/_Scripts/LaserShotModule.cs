@@ -125,7 +125,7 @@ public class LaserShotModule : MonoBehaviour {
         laserColliderObject.transform.LookAt(target);
         laserColliderObject.transform.Rotate(0f, 90f, 90f);
         Vector3 scaleVector = laserColliderObject.transform.localScale;
-        scaleVector.y = Vector3.Distance(spawnPosition, target) / this.transform.localScale.y / this.transform.root.localScale.y;
+        scaleVector.y = Vector3.Distance(spawnPosition, target) / this.transform.localScale.y / this.transform.parent.parent.localScale.y;
         laserColliderObject.transform.localScale = scaleVector;
         laserColliderObject.SetActive(true);
     }

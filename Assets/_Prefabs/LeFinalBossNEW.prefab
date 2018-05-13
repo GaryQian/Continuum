@@ -155,6 +155,7 @@ GameObject:
   - component: {fileID: 23007895231296666}
   - component: {fileID: 114273854339733544}
   - component: {fileID: 114982828096466636}
+  - component: {fileID: 114756108888658160}
   m_Layer: 13
   m_Name: LeFinalBossNEW
   m_TagString: Enemy
@@ -197,7 +198,7 @@ Transform:
   m_GameObject: {fileID: 1872146065391028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 25, y: 25, z: 25}
   m_Children:
   - {fileID: 4999915606114776}
   m_Father: {fileID: 0}
@@ -646,6 +647,23 @@ MonoBehaviour:
   ShotLayerMask:
     serializedVersion: 2
     m_Bits: 0
+--- !u!114 &114756108888658160
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1872146065391028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b68266e541fc4e1a893912180353fae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealthCube: {fileID: 1558508196064000, guid: 86d9da590992f430fb42065e1149bbdf, type: 2}
+  cubeDistance: 0.5
+  aboveHeadDistance: 10
+  HealthComponent: {fileID: 114982828096466636}
+  healthCubeScale: {x: 1, y: 1, z: 1}
+  currentHealthCubeNum: 0
 --- !u!114 &114812143277566708
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -774,7 +792,7 @@ LineRenderer:
     alignment: 0
     textureMode: 0
     generateLightingData: 0
-  m_UseWorldSpace: 1
+  m_UseWorldSpace: 0
   m_Loop: 0
 --- !u!120 &120432716448077868
 LineRenderer:
@@ -862,7 +880,7 @@ LineRenderer:
     alignment: 0
     textureMode: 0
     generateLightingData: 0
-  m_UseWorldSpace: 1
+  m_UseWorldSpace: 0
   m_Loop: 0
 --- !u!135 &135069923214587776
 SphereCollider:
