@@ -5,6 +5,7 @@ using UnityEngine;
 public class HealthBar3D : MonoBehaviour {
 
     public GameObject HealthCube;
+    public int healthPerCube = 10;
     public float cubeDistance = 0.5f;
     public float aboveHeadDistance = 1f;
     public Health HealthComponent;
@@ -18,7 +19,7 @@ public class HealthBar3D : MonoBehaviour {
         HealthCubes = new Stack<GameObject>();
         HealthComponent = this.GetComponent<Health>();
         HealthComponent.OnDie += OnDie;
-        currentHealthCubeNum = (int)HealthComponent.health / 10;
+        currentHealthCubeNum = (int)HealthComponent.health / healthPerCube;
         HealthBarContainer = new GameObject();
         HealthBarContainer.transform.position = this.transform.position + new Vector3(0f, aboveHeadDistance, 0f);
 
@@ -38,7 +39,7 @@ public class HealthBar3D : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        int updatedHealthCubeNum = (int)HealthComponent.health / 10;
+        int updatedHealthCubeNum = (int)HealthComponent.health / healthPerCube;
         if(currentHealthCubeNum > updatedHealthCubeNum){
             for (int i = 0; i < currentHealthCubeNum - updatedHealthCubeNum; i++)
             {
