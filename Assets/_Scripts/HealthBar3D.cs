@@ -21,7 +21,8 @@ public class HealthBar3D : MonoBehaviour {
         HealthComponent.OnDie += OnDie;
         currentHealthCubeNum = (int)HealthComponent.health / healthPerCube;
         HealthBarContainer = new GameObject();
-        HealthBarContainer.transform.position = this.transform.position + new Vector3(0f, aboveHeadDistance, 0f);
+        HealthBarContainer.transform.parent = this.gameObject.transform;
+        HealthBarContainer.transform.localPosition = new Vector3(0f, aboveHeadDistance, 0f);
 
         Vector3 cubePosition = Vector3.zero;
         cubePosition.y += aboveHeadDistance;
