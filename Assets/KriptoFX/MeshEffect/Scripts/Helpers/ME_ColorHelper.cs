@@ -138,7 +138,7 @@ public static class ME_ColorHelper
         var renderers = go.GetComponentsInChildren<Renderer>(true);
         foreach (var rend in renderers)
         {
-            var mats = rend.materials;
+            var mats = rend.sharedMaterials;
             if (mats.Length == 0)
                 continue;
             foreach (var colorProperty in colorProperties)
