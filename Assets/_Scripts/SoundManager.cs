@@ -29,7 +29,7 @@ public class SoundManager : MonoBehaviour {
     AudioClip nextMusicClip;
     float musicVol;
     public float maxMusicVol;
-    public float ambienceVolume;
+    public float ambienceVolume = 0.3f;
     float targMusicVol;
 
     public static SoundManager instance;

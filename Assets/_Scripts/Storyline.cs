@@ -5,8 +5,11 @@ using UnityEngine;
 public class Storyline : MonoBehaviour {
 
     public AudioClip clip;
+    public float volume = 1;
     public float delay = 0;
     public bool destroyOnPlay = true;
+
+    public string msg = "";
 
     UnityStandardAssets.Characters.FirstPerson.FirstPersonController controller;
 
@@ -19,7 +22,8 @@ public class Storyline : MonoBehaviour {
     }
 
     void Play() {
-        controller.StoryAudioSource.PlayOneShot(clip);
+        if (clip != null) controller.StoryAudioSource.PlayOneShot(clip, volume);
+        if (msg != null && msg != "") UIManager.instance.SendMessage(msg);
         if (destroyOnPlay) Destroy(gameObject);
     }
 }
