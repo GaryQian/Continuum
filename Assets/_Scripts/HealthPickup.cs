@@ -12,6 +12,7 @@ public class HealthPickup : MonoBehaviour {
         {
             Health health = (Health)other.gameObject.GetComponent<Health>();
             health.Heal(amountToHeal);
+            SoundManager.PlaySfx(SoundManager.instance.gulpClip);
             Destroy(gameObject);
         }
 	}
