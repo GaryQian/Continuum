@@ -598,6 +598,9 @@ MonoBehaviour:
   LaserSphereWrapper: {fileID: 1524126465971134}
   laserSphereRotateSpeed: 10
   laserSphere1: {fileID: 1512454886855724}
+  BossBullet: {fileID: 1966532732242780, guid: 4438c1b60a7564db78ab3a80261630e6, type: 2}
+  shotInterval: 5
+  shots: 60
 --- !u!114 &114363554082940120
 MonoBehaviour:
   m_ObjectHideFlags: 1
