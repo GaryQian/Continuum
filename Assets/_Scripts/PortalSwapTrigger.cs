@@ -17,8 +17,8 @@ public class PortalSwapTrigger : MonoBehaviour {
             originalModel.SetActive(false);
             portalModel.SetActive(true);
         } else {
-            originalModel.SetActive(true);
-            portalModel.SetActive(false);
+            //originalModel.SetActive(true);
+            //portalModel.SetActive(false);
         }
 	}
 
