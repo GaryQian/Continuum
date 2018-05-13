@@ -703,6 +703,7 @@ GameObject:
   - component: {fileID: 119172006}
   - component: {fileID: 119172005}
   - component: {fileID: 119172004}
+  - component: {fileID: 119172010}
   - component: {fileID: 119172003}
   - component: {fileID: 119172008}
   - component: {fileID: 119172009}
@@ -824,6 +825,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.2, y: 0.2, z: 0.2}
   m_Center: {x: -0.0033804774, y: 0.36, z: -0.0000004768372}
+--- !u!114 &119172010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 119172002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ac87f6d04bc6e439b551b2d77916f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targScale: 1
+  bassDrop: {fileID: 8300000, guid: 7ee54ec8b8553004d90376b2e912e429, type: 3}
 --- !u!1001 &122248163
 Prefab:
   m_ObjectHideFlags: 0
