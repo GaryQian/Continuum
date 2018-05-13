@@ -248,6 +248,31 @@ Prefab:
       propertyPath: musicClip
       value: 
       objectReference: {fileID: 8300000, guid: 0fcb87332f171fb43a8c96d4ce03e1c0, type: 3}
+    - target: {fileID: 82310396253504436, guid: 613fc86a0f9cef145b85a9f1c65027de,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82891329462698294, guid: 613fc86a0f9cef145b85a9f1c65027de,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82516067242808922, guid: 613fc86a0f9cef145b85a9f1c65027de,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82345184180154488, guid: 613fc86a0f9cef145b85a9f1c65027de,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82709745237048106, guid: 613fc86a0f9cef145b85a9f1c65027de,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 613fc86a0f9cef145b85a9f1c65027de, type: 2}
   m_IsPrefabParent: 0
@@ -16012,25 +16037,6 @@ Prefab:
     - target: {fileID: 4917916096054434, guid: 023c8efcc733043ec81019f69a950d0a, type: 2}
       propertyPath: m_RootOrder
       value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 4917916096054434, guid: 023c8efcc733043ec81019f69a950d0a, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 92.07201
-      objectReference: {fileID: 0}
-    - target: {fileID: 82298007370061730, guid: 023c8efcc733043ec81019f69a950d0a,
-        type: 2}
-      propertyPath: spreadCustomCurve.m_RotationOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114300825143741924, guid: 023c8efcc733043ec81019f69a950d0a,
-        type: 2}
-      propertyPath: invincible
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 82806333413256892, guid: 023c8efcc733043ec81019f69a950d0a,
-        type: 2}
-      propertyPath: m_Pitch
-      value: 0.98
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 023c8efcc733043ec81019f69a950d0a, type: 2}

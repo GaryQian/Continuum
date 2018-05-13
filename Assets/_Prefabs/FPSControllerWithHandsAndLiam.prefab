@@ -3242,8 +3242,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1322476788873332}
-  m_LocalRotation: {x: -0, y: -0.11066626, z: -0, w: 0.9938577}
-  m_LocalPosition: {x: 79.96, y: 28.79, z: -125.6}
+  m_LocalRotation: {x: -0, y: 0.71977764, z: -0, w: 0.69420475}
+  m_LocalPosition: {x: -21.58376, y: 0.96000004, z: 6.215839}
   m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
   m_Children:
   - {fileID: 4420342042251580}
@@ -3252,7 +3252,7 @@ Transform:
   - {fileID: 4120786104431436}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 92.07201, z: 0}
 --- !u!4 &4925642508732858
 Transform:
   m_ObjectHideFlags: 1
@@ -3796,7 +3796,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -4116,6 +4116,7 @@ MonoBehaviour:
   NowTargeting: {fileID: 0}
   shotDelay: 0.15
   isClone: 0
+  canShoot: 1
 --- !u!114 &114577047049522792
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4399,7 +4400,7 @@ CharacterController:
   m_Height: 2.92
   m_Radius: 1
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_StepOffset: 1.5
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 1.29, z: 0}
