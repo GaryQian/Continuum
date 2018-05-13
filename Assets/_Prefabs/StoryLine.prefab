@@ -80,6 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdadb2af32f6a274d8e8b0e567e20216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 62357317b6a758148b360491517d7c5e, type: 3}
+  clip: {fileID: 0}
   delay: 0
   destroyOnPlay: 1
+  msg: 
