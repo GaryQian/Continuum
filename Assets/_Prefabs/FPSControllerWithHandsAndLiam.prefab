@@ -664,6 +664,7 @@ GameObject:
   - component: {fileID: 114257625368910740}
   - component: {fileID: 82806333413256892}
   - component: {fileID: 135476200482778202}
+  - component: {fileID: 135633468012035942}
   m_Layer: 10
   m_Name: FPSControllerWithHandsAndLiam
   m_TagString: Player
@@ -3242,8 +3243,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1322476788873332}
-  m_LocalRotation: {x: -0, y: 0.71977764, z: -0, w: 0.69420475}
-  m_LocalPosition: {x: -21.58376, y: 0.96000004, z: 6.215839}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -13.8, y: 369.9, z: 419.5}
   m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
   m_Children:
   - {fileID: 4420342042251580}
@@ -4085,8 +4086,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 400
-  maxHealth: 400
-  invincible: 0
+  maxHealth: 1000
+  invincible: 1
   armor: 1
   isAlive: 1
 --- !u!114 &114324930616007046
@@ -4216,6 +4217,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &135633468012035942
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1322476788873332}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8
+  m_Center: {x: -0, y: 2.68, z: 0}
 --- !u!137 &137062080548576998
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
