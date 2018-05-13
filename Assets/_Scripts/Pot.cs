@@ -7,12 +7,15 @@ public class Pot : MonoBehaviour {
     Vector3 lockdownPos;
     bool locked = false;
     public float targScale;
+
+    public AudioClip bassDrop;
 	// Use this for initialization
 	void Start () {
 		
 	}
 	
 	IEnumerator Lockdown() {
+        SoundManager.PlaySfx(bassDrop);
         while (true) {
             GameManager.Instance.player.transform.position = lockdownPos;
             transform.localScale = Vector3.one * Mathf.Lerp(transform.localScale.x, targScale, Time.deltaTime);
