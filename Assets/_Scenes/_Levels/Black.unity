@@ -2488,6 +2488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a9c206c02031414e8aa628ceb8c9eda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rScripts: []
 --- !u!4 &474749813
 Transform:
   m_ObjectHideFlags: 0
@@ -5454,6 +5455,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 17
       objectReference: {fileID: 0}
+    - target: {fileID: 114425433263920288, guid: 613fc86a0f9cef145b85a9f1c65027de,
+        type: 2}
+      propertyPath: musicClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 558d6765e32ecf74d80c031cd947cced, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 613fc86a0f9cef145b85a9f1c65027de, type: 2}
   m_IsPrefabParent: 0
