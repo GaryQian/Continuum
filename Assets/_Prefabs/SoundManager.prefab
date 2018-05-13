@@ -473,7 +473,7 @@ MonoBehaviour:
   inGameMusic: {fileID: 0}
   menuWooshClip: {fileID: 0}
   musicClip: {fileID: 0}
-  maxMusicVol: 0.5
+  maxMusicVol: 0.7
   ambienceVolume: 0
   bulletImpactWalls:
   - {fileID: 8300000, guid: d4b3d0febb7b2014fada4f4c04371d62, type: 3}
@@ -485,3 +485,4 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 47a381927b6b9c24ca7cb61359b26ea8, type: 3}
   laserClip: {fileID: 8300000, guid: fd2b0477c7da2d240aa2348163b47189, type: 3}
   chargeClip: {fileID: 8300000, guid: eaed49a2f8c50fa41a7d04d506f943e3, type: 3}
+  explosionClip: {fileID: 8300000, guid: 36595b7d5033ab2438b556fb54a0d17d, type: 3}

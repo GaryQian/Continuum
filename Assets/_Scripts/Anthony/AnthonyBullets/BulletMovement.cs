@@ -64,7 +64,7 @@ public class BulletMovement : MonoBehaviour {
         }
         else if (other.gameObject.layer == 17) {
             //Whizzz
-            SoundManager.PlaySfx(0.7f, GameManager.Instance.whizzes);
+            SoundManager.PlaySfx(0.9f, GameManager.Instance.whizzes);
         }
 	}
 

@@ -38,6 +38,7 @@ public class SoundManager : MonoBehaviour {
     public AudioClip[] bulletImpactEnemy;
     public AudioClip laserClip;
     public AudioClip chargeClip;
+    public AudioClip explosionClip;
 
     void Awake() {
         //DontDestroyOnLoad(transform.gameObject);

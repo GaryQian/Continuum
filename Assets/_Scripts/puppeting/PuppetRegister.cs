@@ -19,6 +19,8 @@ public class PuppetRegister : MonoBehaviour {
     public static float duration = 10f;
     public static float timer;
 
+    public List<AudioClip> rScripts;
+
     private void Awake() {
         if (Instance != null) {
             Destroy(gameObject);
@@ -74,6 +76,11 @@ public class PuppetRegister : MonoBehaviour {
         dead = new List<GameObject>();
         foreach (GameObject obj in bombs) {
             obj.GetComponent<DefusableBomb>().Rewind();
+        }
+        if (rScripts.Count != 0) {
+            UnityStandardAssets.Characters.FirstPerson.FirstPersonController controller = GameManager.Instance.player.gameObject.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>();
+            controller.StoryAudioSource.PlayOneShot(rScripts[0]);
+            rScripts.RemoveAt(0);
         }
     }
 
