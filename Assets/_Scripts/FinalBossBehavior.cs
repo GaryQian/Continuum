@@ -16,6 +16,8 @@ public class FinalBossBehavior : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        GetComponent<Health>().OnDie += OnDie;
+
         InvokeRepeating("FireCircle", 10f, shotInterval);
 	}
 
@@ -56,4 +58,9 @@ public class FinalBossBehavior : MonoBehaviour {
 	void Update () {
         LaserSphereWrapper.transform.Rotate(Vector3.up * Time.deltaTime * laserSphereRotateSpeed);
 	}
+
+    void OnDie() {
+        Ending.Instance.Begin();
+        Destroy(gameObject);
+    }
 }

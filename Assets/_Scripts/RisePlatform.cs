@@ -26,11 +26,6 @@ public class RisePlatform : MonoBehaviour {
             triggerCollider = null;
         }
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     IEnumerator Move() {
         while (Vector3.SqrMagnitude(transform.position - endPos) > 0.08f) {
@@ -44,9 +39,14 @@ public class RisePlatform : MonoBehaviour {
     private void OnTriggerEnter(Collider collision) {
         if (collision.gameObject.layer == 10) {
             triggerCollider.enabled = false;
-            StartCoroutine(Move());
-            moved = true;
+            Begin();
         }
+    }
+
+    public void Begin() {
+        //triggerCollider.enabled = false;
+        StartCoroutine(Move());
+        moved = true;
     }
 
     public void SetStart() {
