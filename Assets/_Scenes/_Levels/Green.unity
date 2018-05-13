@@ -15215,11 +15215,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 466108201}
     m_Modifications:
-    - target: {fileID: 114836842274085232, guid: 42a0189d9ce2947a9bff0e1cd5da3cdd,
-        type: 2}
-      propertyPath: DestinationList.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 4913837126639968, guid: 42a0189d9ce2947a9bff0e1cd5da3cdd, type: 2}
       propertyPath: m_LocalPosition.x
       value: -13.34
@@ -15252,10 +15247,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1134827099207960, guid: 42a0189d9ce2947a9bff0e1cd5da3cdd, type: 2}
-      propertyPath: m_Name
-      value: Scorpion1
-      objectReference: {fileID: 0}
     - target: {fileID: 114836842274085232, guid: 42a0189d9ce2947a9bff0e1cd5da3cdd,
         type: 2}
       propertyPath: DestinationList.Array.data[0]
@@ -15276,10 +15267,9 @@ Prefab:
       propertyPath: DestinationList.Array.data[3]
       value: 
       objectReference: {fileID: 1508422776}
-    - target: {fileID: 114836842274085232, guid: 42a0189d9ce2947a9bff0e1cd5da3cdd,
-        type: 2}
-      propertyPath: DestinationArrivalOKDistance
-      value: 3
+    - target: {fileID: 1134827099207960, guid: 42a0189d9ce2947a9bff0e1cd5da3cdd, type: 2}
+      propertyPath: m_Name
+      value: Scorpion1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 42a0189d9ce2947a9bff0e1cd5da3cdd, type: 2}
