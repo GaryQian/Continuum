@@ -296,7 +296,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.624
+  m_Volume: 0.499
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -473,4 +473,16 @@ MonoBehaviour:
   inGameMusic: {fileID: 0}
   menuWooshClip: {fileID: 0}
   musicClip: {fileID: 0}
-  maxMusicVol: 0.5
+  maxMusicVol: 0.7
+  ambienceVolume: 0
+  bulletImpactWalls:
+  - {fileID: 8300000, guid: d4b3d0febb7b2014fada4f4c04371d62, type: 3}
+  - {fileID: 8300000, guid: d7db690abe1f5bc4aa9f071840627f71, type: 3}
+  - {fileID: 8300000, guid: 2a61938845d609a4aa27a44f12f56cc1, type: 3}
+  bulletImpactEnemy:
+  - {fileID: 8300000, guid: dd41c6b6604d24a49a4dfec57ab71969, type: 3}
+  - {fileID: 8300000, guid: c0761a998eeb4fb419863f1cc7946305, type: 3}
+  - {fileID: 8300000, guid: 47a381927b6b9c24ca7cb61359b26ea8, type: 3}
+  laserClip: {fileID: 8300000, guid: fd2b0477c7da2d240aa2348163b47189, type: 3}
+  chargeClip: {fileID: 8300000, guid: eaed49a2f8c50fa41a7d04d506f943e3, type: 3}
+  explosionClip: {fileID: 8300000, guid: 36595b7d5033ab2438b556fb54a0d17d, type: 3}

@@ -29,11 +29,16 @@ public class SoundManager : MonoBehaviour {
     AudioClip nextMusicClip;
     float musicVol;
     public float maxMusicVol;
+    public float ambienceVolume;
     float targMusicVol;
 
     public static SoundManager instance;
 
-    public 
+    public AudioClip[] bulletImpactWalls;
+    public AudioClip[] bulletImpactEnemy;
+    public AudioClip laserClip;
+    public AudioClip chargeClip;
+    public AudioClip explosionClip;
 
     void Awake() {
         //DontDestroyOnLoad(transform.gameObject);
@@ -59,11 +64,12 @@ public class SoundManager : MonoBehaviour {
 
         musicSource.clip = atmos[Random.Range(0, atmos.Length)];
         musicSource.loop = true;
-        musicSource.volume = targMusicVol;
+        musicSource.volume = ambienceVolume;
         musicSource.Play();
 
         if (musicClip != null) {
             musicSource2.clip = musicClip;
+            musicSource2.volume = targMusicVol;
             musicSource2.Play();
         }
     }

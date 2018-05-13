@@ -97,6 +97,7 @@ public class Health : MonoBehaviour {
     // Callbacks for when this object dies. Register callbacks using: GetComponent<Health>().OnDie += functionname;
     public void Die() {
         Debug.Log("Unit is dying");
+        GameManager.Instance.player.gameObject.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().StoryAudioSource.PlayOneShot(SoundManager.instance.explosionClip);
         if (OnDie != null) {
             Debug.Log("Calling Health OnDie");
             OnDie();

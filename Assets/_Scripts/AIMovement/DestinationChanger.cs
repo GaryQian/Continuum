@@ -34,6 +34,8 @@ public class DestinationChanger : MonoBehaviour {
 	private RaycastHit hit;
 	public LayerMask ShotLayerMask;
 
+    public AudioClip laserClip;
+
 	// Use this for initialization
 	void Start () {
         detectionRadius *= Mathf.Pow(this.gameObject.transform.localScale.y, 0.25f);
@@ -132,6 +134,7 @@ public class DestinationChanger : MonoBehaviour {
 		LaserChargeLight.enabled = true;
 		LaserIndicatorRenderer.SetPositions (new Vector3[]{TurretFireLight.transform.position, laserTargetPoint});
 		LaserIndicatorRenderer.enabled = true;
+        SoundManager.PlaySfx(SoundManager.instance.chargeClip);
 
         yield return new WaitForSeconds(chargeTime);
 
@@ -141,6 +144,7 @@ public class DestinationChanger : MonoBehaviour {
 		    //LaserRenderer.SetPositions (new Vector3[]{TurretFireLight.transform.position, laserTargetPoint});
 		    //LaserRenderer.enabled = true;
         createLaserCollider(TurretFireLight.transform.position, laserTargetPoint);
+        SoundManager.PlaySfx(SoundManager.instance.laserClip);
         yield return new WaitForSeconds(beamTime);
 
 		//Laser turnoff sequence

@@ -11,7 +11,7 @@ public class Storyline : MonoBehaviour {
     UnityStandardAssets.Characters.FirstPerson.FirstPersonController controller;
 
     private void OnTriggerEnter(Collider other) {
-        Debug.Log("Entered" + other.gameObject.layer);
+        //Debug.Log("Entered" + other.gameObject.layer);
         if (other.gameObject.layer == 10) {
             controller = other.gameObject.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>();
             Invoke("Play", delay);

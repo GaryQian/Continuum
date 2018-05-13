@@ -24,7 +24,6 @@ public class LaserTrigger : MonoBehaviour {
         foreach (GameObject obj in players) {
             if (obj == null) count++;
         }
-        Debug.Log("" + players.Count + " " + count);
         if (players.Count - count <= 0) {
             foreach (GameObject laserBeam in laserBeams) {
                 laserBeam.SetActive(true);
