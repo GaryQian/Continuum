@@ -665,6 +665,7 @@ MonoBehaviour:
   healthPerCube: 50
   cubeDistance: 0.5
   aboveHeadDistance: 0.85
+  horizontalOffset: 0
   HealthComponent: {fileID: 114982828096466636}
   healthCubeScale: {x: 1, y: 1, z: 1}
   currentHealthCubeNum: 0
@@ -706,7 +707,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 300
-  maxHealth: 100
+  maxHealth: 500
   invincible: 0
   armor: 1
   isAlive: 1

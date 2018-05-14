@@ -21,6 +21,7 @@ public class BossActivator : MonoBehaviour {
 	private void OnTriggerEnter(Collider other)
 	{
         //Boss.SetActive(true);
+        if (other.gameObject.layer != 10) return;
         if (!hasSpawned)
         {
             Instantiate(Boss, BossActivationPoint.transform);

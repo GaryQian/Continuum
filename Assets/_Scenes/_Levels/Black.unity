@@ -1144,7 +1144,7 @@ Prefab:
     - target: {fileID: 114578324728785274, guid: 06caca6e4cb1946fab2c7d78f5f5d788,
         type: 2}
       propertyPath: maxHealth
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 06caca6e4cb1946fab2c7d78f5f5d788, type: 2}
@@ -1578,7 +1578,7 @@ Prefab:
     - target: {fileID: 114578324728785274, guid: 06caca6e4cb1946fab2c7d78f5f5d788,
         type: 2}
       propertyPath: maxHealth
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 06caca6e4cb1946fab2c7d78f5f5d788, type: 2}
@@ -3112,7 +3112,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4917916096054434, guid: 023c8efcc733043ec81019f69a950d0a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 250.2
+      value: -3.36
       objectReference: {fileID: 0}
     - target: {fileID: 4917916096054434, guid: 023c8efcc733043ec81019f69a950d0a, type: 2}
       propertyPath: m_LocalPosition.y
@@ -3120,7 +3120,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4917916096054434, guid: 023c8efcc733043ec81019f69a950d0a, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -8.8
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 4917916096054434, guid: 023c8efcc733043ec81019f69a950d0a, type: 2}
       propertyPath: m_LocalRotation.x
@@ -3141,16 +3141,6 @@ Prefab:
     - target: {fileID: 4917916096054434, guid: 023c8efcc733043ec81019f69a950d0a, type: 2}
       propertyPath: m_RootOrder
       value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 82806333413256892, guid: 023c8efcc733043ec81019f69a950d0a,
-        type: 2}
-      propertyPath: spreadCustomCurve.m_RotationOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114300825143741924, guid: 023c8efcc733043ec81019f69a950d0a,
-        type: 2}
-      propertyPath: invincible
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 023c8efcc733043ec81019f69a950d0a, type: 2}
@@ -3308,7 +3298,7 @@ Prefab:
     - target: {fileID: 114578324728785274, guid: 06caca6e4cb1946fab2c7d78f5f5d788,
         type: 2}
       propertyPath: maxHealth
-      value: 200
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1323448369925108, guid: 06caca6e4cb1946fab2c7d78f5f5d788, type: 2}
       propertyPath: m_Name
@@ -8009,7 +7999,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-1017944
+  m_Name: pb_Mesh-1262534
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
