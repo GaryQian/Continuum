@@ -532,7 +532,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 41180461}
   m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659258}
-  m_LocalPosition: {x: 425.76, y: 168.99, z: 6.25}
+  m_LocalPosition: {x: 425.76, y: 173.93001, z: 6.25}
   m_LocalScale: {x: 8.685342, y: 1.4625599, z: 73.20555}
   m_Children: []
   m_Father: {fileID: 1283287340}
@@ -623,7 +623,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPos: {x: 425.76, y: -80.95999, z: 6.25}
-  endPos: {x: 425.76, y: 168.99, z: 6.25}
+  endPos: {x: 425.76, y: 173.93001, z: 6.25}
   moveSpeed: 0.05
 --- !u!33 &41180468
 MeshFilter:
@@ -3228,6 +3228,7 @@ MonoBehaviour:
   spaceVol: 1
   line1: {fileID: 8300000, guid: cc0bb60917091a24582204ce5a23b303, type: 3}
   line2: {fileID: 0}
+  o: {fileID: 0}
   state: 0
 --- !u!4 &478459080 stripped
 Transform:
@@ -11693,7 +11694,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1622179079}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 442.46002, y: 187.16, z: -30.41}
+  m_LocalPosition: {x: 442.46002, y: 192.1, z: -30.41}
   m_LocalScale: {x: 42.347385, y: 1.4625599, z: 11.108359}
   m_Children: []
   m_Father: {fileID: 1283287340}
@@ -11772,7 +11773,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPos: {x: 442.46002, y: -62.5, z: -30.41}
-  endPos: {x: 442.46002, y: 187.16, z: -30.41}
+  endPos: {x: 442.46002, y: 192.1, z: -30.41}
   moveSpeed: 0.05
 --- !u!33 &1622179085
 MeshFilter:

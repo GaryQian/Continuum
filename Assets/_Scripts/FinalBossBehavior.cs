@@ -18,7 +18,7 @@ public class FinalBossBehavior : MonoBehaviour {
     void Start () {
         GetComponent<Health>().OnDie += OnDie;
 
-        InvokeRepeating("FireCircle", 10f, shotInterval);
+        InvokeRepeating("FireCircle", 7f, shotInterval);
 	}
 
     void FireCircle() {

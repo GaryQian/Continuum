@@ -62,7 +62,7 @@ public class LaserShotModule : MonoBehaviour {
                 //Debug.DrawRay(this.gameObject.transform.position, hit.point - this.gameObject.transform.position, Color.magenta);
 
 
-                if (hit.collider.gameObject.CompareTag("Player"))
+                if (hit.collider.gameObject.layer == 10 || hit.collider.gameObject.layer == 17)
                 {
                     //Debug.Log("Raycast hit player");
 
