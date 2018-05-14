@@ -16,6 +16,8 @@ public class UIManager : MonoBehaviour {
     public GameObject messagePrefab;
     GameObject message;
 
+    public GameObject white;
+
 	void Awake() {
 		if (instance != null) {
 			Destroy(this.gameObject);
@@ -49,5 +51,9 @@ public class UIManager : MonoBehaviour {
         }
         message = Instantiate(messagePrefab, gameObject.transform);
         message.GetComponent<Text>().text = msg;
+    }
+
+    public void ToWhite() {
+        Instantiate(white, gameObject.transform);
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Ending : MonoBehaviour {
     public static Ending Instance; ///Singleton Instance
@@ -42,6 +43,8 @@ public class Ending : MonoBehaviour {
                     SoundManager.instance.musicSource2.loop = false;
                     SoundManager.instance.musicSource2.volume = spaceVol;
                     SoundManager.instance.musicSource2.Play();
+                    Invoke("ToWhite", 60 + 22);
+                    Invoke("Finish", 60 + 34 + 1);
                     break;
                 }
             default: {
@@ -78,6 +81,14 @@ public class Ending : MonoBehaviour {
         GameObject.Find("Pot").GetComponent<RisePlatform>().Begin();
         GameObject.Find("PotRamp1").GetComponent<RisePlatform>().Begin();
         GameObject.Find("PotRamp2").GetComponent<RisePlatform>().Begin();
+    }
+
+    void ToWhite() {
+        UIManager.instance.ToWhite();
+    }
+
+    void Finish() {
+        SceneManager.LoadScene("Title");
     }
 
 
