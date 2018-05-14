@@ -625,6 +625,7 @@ MonoBehaviour:
   startPos: {x: 425.76, y: -80.95999, z: 6.25}
   endPos: {x: 425.76, y: 173.93001, z: 6.25}
   moveSpeed: 0.05
+  triggerCollider: {fileID: 0}
 --- !u!33 &41180468
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -728,6 +729,7 @@ MonoBehaviour:
   startPos: {x: 444.48, y: -60, z: -7.4}
   endPos: {x: 444.48, y: 156.66, z: -7.4}
   moveSpeed: 0.07
+  triggerCollider: {fileID: 0}
 --- !u!64 &119172004
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1275,6 +1277,7 @@ MonoBehaviour:
   startPos: {x: 325.36, y: -14.6, z: -6.8}
   endPos: {x: 325.36, y: 1.5, z: -6.71}
   moveSpeed: 1
+  triggerCollider: {fileID: 0}
 --- !u!33 &164778162
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2237,6 +2240,7 @@ MonoBehaviour:
   startPos: {x: 378.23, y: -14.6, z: -6.8}
   endPos: {x: 378.23, y: 1.5, z: -6.71}
   moveSpeed: 1
+  triggerCollider: {fileID: 0}
 --- !u!33 &307930689
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3081,6 +3085,7 @@ MonoBehaviour:
   startPos: {x: 352.07, y: -14.6, z: -6.8}
   endPos: {x: 352.07, y: 1.5, z: -6.71}
   moveSpeed: 1
+  triggerCollider: {fileID: 0}
 --- !u!33 &397817667
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3228,7 +3233,7 @@ MonoBehaviour:
   spaceVol: 1
   line1: {fileID: 8300000, guid: cc0bb60917091a24582204ce5a23b303, type: 3}
   line2: {fileID: 0}
-  o: {fileID: 0}
+  o: {fileID: 8300000, guid: d58ae9f00d56de44b96518713346bc72, type: 3}
   state: 0
 --- !u!4 &478459080 stripped
 Transform:
@@ -4044,6 +4049,7 @@ MonoBehaviour:
   startPos: {x: 316.41, y: -14.6, z: -6.8}
   endPos: {x: 316.41, y: 1.5, z: -6.8}
   moveSpeed: 1
+  triggerCollider: {fileID: 0}
 --- !u!33 &580084522
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4559,6 +4565,7 @@ MonoBehaviour:
   startPos: {x: 264.5, y: -14.6, z: -6.8}
   endPos: {x: 264.5, y: 1.5, z: -6.8}
   moveSpeed: 1
+  triggerCollider: {fileID: 0}
 --- !u!33 &655762078
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6189,6 +6196,7 @@ MonoBehaviour:
   startPos: {x: 451.4, y: -7.1, z: -6.71}
   endPos: {x: 451.4, y: 156.2, z: -6.71}
   moveSpeed: 0.1
+  triggerCollider: {fileID: 0}
 --- !u!33 &852544270
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6697,6 +6705,7 @@ MonoBehaviour:
   startPos: {x: 334.25, y: -14.6, z: -6.8}
   endPos: {x: 334.25, y: 1.5, z: -6.71}
   moveSpeed: 1
+  triggerCollider: {fileID: 0}
 --- !u!33 &930050722
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6875,6 +6884,7 @@ MonoBehaviour:
   startPos: {x: 255.95, y: -14.22, z: -6.8}
   endPos: {x: 255.95, y: 1.5, z: -6.8}
   moveSpeed: 1
+  triggerCollider: {fileID: 0}
 --- !u!33 &966241496
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -8365,6 +8375,7 @@ MonoBehaviour:
   startPos: {x: 369.48, y: -14.6, z: -6.8}
   endPos: {x: 369.48, y: 1.5, z: -6.71}
   moveSpeed: 1
+  triggerCollider: {fileID: 0}
 --- !u!33 &1107604179
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -8617,6 +8628,7 @@ MonoBehaviour:
   startPos: {x: 290.79, y: -14.6, z: -6.8}
   endPos: {x: 290.79, y: 1.5, z: -6.8}
   moveSpeed: 1
+  triggerCollider: {fileID: 0}
 --- !u!33 &1113397181
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9039,6 +9051,7 @@ MonoBehaviour:
   startPos: {x: 273.39, y: -14.6, z: -6.8}
   endPos: {x: 273.39, y: 1.5, z: -6.8}
   moveSpeed: 1
+  triggerCollider: {fileID: 0}
 --- !u!33 &1203782025
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9996,6 +10009,7 @@ MonoBehaviour:
   startPos: {x: 343.11, y: -14.6, z: -6.8}
   endPos: {x: 343.11, y: 1.5, z: -6.71}
   moveSpeed: 1
+  triggerCollider: {fileID: 0}
 --- !u!33 &1343895693
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -11125,6 +11139,7 @@ MonoBehaviour:
   startPos: {x: 282.13, y: -14.6, z: -6.8}
   endPos: {x: 282.13, y: 1.5, z: -6.8}
   moveSpeed: 1
+  triggerCollider: {fileID: 0}
 --- !u!33 &1565135965
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -11775,6 +11790,7 @@ MonoBehaviour:
   startPos: {x: 442.46002, y: -62.5, z: -30.41}
   endPos: {x: 442.46002, y: 192.1, z: -30.41}
   moveSpeed: 0.05
+  triggerCollider: {fileID: 0}
 --- !u!33 &1622179085
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -11915,6 +11931,7 @@ MonoBehaviour:
   startPos: {x: 360.73, y: -14.6, z: -6.8}
   endPos: {x: 360.73, y: 1.5, z: -6.71}
   moveSpeed: 1
+  triggerCollider: {fileID: 0}
 --- !u!33 &1636571796
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -12043,6 +12060,7 @@ MonoBehaviour:
   startPos: {x: 308.07, y: -14.6, z: -6.8}
   endPos: {x: 308.07, y: 1.5, z: -6.8}
   moveSpeed: 1
+  triggerCollider: {fileID: 0}
 --- !u!33 &1638845455
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -14645,6 +14663,7 @@ MonoBehaviour:
   startPos: {x: 299.54, y: -14.6, z: -6.8}
   endPos: {x: 299.54, y: 1.5, z: -6.8}
   moveSpeed: 1
+  triggerCollider: {fileID: 0}
 --- !u!33 &2053279653
 MeshFilter:
   m_ObjectHideFlags: 0

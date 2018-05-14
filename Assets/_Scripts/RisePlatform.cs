@@ -12,22 +12,22 @@ public class RisePlatform : MonoBehaviour {
     Rigidbody body;
     bool moved = false;
     public float moveSpeed = 1f;
-    //public Collider triggerCollider;
+    public Collider triggerCollider;
 
 	// Use this for initialization
 	void Start () {
         //transform.position = startPos;
         body = GetComponent<Rigidbody>();
         body.MovePosition(startPos);
-        //if (triggerCollider == null) {
-        //    Collider[] col = this.GetComponents<Collider>();
-        //    if (col.Length == 2) {
-        //        triggerCollider = col[1];
-        //    }
-        //    else {
-        //        triggerCollider = null;
-        //    }
-        //}
+        if (triggerCollider == null) {
+            Collider[] col = this.GetComponents<Collider>();
+            if (col.Length == 2) {
+                triggerCollider = col[1];
+            }
+            else {
+                triggerCollider = null;
+            }
+        }
 	}
 
     IEnumerator Move() {
@@ -41,7 +41,7 @@ public class RisePlatform : MonoBehaviour {
 
     private void OnTriggerEnter(Collider collision) {
         if (collision.gameObject.layer == 10) {
-            //triggerCollider.enabled = false;
+            triggerCollider.enabled = false;
             Begin();
         }
     }
