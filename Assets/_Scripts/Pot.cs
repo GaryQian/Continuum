@@ -43,6 +43,7 @@ public class Pot : MonoBehaviour {
             lockdownPos = GameManager.Instance.player.transform.position;
             locked = true;
             StartCoroutine(Lockdown());
+            Ending.Instance.NextState();
         }
     }
 }

@@ -11,6 +11,8 @@ public class Ending : MonoBehaviour {
     public AudioClip line1;
     public AudioClip line2;
     public AudioClip o;
+
+    public float musicStartTime;
     UnityStandardAssets.Characters.FirstPerson.FirstPersonController controller;
 
     public int state = 0;
@@ -44,9 +46,14 @@ public class Ending : MonoBehaviour {
                     SoundManager.instance.musicSource2.loop = false;
                     SoundManager.instance.musicSource2.volume = spaceVol;
                     SoundManager.instance.musicSource2.Play();
-                    Invoke("ToWhite", 60 + 22);
-                    Invoke("PlayO", 60 + 34);
-                    Invoke("Finish", 60 + 34 + 1);
+                    musicStartTime = Time.time;
+                    break;
+                }
+            case 3: {
+                    float elapsed = Mathf.Min(50f, Time.time - musicStartTime);
+                    Invoke("ToWhite", 60 + 22 - elapsed);
+                    Invoke("PlayO", 60 + 34 - elapsed);
+                    Invoke("Finish", 60 + 34 + 1 - elapsed);
                     break;
                 }
             default: {
