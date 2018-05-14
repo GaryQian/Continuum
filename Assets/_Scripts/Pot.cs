@@ -25,6 +25,7 @@ public class Pot : MonoBehaviour {
             Destroy(c);
         }
         Destroy(floor);
+        Ending.Instance.PlayO();
         while (true) {
             GameManager.Instance.player.transform.position = lockdownPos;
             transform.localScale = Vector3.one * Mathf.Lerp(transform.localScale.x, targScale, Time.deltaTime);

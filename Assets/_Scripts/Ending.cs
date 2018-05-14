@@ -10,6 +10,7 @@ public class Ending : MonoBehaviour {
     public float spaceVol;
     public AudioClip line1;
     public AudioClip line2;
+    public AudioClip o;
     UnityStandardAssets.Characters.FirstPerson.FirstPersonController controller;
 
     public int state = 0;
@@ -44,6 +45,7 @@ public class Ending : MonoBehaviour {
                     SoundManager.instance.musicSource2.volume = spaceVol;
                     SoundManager.instance.musicSource2.Play();
                     Invoke("ToWhite", 60 + 22);
+                    Invoke("PlayO", 60 + 34);
                     Invoke("Finish", 60 + 34 + 1);
                     break;
                 }
@@ -85,6 +87,10 @@ public class Ending : MonoBehaviour {
 
     void ToWhite() {
         UIManager.instance.ToWhite();
+    }
+
+    public void PlayO() {
+        SoundManager.PlaySfx(o);
     }
 
     void Finish() {
